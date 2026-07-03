@@ -1,0 +1,24 @@
+{
+  "name": "fuzhou-hospital-banner",
+  "version": "1.0.0",
+  "description": "- `index.html`：静态 banner 结构 - `styles.css`：按 Figma 原始尺寸 `2160×865` 等比实现 - `assets/`：从 Figma 节点导出的 SVG/PNG 服务图标、提示条和 JPG 小程序码 - `verification/figma-36-4806-reference.png`：Figma 节点参考截图",
+  "main": "src/index.ts",
+  "scripts": {
+    "remotion:studio": "remotion studio src/index.ts",
+    "remotion:still": "remotion still src/index.ts FuzhouHospitalBanner --frame=75 --scale=0.5",
+    "remotion:render": "remotion render src/index.ts FuzhouHospitalBanner out/fuzhou-hospital-banner.mp4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@remotion/cli": "^4.0.484",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "remotion": "^4.0.484",
+    "typescript": "^6.0.3"
+  }
+}

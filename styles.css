@@ -1,0 +1,231 @@
+:root {
+  --banner-width: 2160;
+  --banner-height: 865;
+  --green: #00603d;
+  --muted-green: #8ba182;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.preview-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+}
+
+/* 浅绿大容器 */
+.fzh-service-banner {
+  container-type: inline-size;
+  position: relative;
+  width: min(100%, 2160px);
+  aspect-ratio: 2160 / 865;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 0;
+  background: linear-gradient(180deg, #eff8e8 0%, #e9f6e2 14.539%, #dcf2d2 100%);
+  color: #000000;
+}
+
+.service-list,
+.mascot-entry,
+.more-service-bar {
+  position: absolute;
+}
+
+.service-list {
+  left: 3.056cqw;
+  top: 5.163cqw;
+  display: flex;
+  align-items: flex-start;
+  gap: 3.333cqw;
+  z-index: 2;
+}
+
+/* 服务卡片基准样式与阶段一依次放大波浪 */
+.service-item {
+  width: 15.833cqw;
+  height: 16.667cqw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+  padding-top: 0.833cqw;
+  border: 0.167cqw solid #ffffff;
+  border-radius: 3.583cqw;
+  background: var(--card-bg);
+  cursor: pointer;
+  animation: card-scale-wave 3.5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
+.service-item-registration {
+  animation-delay: 0.4s;
+}
+.service-item-consult {
+  animation-delay: 0.6s;
+}
+.service-item-prescription {
+  animation-delay: 0.8s;
+}
+.service-item-preparation {
+  animation-delay: 1.0s;
+}
+
+.service-icon {
+  position: relative;
+  width: 10.24cqw;
+  height: 10.24cqw;
+  display: block;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.service-icon-stack > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.service-icon-stack > img.calendar-mark {
+  left: 26%;
+  top: 26.4%;
+  width: 48%;
+  height: 47.2%;
+}
+
+.service-label {
+  display: block;
+  min-width: 100%;
+  margin-top: 0.463cqw;
+  color: var(--green);
+  font-size: 2.75cqw;
+  font-weight: 500;
+  line-height: 4cqw;
+  letter-spacing: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* 吉祥物卡片 (阶段一最后放大) */
+.mascot-entry {
+  left: 73.611cqw;
+  top: 5.185cqw;
+  width: 27.546cqw;
+  height: 34.861cqw;
+  display: block;
+  z-index: 3;
+  cursor: pointer;
+  animation: card-scale-wave 3.5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  animation-delay: 1.2s;
+}
+
+.mascot-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* 下方提示气泡 (3.5s 悬浮周期) */
+.more-service-bar {
+  left: 3.056cqw;
+  top: 23.1cqw;
+  width: 70.556cqw;
+  height: 10.833cqw;
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  animation: bubble-continuous-seamless 3.5s ease-in-out infinite;
+}
+
+.more-service-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.more-service-text {
+  position: absolute;
+  left: 50%;
+  top: 59.5%;
+  transform: translate(-50%, -50%);
+  color: var(--green);
+  font-size: 2.685cqw;
+  font-weight: 500;
+  line-height: 4cqw;
+  letter-spacing: 0;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.more-service-muted {
+  color: var(--muted-green);
+}
+
+.more-service-strong {
+  color: var(--green);
+}
+
+/* KEYFRAMES */
+@keyframes card-scale-wave {
+  0%, 7.78%, 100% {
+    transform: scale(1);
+    z-index: 1;
+  }
+  3.89% {
+    transform: scale(1.05);
+    z-index: 10;
+  }
+}
+
+/* 全程光滑无停顿，振幅 0.65cqw */
+@keyframes bubble-continuous-seamless {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-0.65cqw);
+  }
+  75% {
+    transform: translateY(0.65cqw);
+  }
+}
+
+@media (max-width: 640px) {
+  .fzh-service-banner {
+    width: 100%;
+    border-radius: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-item,
+  .qr-entry,
+  .more-service-bar {
+    animation: none;
+  }
+}
