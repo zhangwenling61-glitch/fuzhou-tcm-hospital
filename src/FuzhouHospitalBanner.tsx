@@ -92,9 +92,7 @@ export const FuzhouHospitalBanner = () => {
   const pulse1 = animatePulse(0.6, 0.35); // 在线问诊
   const pulse2 = animatePulse(0.8, 0.35); // 复诊续方
   const pulse3 = animatePulse(1.0, 0.35); // 便捷配药
-  const pulse4 = animatePulse(1.2, 0.35); // 吉祥物 Mascot
-
-  const mascotScale = 1 + pulse4 * 0.05;
+  // 吉祥物不再放大，仅保留上下浮动动画
 
   // 浮动动效 (3.5秒 105帧 连续循环)
   const mascotY = Math.sin((frame / 105) * Math.PI * 2) * -8;
@@ -283,7 +281,7 @@ export const FuzhouHospitalBanner = () => {
               top: 31.48,
               width: 308.466,
               height: 390.575,
-              transform: `translateY(${mascotY}px) scale(${mascotScale})`,
+              transform: `translateY(${mascotY}px)`,
               transformOrigin: "center center",
             }}
           >
