@@ -9,6 +9,24 @@
   <body>
     <main class="preview-page">
       <section class="fzh-service-banner" aria-label="福州中医院小程序服务入口">
+        <!-- 底部绿植背景 -->
+        <img class="bg-leaves" src="./assets/bg-bottom-leaves.png" alt="" aria-hidden="true" />
+
+        <!-- 顶部装饰与标题 -->
+        <div class="title-line title-line-left"></div>
+        <div class="title-line title-line-right"></div>
+        <h1 class="hospital-title">福州市中医院</h1>
+        <img class="title-sub" src="./assets/title-internet-hospital.svg" alt="互联网医院" />
+
+        <!-- Mascot IP & Clouds -->
+        <div class="ip-group">
+          <img class="cloud cloud-2" src="./assets/cloud.png" alt="" />
+          <img class="cloud cloud-3" src="./assets/cloud.png" alt="" />
+          <img class="cloud cloud-1" src="./assets/cloud.png" alt="" />
+          <img class="mascot-new" src="./assets/mascot-new.png" alt="吉祥物" />
+        </div>
+
+        <!-- 卡片列表 -->
         <div class="service-list">
           <a class="service-item service-item-registration" href="#" aria-label="预约挂号">
             <span class="service-icon service-icon-stack" aria-hidden="true">
@@ -25,11 +43,11 @@
             <span class="service-label">在线问诊</span>
           </a>
 
-          <a class="service-item service-item-prescription" href="#" aria-label="中药续方">
+          <a class="service-item service-item-prescription" href="#" aria-label="复诊续方">
             <span class="service-icon service-icon-stack" aria-hidden="true">
               <img src="./assets/icon-prescription.svg" alt="" />
             </span>
-            <span class="service-label">中药续方</span>
+            <span class="service-label">复诊续方</span>
           </a>
 
           <a class="service-item service-item-preparation" href="#" aria-label="便捷配药">
@@ -40,17 +58,21 @@
           </a>
         </div>
 
-        <a class="mascot-entry" href="#" aria-label="进入福州中医院小程序">
-          <img class="mascot-image" src="./assets/mascot.png" alt="吉祥物" />
-        </a>
-
-        <a class="more-service-bar" href="#" aria-label="更多服务，点击进入福州中医院小程序">
-          <img class="more-service-bg" src="./assets/prompt-bar-new.svg" alt="" aria-hidden="true" />
+        <!-- 底部提示气泡 -->
+        <a class="more-service-bar" href="#" aria-label="点击进入福州市中医院互联网医院小程序">
+          <img class="more-service-bg" src="./assets/prompt-bar-v3.svg" alt="" aria-hidden="true" />
           <span class="more-service-text">
-            <span class="more-service-muted">更多服务，点击进入</span>
+            <span class="more-service-muted">点击进入</span>
             <span class="more-service-strong">“福州市中医院互联网医院”小程序</span>
           </span>
         </a>
+
+        <!-- 引导点击手势与波纹 -->
+        <div class="gesture-container">
+          <img class="ripple ripple-1" src="http://localhost:3845/assets/67ebb17bf22e84738de076233edd70c9b32d46a6.svg" alt="" />
+          <img class="ripple ripple-2" src="http://localhost:3845/assets/7ad85e849cc9c24bdf9b569ff2bf79bf9b58ba31.svg" alt="" />
+          <img class="hand-gesture" src="http://localhost:3845/assets/581e9e1691ab464da060a1fb32c7fbf491c2babc.png" alt="点击手势" />
+        </div>
       </section>
     </main>
   </body>

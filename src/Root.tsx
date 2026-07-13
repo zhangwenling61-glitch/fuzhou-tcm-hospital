@@ -8,8 +8,8 @@ export const RemotionRoot = () => {
       component={FuzhouHospitalBanner}
       durationInFrames={105}
       fps={30}
-      width={2160}
-      height={865}
+      width={1080}
+      height={844}
     />
   );
 };
