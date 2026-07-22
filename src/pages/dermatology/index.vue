@@ -2,7 +2,7 @@
   <view class="dermatology-page">
     <PortalNavBar :title="pageTitle" secondary force-dark-text />
 
-    <scroll-view scroll-y class="dermatology-scroll">
+    <view class="dermatology-scroll">
       <view v-if="view === 'home'" class="dermatology-home">
         <view class="hero-card">
           <view class="hero-badge">🏥 福州中医院 · 皮肤科</view>
@@ -40,7 +40,7 @@
       </view>
 
       <view v-else class="confirm-view"><view class="confirm-card"><view class="section-title">就诊人信息</view><view class="patient"><text class="avatar">👤</text><view><view class="patient-name">张明 <text>本人</text></view><view class="patient-card">自费卡 · **** 5678</view></view><button @tap="showPatients">切换</button></view></view><view v-if="currentPackage" class="confirm-card"><view class="section-title">服务项目</view><view class="confirm-row"><text>{{ currentPackage.name }}</text><strong>¥{{ currentPackage.price }}</strong></view></view><view class="confirm-notice">ℹ️ 本次就诊需使用患者本人的自费卡结算。如无自费卡，请先添加电子健康卡。</view><view class="confirm-bottom"><view><text>实付</text><strong>¥{{ currentPackage?.price || 0 }}</strong></view><button @tap="submitOrder">申请开单</button></view></view>
-    </scroll-view>
+    </view>
 
     <button class="orders-fab" @tap="showOrders"><image :src="orderIcon" mode="aspectFit" /><text>我的订单</text></button>
 
