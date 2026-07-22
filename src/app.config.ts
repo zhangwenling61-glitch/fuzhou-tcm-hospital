@@ -1,7 +1,8 @@
 export default defineAppConfig({
   pages: [
     'pages/home/index',
-    'pages/winter-summer-treatment/index'
+    'pages/winter-summer-treatment/index',
+    'pages/dermatology/index'
   ],
   subPackages: [
     {

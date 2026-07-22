@@ -1376,7 +1376,8 @@ const handleCardClick = (name: string, categoryTitle?: string) => {
     '线上问诊': '/pages/appointment/department/index?mode=consult',
     '自助开单': '/pages/common-list/self-order/index',
     '在线续方': '/pages/common-list/medication-refill/index',
-    '三伏灸': '/pages/winter-summer-treatment/index'
+    '三伏灸': '/pages/winter-summer-treatment/index',
+    '皮肤科': '/pages/dermatology/index'
   }
 
   if (routesMap[name]) {
