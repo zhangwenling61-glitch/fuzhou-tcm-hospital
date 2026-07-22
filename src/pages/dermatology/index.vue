@@ -8,7 +8,6 @@
           <view class="hero-badge">🏥 福州中医院 · 皮肤科</view>
           <view class="hero-title">传承中医精髓 · 守护皮肤健康</view>
           <view class="hero-desc">福州市中医院皮肤科是福建省中医重点专科，<br>以中医特色疗法结合现代技术，为您提供专业、安心的皮肤诊疗服务。</view>
-          <view class="hero-seal">皮肤科</view>
         </view>
 
         <view class="consult-card" @tap="goConsult">
