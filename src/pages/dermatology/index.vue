@@ -54,7 +54,7 @@
 import Taro from '@tarojs/taro'
 import { computed, ref } from 'vue'
 import PortalNavBar from '@/components/PortalNavBar/index.vue'
-import orderIcon from '@/assets/icons/message/order-notice.svg'
+import orderIcon from './dermatology-order.svg'
 import './index.less'
 
 type PackageItem = { id: string; cat: string; name: string; price: number; area: string[]; note: string; desc: string; duration: string; icon: string; intro: string; steps: string[] }
