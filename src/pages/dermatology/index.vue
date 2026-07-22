@@ -20,7 +20,7 @@
         <view class="address">📍 {{ selectedArea === '五四北' ? '五四北院区 · 福建省福州市晋安区' : '鼓楼院区 · 福建省福州市鼓楼区' }}</view>
 
         <view class="content-layout">
-          <view class="category-list"><view class="category-title">分类</view><button v-for="cat in categories" :key="cat.id" :class="['category-btn', { active: activeCategory === cat.id }]" @tap="activeCategory = cat.id">{{ cat.name }}</button></view>
+          <view class="category-list"><button v-for="cat in categories" :key="cat.id" :class="['category-btn', { active: activeCategory === cat.id }]" @tap="activeCategory = cat.id">{{ cat.name }}</button></view>
           <view class="package-list">
             <view v-for="item in filteredPackages" :key="item.id" class="package-card" @tap="openDetail(item)">
               <view class="package-visual" :class="item.cat"><text>{{ item.icon }}</text></view>
