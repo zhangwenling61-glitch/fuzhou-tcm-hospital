@@ -6,7 +6,7 @@ export const RemotionRoot = () => {
     <Composition
       id="FuzhouHospitalBanner"
       component={FuzhouHospitalBanner}
-      durationInFrames={105}
+      durationInFrames={60}
       fps={30}
       width={2160}
       height={865}

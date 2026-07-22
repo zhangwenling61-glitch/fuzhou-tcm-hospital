@@ -16,19 +16,21 @@ const Icon = ({ file }: { file: string }) => <Img src={staticFile(`assets/${file
 
 export const FuzhouHospitalBanner = () => {
   const frame = useCurrentFrame()
-  const loopPhase = Math.min(frame, 104) / 104
-  const cloudPhase = loopPhase
-  const ipPhase = loopPhase
+  const loopPhase = Math.min(frame, 59) / 59
+  const oneShotPhase = Math.min(frame, 59) / 59
+  const cloudPhase = oneShotPhase
+  const ipPhase = oneShotPhase
   const pulse = (start: number) => {
     const progress = (frame - start) / 12
     return progress >= 0 && progress <= 1 ? Math.sin(progress * Math.PI) : 0
   }
-  const floatY = Math.sin(ipPhase * Math.PI * 2) * -7
-  const bubbleY = Math.sin(cloudPhase * Math.PI * 2 + Math.PI / 3) * -4
-  const cloudLeftX = Math.sin(cloudPhase * Math.PI * 2) * 7
-  const cloudLeftY = Math.cos(cloudPhase * Math.PI * 2) * 4
-  const cloudBottomX = Math.sin(cloudPhase * Math.PI * 2 + Math.PI) * 10
-  const cloudBottomY = Math.cos(cloudPhase * Math.PI * 2 + Math.PI) * 7
+  const floatY = Math.sin(ipPhase * Math.PI * 2) * -4
+  const bubblePhase = Math.min(frame % 60, 59) / 59
+  const bubbleY = Math.sin(bubblePhase * Math.PI * 2 + Math.PI / 3) * -4
+  const cloudLeftX = Math.sin(cloudPhase * Math.PI * 2) * 4
+  const cloudLeftY = Math.cos(cloudPhase * Math.PI * 2) * 2.5
+  const cloudBottomX = Math.sin(cloudPhase * Math.PI * 2 + Math.PI) * 6
+  const cloudBottomY = Math.cos(cloudPhase * Math.PI * 2 + Math.PI) * 4
 
   return <AbsoluteFill style={{ overflow: "hidden", background: "linear-gradient(180deg,#eff8e8 0%,#e9f6e2 14.539%,#dcf2d2 100%)" }}>
     <AbsoluteFill style={{ top: 15, width: W, height: H, overflow: "hidden", transform: "scale(2)", transformOrigin: "top left" }}>
