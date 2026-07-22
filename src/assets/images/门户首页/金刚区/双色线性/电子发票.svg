@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/电子发票</title>
+    <g id="图标/金刚区/电子发票" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(19, 26)">
+                <path d="M21,5 L43,5 C44.1045695,5 45,5.8954305 45,7 L45,29 C45,30.1045695 44.1045695,31 43,31 L21,31 L21,31 L21,5 Z" id="矩形" fill="#FEF4DA"></path>
+                <path d="M9.10020169,0.000903924701 C9.56382125,2.28269387 11.5813615,4 14,4 C16.4186385,4 18.4361787,2.28269387 18.8997983,0.000903924701 L46,0 C48.209139,-4.05812251e-16 50,1.790861 50,4 L50,32 C50,34.209139 48.209139,36 46,36 L18.8999437,35.999812 C18.4366008,33.7176654 16.4188915,32 14,32 C11.5811085,32 9.56339924,33.7176654 9.10005628,35.999812 L4,36 C1.790861,36 1.3527075e-16,34.209139 0,32 L0,4 C-2.705415e-16,1.790861 1.790861,2.705415e-16 4,0 L9.10020169,0.000903924701 Z" id="形状结合" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <line x1="14.745002" y1="11.7645865" x2="14.2653855" y2="23.754998" id="直线" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(14.5052, 17.7598) rotate(-2.2906) translate(-14.5052, -17.7598)"></line>
+                <line x1="27.5" y1="12.5" x2="39.5" y2="12.5" id="直线-2" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="27.5" y1="23.5" x2="39.5" y2="23.5" id="直线-2备份" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

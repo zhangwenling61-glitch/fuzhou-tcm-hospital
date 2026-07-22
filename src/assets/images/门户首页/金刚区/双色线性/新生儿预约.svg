@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/新生儿预约</title>
+    <g id="图标/金刚区/新生儿预约" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形备份-13" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="编组-9" transform="translate(21, 23)">
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(22.981, 24.163) rotate(-315) translate(-22.981, -24.163)" x="7.48097039" y="7.1629509" width="31" height="34" rx="4"></rect>
+                <rect id="矩形" fill="#FEF4DA" transform="translate(22.981, 24.163) rotate(-315) translate(-22.981, -24.163)" x="11.4809704" y="12.1629509" width="23" height="24" rx="2"></rect>
+                <path d="M33.5875721,0.585786438 L37.8302128,4.82842712 L39.2444264,3.41421356 C40.4159992,2.24264069 42.3154942,2.24264069 43.487067,3.41421356 L44.1941738,4.12132034 C45.3657467,5.29289322 45.3657467,7.19238816 44.1941738,8.36396103 L42.7800382,9.778 L46.3154942,13.3137085 C47.0965428,14.0947571 47.0965428,15.361087 46.3154942,16.1421356 L44.1941738,18.263456 C43.4131252,19.0445046 42.1467953,19.0445046 41.3657467,18.263456 L28.6378246,5.53553391 C27.8567761,4.75448532 27.8567761,3.48815536 28.6378246,2.70710678 L30.759145,0.585786438 C31.5401936,-0.195262146 32.8065235,-0.195262146 33.5875721,0.585786438 Z" id="形状结合" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <line x1="22.377417" y1="15.513456" x2="13.1850288" y2="24.7058441" id="直线-10" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/政策解读</title>
+    <g id="图标/金刚区/政策解读" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形备份-16" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="编组-10" transform="translate(18, 26)">
+                <path d="M52,0 C47.581722,5.41083001e-16 44,3.581722 44,8 C44,12.418278 47.581722,16 52,16 L8,16 C3.581722,16 2.705415e-16,12.418278 0,8 C-5.41083001e-16,3.581722 3.581722,5.41083001e-16 8,0 Z" id="形状结合" stroke="#4E7F3E" stroke-width="4" stroke-linejoin="round"></path>
+                <path d="M52,24 C47.581722,24 44,27.581722 44,32 C44,36.418278 47.581722,40 52,40 L8,40 C3.581722,40 2.705415e-16,36.418278 0,32 C-5.41083001e-16,27.581722 3.581722,24 8,24 Z" id="形状结合备份" stroke="#4E7F3E" stroke-width="4" stroke-linejoin="round" transform="translate(26, 32) scale(-1, 1) translate(-26, -32)"></path>
+                <path d="M47,29 C45.3431458,29 44,30.3431458 44,32 C44,33.6568542 45.3431458,35 47,35 L15,35 C13.3431458,35 12,33.6568542 12,32 C12,30.3431458 13.3431458,29 15,29 Z" id="形状结合备份" fill="#FEF4DA" transform="translate(29.5, 32) scale(-1, 1) translate(-29.5, -32)"></path>
+                <path d="M40,5 C38.3431458,5 37,6.34314575 37,8 C37,9.65685425 38.3431458,11 40,11 L8,11 C6.34314575,11 5,9.65685425 5,8 C5,6.34314575 6.34314575,5 8,5 Z" id="形状结合备份-2" fill="#FEF4DA"></path>
+                <line x1="14.5" y1="8.5" x2="14.5" y2="18.5" id="直线-11" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

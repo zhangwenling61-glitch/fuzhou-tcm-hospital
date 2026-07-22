@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/儿保预约</title>
+    <g id="图标/金刚区/儿保预约" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="编组-4" transform="translate(16, 21)">
+                <path d="M28.5,0 C38.6753578,0 47.2731196,6.75449125 50.054187,16.0243753 C53.3842351,16.3040639 56,19.0965596 56,22.5 C56,25.9034404 53.3842351,28.6959361 50.053421,28.9767713 C47.2731196,38.2455088 38.6753578,45 28.5,45 C18.3279413,45 9.73245571,38.2498879 6.94851985,28.9846403 L6.73313413,28.995897 L6.5,29 C2.91014913,29 0,26.0898509 0,22.5 C0,18.9101491 2.91014913,16 6.5,16 C6.65101292,16 6.80082305,16.0051498 6.94926433,16.0152834 C9.73245571,6.75011209 18.3279413,0 28.5,0 Z" id="形状结合" stroke="#4E7F3E" stroke-width="4"></path>
+                <circle id="形状结合" fill="#FEF4DA" cx="28.5" cy="22.5" r="17.5"></circle>
+                <line x1="21.5" y1="16.5" x2="21.5" y2="20.5" id="直线-4" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="35.5" y1="16.5" x2="35.5" y2="20.5" id="直线-4备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <path d="M21.5,27.6411896 C23.1064368,29.5115166 25.2731034,30.4466801 28,30.4466801 C30.7268966,30.4466801 33.0065517,29.5115166 34.8389655,27.6411896" id="路径-2" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M28.5,10.0616931 C34.1052874,10.3110862 36.9079311,7.62030515 36.9079311,1.98934989" id="路径-3" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

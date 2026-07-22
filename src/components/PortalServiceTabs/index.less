@@ -1,0 +1,61 @@
+.portal-service-tabs {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 702px;
+  box-sizing: border-box;
+  margin: -8px auto 0;
+  padding: 10px 24px;
+}
+
+.portal-service-tabs__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  line-height: 1;
+
+  &::after {
+    display: none;
+  }
+
+  span {
+    color: #7d90a6;
+    font-size: 30px;
+    font-family: @font-medium;
+    font-weight: bold;
+    line-height: 48px;
+    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                font-size 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &.is-active {
+    span {
+      color: @theme-color;
+      font-size: 36px;
+      font-weight: bold;
+      font-family: @font-medium;
+    }
+
+    .portal-service-tabs__mark {
+      opacity: 1;
+      animation: yh-section-underline-check-pop 0.42s cubic-bezier(0.2, 1.25, 0.32, 1) both;
+    }
+  }
+}
+
+.portal-service-tabs__mark {
+  margin-top: 6px;
+  opacity: 0;
+  transform: scale(0.2) rotate(-12deg) translate3d(0, 4px, 0);
+  transform-origin: center center;
+  will-change: transform, opacity;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/医院介绍</title>
+    <g id="图标/金刚区/医院介绍" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(17, 21)" stroke-width="4">
+                <path d="M4,23 L50,23 C52.209139,23 54,24.790861 54,27 L54,46 C54,47.1045695 53.1045695,48 52,48 L2,48 C0.8954305,48 6.76353751e-17,47.1045695 0,46 L0,27 C-2.705415e-16,24.790861 1.790861,23 4,23 Z" id="矩形" stroke="#4E7F3E"></path>
+                <path d="M12,0 L42,0 C44.209139,-4.05812251e-16 46,1.790861 46,4 L46,48 L46,48 L8,48 L8,4 C8,1.790861 9.790861,2.705415e-16 12,0 Z" id="矩形" stroke="#4E7F3E" fill="#FEF4DA"></path>
+                <line x1="20" y1="19.5" x2="34" y2="19.5" id="直线-8" stroke="#D49B07" fill="#D49B07" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="20" y1="36.5" x2="34" y2="36.5" id="直线-8备份-2" stroke="#4E7F3E" fill="#FEF4DA" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="27.5" y1="12" x2="27.5" y2="26" id="直线-8备份" stroke="#D49B07" fill="#D49B07" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

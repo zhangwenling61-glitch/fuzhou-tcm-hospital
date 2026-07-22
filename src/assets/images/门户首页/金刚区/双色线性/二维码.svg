@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/二维码</title>
+    <g id="图标/金刚区/二维码" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形备份-8" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <rect id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" x="20" y="21" width="48" height="48" rx="4"></rect>
+            <rect id="矩形" fill="#FEF4DA" x="25" y="26" width="38" height="38" rx="2"></rect>
+            <g id="二维码_two-dimensional-code" transform="translate(31.0769, 32.0769)" stroke-linecap="round" stroke-width="4">
+                <polygon id="路径" stroke="#4E7F3E" points="10.1538462 0 0 0 0 10.1538462 10.1538462 10.1538462"></polygon>
+                <polygon id="路径" stroke="#4E7F3E" points="10.1538462 15.6923077 0 15.6923077 0 25.8461538 10.1538462 25.8461538"></polygon>
+                <polygon id="路径" stroke="#4E7F3E" points="25.8461538 0 15.6923077 0 15.6923077 10.1538462 25.8461538 10.1538462"></polygon>
+                <line x1="17.0769231" y1="15.6923077" x2="17.0769231" y2="25.8461538" id="路径" stroke="#D49B07"></line>
+                <line x1="25.3846154" y1="15.6923077" x2="25.3846154" y2="25.8461538" id="路径" stroke="#D49B07"></line>
+            </g>
+        </g>
+    </g>
+</svg>

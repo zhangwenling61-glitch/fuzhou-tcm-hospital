@@ -1,0 +1,84 @@
+.protocol-dialog {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: #fff;
+    overflow-y: scroll;
+    z-index: 100;
+    .header {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 67px;
+      color: #222222;
+    }
+    .section {
+      margin-top: 40px;
+      p, .p-content {
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 48px;
+        color: #666666;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .link {
+        font-style: normal;
+        color: @theme-color;
+        display: inline-block;
+      }
+      span{
+        text-align: justify;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 48px;
+        color: #666666;
+      }
+    }
+    .footer-fill {
+      height: 160px;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      padding-top: 30px;
+      padding-right: 40px;
+      padding-bottom: 30px;
+      padding-left: 40px;
+      background: #fff;
+      z-index: 101;
+      .btn {
+        width: auto;
+        flex: auto;
+        height: 100px;
+        margin-right: 30px;
+        line-height: 100px;
+        border-radius: 16px;
+        font-size: 36px;
+        text-align: center;
+        color: #fff;
+        background: @theme-color;;
+        box-sizing: border-box;
+        &:last-child {
+          margin-right: 0;
+        }
+        &.plain {
+          flex: 1;
+          width: 240px;
+          line-height: 98px;
+          border: 2px solid @theme-color;;
+          border-width: 2px;
+          color: @theme-color;;
+          background: #fff;
+        }
+      }
+    }
+  }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/满意度评价</title>
+    <g id="图标/金刚区/满意度评价" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(21, 21.7114)">
+                <rect id="矩形" fill="#FEF4DA" x="5" y="6.28858223" width="36" height="34" rx="2"></rect>
+                <path d="M46,19.1672172 L46,19.1672172 L46,41.2885822 C46,43.4977212 44.209139,45.2885822 42,45.2885822 L4,45.2885822 C1.790861,45.2885822 0,43.4977212 0,41.2885822 L0,5.28858223 C0,3.07944323 1.790861,1.28858223 4,1.28858223 C12,1.28858223 20,1.28858223 28,1.28858223" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M25.7071068,3.58147545 L35.7071068,3.58147545 L35.7071068,28.5814755 C35.7071068,29.686045 34.8116763,30.5814755 33.7071068,30.5814755 L27.7071068,30.5814755 C26.6025373,30.5814755 25.7071068,29.686045 25.7071068,28.5814755 L25.7071068,3.58147545 L25.7071068,3.58147545 Z" id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(30.7071, 17.0815) rotate(-315) translate(-30.7071, -17.0815)"></path>
+                <path d="M45.2530483,7.53553391 L35.2530483,7.53553391 L45.2530483,7.53553391 Z" id="矩形" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(40.253, 7.5355) rotate(-315) translate(-40.253, -7.5355)"></path>
+                <path d="M36.5111426,10.1171697 L36.4326136,4.36727157 C36.4326136,3.26270207 37.3280441,2.36727157 38.4326136,2.36727157 L44.4326136,2.36727157 C45.5371831,2.36727157 46.4326136,3.26270207 46.4326136,4.36727157 L46.4326136,8.02412582 L46.4100078,10.3446658" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(41.4326, 6.356) rotate(-315) translate(-41.4326, -6.356)"></path>
+                <polygon id="路径-4" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="18.5937073 22.4600202 15.5880872 32.9643881 25.3434292 29.2528482"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

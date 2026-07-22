@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/科室/专门/icu</title>
+    <g id="图标/科室/专门/icu" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g id="icon/科室/icu" transform="translate(0, 4)">
+            <path d="M4.0030551,0 C2.90869116,0.0161487814 1.86712602,0.473130973 1.11419231,1.26747603 C0.36125861,2.06182109 -0.0393563964,3.12633895 0.00305510195,4.22 L0.00305510195,29.56 C0.00305510195,31.88 2.7030551,34 5.0030551,34 L16.0030551,34 L16.0030551,40 L32.0030551,40 L32.0030551,34 L44.0030551,34 C46.3191245,33.8571947 48.0892041,31.8775591 47.9730551,29.56 L47.9930551,4.22 C48.0393592,3.12699629 47.6414103,2.06176813 46.8898126,1.26684535 C46.138215,0.471922573 45.0969369,0.0149606105 44.0030551,0 L4.0030551,0 Z" id="形状_523" fill="#FFD5C7"></path>
+            <text id="ICU" fill="#C26B54" font-family="AlibabaPuHuiTiB, Alibaba PuHuiTi" font-size="18" font-weight="bold">
+                <tspan x="9" y="24">ICU</tspan>
+            </text>
+            <rect id="矩形" fill="#FFD5C7" x="12" y="40" width="25" height="4" rx="2"></rect>
+        </g>
+    </g>
+</svg>

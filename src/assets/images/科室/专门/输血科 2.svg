@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/科室/专门/输血科 2</title>
+    <g id="图标/科室/专门/输血科" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g id="icon/科室/输血科" transform="translate(7, 2)">
+            <path d="M24,3 C29.5228475,3 34,7.4771525 34,13 L34,31 C34,36.5228475 29.5228475,41 24,41 L10,41 C4.4771525,41 0,36.5228475 0,31 L0,13 C0,7.4771525 4.4771525,3 10,3 L24,3 Z M24,7 L10,7 C6.6862915,7 4,9.6862915 4,13 L4,15 L30,15 L30,13 C30,9.6862915 27.3137085,7 24,7 Z" id="圆角矩形_1050_拷贝" fill="#FFD5C7"></path>
+            <rect id="圆角矩形_1051_拷贝_2" fill="#C26B54" fill-rule="nonzero" x="15" y="35" width="4" height="10" rx="2"></rect>
+            <rect id="圆角矩形_1051_拷贝" fill="#C26B54" fill-rule="nonzero" x="15" y="0" width="4" height="10" rx="2"></rect>
+            <circle id="椭圆_767" fill="#C26B54" fill-rule="nonzero" cx="11.5" cy="20.5" r="2.5"></circle>
+            <circle id="椭圆_767_拷贝" fill="#C26B54" fill-rule="nonzero" cx="23.5" cy="23.5" r="2.5"></circle>
+            <circle id="椭圆_767_拷贝_2" fill="#C26B54" fill-rule="nonzero" cx="16.5" cy="27.5" r="2.5"></circle>
+            <rect id="圆角矩形_1053" fill="#C26B54" fill-rule="nonzero" x="11" y="35" width="12" height="4" rx="2"></rect>
+        </g>
+    </g>
+</svg>

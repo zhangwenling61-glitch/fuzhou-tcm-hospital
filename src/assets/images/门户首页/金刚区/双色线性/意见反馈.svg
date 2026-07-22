@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/意见反馈</title>
+    <g id="图标/金刚区/意见反馈" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(20, 22)">
+                <path d="M44,24.6265669 L44,35.783013 C44,37.1365764 43.126985,38.2338053 42.05,38.2338053 L6.95,38.2338053 C5.87304425,38.2338053 5,37.1365764 5,35.783013 L5,24.6265669 L24.5,32.2080251 L44,24.6265669 Z" id="路径" fill="#FEF4DA"></path>
+                <path d="M49,18.2338053 L49,40.170315 C49,41.8622692 47.903135,43.2338053 46.55,43.2338053 L2.45,43.2338053 C1.09690175,43.2338053 0,41.8622692 0,40.170315 L0,18.2338053 L24.5,27.7106279 L49,18.2338053 Z" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M0,18.2338053 L13,9.23380526 M49,18.2338053 L36,9.23380526" id="形状" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M41,0 L8,0 L8,20.0786852 C8,20.6354532 8.56496,21.1543907 9.5015,21.4577758 L22.7015,25.734281 C23.79512,26.088573 25.20488,26.088573 26.2985,25.734281 L39.4985,21.4577758 C40.43504,21.1543907 41,20.6354532 41,20.0786852 L41,0 Z" id="路径" stroke="#4E7F3E" stroke-width="4" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+                <line x1="16.8" y1="14.2864368" x2="23.8" y2="14.2864368" id="路径" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="16.8" y1="8.28643684" x2="29.8" y2="8.28643684" id="路径" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

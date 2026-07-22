@@ -1,0 +1,149 @@
+// 字体
+@font-light: PingFangSC-Light, PingFang SC; // 细字体
+@font-regular: PingFangSC-Regular, PingFang SC; // 默认
+@font-medium: PingFangSC-Medium, PingFang SC; // 粗字体
+@font-bold: @font-medium;
+
+
+// 黑色
+@black: #000000;
+
+// 白色
+@white: #FFFFFF;
+
+// 灰色
+@grey-8: #323233;
+@grey-7: #646566;
+@grey-6: #969799;
+@grey-5: #C8C9CC;
+@grey-4: #DCDEE0;
+@grey-3: #EBEDF0;
+@grey-2: #F2F3F5;
+@grey-1: #F7F8FA;
+@grey: @grey-3; // 默认边框
+@grey-light: @grey-1; // 浅色背景
+@grey-dark: @grey-5; // 深色灰
+
+// 红色
+@red: #FF595E; // 默认
+@red-light: #FF595E; // 浅色
+
+// 主题色
+// 变量名保持兼容历史蓝色命名，福州中医院版本统一映射为绿色主色。
+@blue: #457130; // 默认/主题色
+@blue-light: #ECF6E7; // 浅色背景
+@blue-dark: #2a451d; // 深色/标题色
+
+// 青色
+@cyan: #2DD6C4; // 门户标题弧线/辅助强调色
+
+// 橘色
+@orange: #FF9D0B; // 默认
+@orange-light: #FFFBE8; // 浅色
+@orange-dark: #ED6A0C; // 深色
+
+// 黄色
+@yellow: #e4d3b8; // 默认
+@yellow-light: #f1e8cd; // 浅色
+@yellow-dark: #9e7430; // 深色
+
+// 绿色
+@green: #457130; // 默认
+@green-dark: #2a451d; // 深色
+
+// 背景色
+@bg-color: #FFFFFF; // 基础色
+@bg-color-light: #F7F8FA; // 浅色
+@bg-color-dark: #646566; // 深色
+@bg-color-blue-1: #ECF6E7; // 门户首页绿色主背景
+@bg-color-blue-2: #F7FAF6; // 门户首页内容区浅绿背景
+@bg-color-secondary-end: #F4FAF2; // 二级列表/表单页面渐变底部色
+@portal-home-bg-start: #ECF6E7; // 门户首页顶部渐变起始色
+@portal-home-bg-end: #FFFFFF; // 门户首页顶部渐变结束色
+@portal-home-bg-gradient: linear-gradient(180deg, @portal-home-bg-start 0.03%, @portal-home-bg-end ~"calc(18.66% + 20px)");
+@portal-home-header-gradient: linear-gradient(180deg, @portal-home-bg-start 0%, #F0F7ED ~"calc(58% + 20px)", @portal-home-bg-end 100%);
+
+// 场景颜色
+@success-color: #07C160; // 成功
+@warning-color: #FF9D0B; // 警告
+@danger-color: #FF595E; // 危险
+@info-color: #969799; // 信息
+
+// 字体颜色
+@text-color: #666666; // 默认
+@text-color-light: #999999; // 浅色
+@text-color-dark: #222222; // 深色
+@text-color-secondary: #999999; // 次要颜色
+@text-color-placeholder: #999999; // 占位提示
+
+// 边框颜色
+@border-color: #F2F3F5; // 一般边框/点击态背景
+@border-color-light: #EBEDF0; // 二级边框
+
+// 透明度
+@active-opacity: 0.7; // 激活状态
+@disabled-opacity: 0.5; // 禁用状态
+
+// 字号
+@font-size-caption: 24px;
+@font-size-body-sm: 28px;
+@font-size-body-md: 32px;
+@font-size-body-lg: 34px;
+@font-size-title-sm: 36px;
+@font-size-title-md: 40px;
+@font-size-title-lg: 48px;
+@font-size-display: 56px;
+@font-size-mini: @font-size-caption; // 最小
+@font-size-xxs: @font-size-body-sm; // 较小
+@font-size-xs: @font-size-caption; // 稍小
+@font-size-sm: @font-size-caption; // 小
+@font-size-md: @font-size-body-sm; // 中
+@font-size-lg: @font-size-body-md; // 大
+@font-size-xl: @font-size-title-sm; // 稍大
+@font-size-xxl: @font-size-title-md; // 较大
+@font-size-max: @font-size-title-lg; // 最大
+
+// 行高
+@line-height-caption: 36px;
+@line-height-body-sm: 40px;
+@line-height-body-md: 44px;
+@line-height-body-lg: 48px;
+@line-height-title-sm: 52px;
+@line-height-title-md: 56px;
+@line-height-title-lg: 64px;
+@line-height-display: 72px;
+
+// 字重
+@font-weight-regular: 400;
+@font-weight-medium: 500;
+@font-weight-semibold: 600;
+@font-weight-heavy: 800;
+@font-weight: @font-weight-regular; // 平常
+@font-weight-bold: @font-weight-medium; // 稍重
+
+// 箭头颜色
+@arrow-color: #DCDEE0; // 默认
+
+// 边距
+@margin: 20px; // 默认
+@margin-2: 40px; // 宽边距
+
+// 圆角
+@border-radius: 8px; // 默认
+@border-radius-double: 16px; // 2倍圆角
+@border-radius-triple: 24px; // 3倍圆角
+@icon-corner-radius: 16px; // 全局圆角方形图标，Figma 1x 8px × 2
+@card-radius: 48px; // 全局标准卡片圆角，Figma 1x 24px × 2
+@card-padding-x: 32px; // 全局标准卡片左右内边距
+@card-padding-y: 32px; // 全局标准卡片上下内边距
+@card-border-color: @white; // 全局标准卡片白色描边
+@card-bg: @white; // 全局标准卡片底色
+@card-shadow: 0 8px 32px rgba(42, 69, 29, 0.12); // 全局标准卡片柔和阴影
+
+// 导航栏
+@nav-bottom-gap: 8; // 导航栏底部到首个内容元素的固定间距（真实像素，非 rpx）
+
+// 主题相关
+@theme-color: @blue; // 主题色
+@theme-selected-color: #ECF6E7;
+@theme-success: @success-color;

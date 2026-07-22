@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/信用就医</title>
+    <g id="图标/金刚区/信用就医" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(22, 19)">
+                <path d="M0,6.40923891 L22.0105111,0 L44,6.40923891 L44,19.5530542 C44,33.3681297 35.1391333,45.6328581 22.0031778,50 C8.86367778,45.6329801 0,33.3654468 0,19.5469567 L0,6.40923891 Z" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M5,10.7189051 L22.0081222,5 L39,10.7189051 L39,20.4586786 C39,30.6958663 32.1529667,41.7802911 22.0024556,45.0164118 C11.8492056,41.7803815 5,30.6938783 5,20.4541603 L5,10.7189051 Z" id="路径" fill="#FEF4DA"></path>
+                <path d="M14.6666667,23.2291667 L29.3333333,23.2291667 M22.1904762,15.7083333 L22.1904762,30.2916667" id="形状结合" stroke="#D49B07" stroke-width="4.16666667" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/其他 3</title>
+    <g id="图标/金刚区/其他" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="编组" transform="translate(19, 20)">
+                <rect id="矩形" fill="#FEF4DA" x="5" y="15" width="40" height="27" rx="4"></rect>
+                <path d="M37.5,21 L50,21 L50,21 L50,34 L37.5,34 C33.9101491,34 31,31.0898509 31,27.5 C31,23.9101491 33.9101491,21 37.5,21 Z" id="矩形" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" x="0" y="10" width="50" height="37" rx="4"></rect>
+                <polygon id="路径-2" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="14.9521975 10 32.9409241 0 38.9521975 10"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/新冠预约</title>
+    <g id="图标/金刚区/新冠预约" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形备份-11" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <rect id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" x="23" y="22" width="30" height="10" rx="2"></rect>
+            <path d="M27,32 L49,32 L49,67 C49,68.1045695 48.1045695,69 47,69 L29,69 C27.8954305,69 27,68.1045695 27,67 L27,32 L27,32 Z" id="矩形备份-12" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <rect id="矩形备份-12" fill="#FEF4DA" x="32" y="37" width="12" height="27"></rect>
+            <line x1="35.5" y1="58.5" x2="40.5" y2="58.5" id="直线-9" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <line x1="61" y1="32" x2="61" y2="59" id="直线-9备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <path d="M61,31.5909415 C57.4085273,25.4319034 57.4085273,22.3523844 61,22.3523844 C64.5914727,22.3523844 64.5914727,25.4319034 61,31.5909415 Z" id="路径-5" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M61,69.5909415 C57.4085273,63.4319034 57.4085273,60.3523844 61,60.3523844 C64.5914727,60.3523844 64.5914727,63.4319034 61,69.5909415 Z" id="路径-5备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(61, 64.9717) scale(1, -1) translate(-61, -64.9717)"></path>
+        </g>
+    </g>
+</svg>

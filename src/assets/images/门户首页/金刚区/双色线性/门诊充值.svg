@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/门诊充值</title>
+    <g id="图标/金刚区/门诊充值" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(19, 20)">
+                <rect id="矩形" fill="#FEF4DA" x="12" y="5" width="34" height="38" rx="2"></rect>
+                <line x1="0" y1="15" x2="6" y2="15" id="直线" stroke="#D49B07" stroke-width="4" stroke-linecap="round"></line>
+                <line x1="0" y1="33" x2="6" y2="33" id="直线备份-2" stroke="#D49B07" stroke-width="4" stroke-linecap="round"></line>
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" x="7" y="0" width="44" height="48" rx="4"></rect>
+                <path d="M21,23.2697626 L37,23.2697626 M21.9080971,15 L28.9791649,22.0710678 M35.9791649,15 L28.9080971,22.0710678 M29.0579192,24.7693899 L29.0579192,33.7693899 M21,30.2697626 L37,30.2697626" id="形状结合" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/价目查询</title>
+    <g id="图标/金刚区/价目查询" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#D8D8D8" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(21, 22)">
+                <rect id="矩形" fill="#FEF4DA" x="5" y="5" width="30" height="34" rx="2"></rect>
+                <path d="M10,16.4576104 L21,16.4576104 M10.6243168,11 L15.4856759,15.6665346 M20.2981759,11 L15.4368168,15.6665346 M15.5398194,17.4472858 L15.6022545,26 M10,21.0772439 L21,21.0772439" id="形状结合" stroke="#D49B07" stroke-width="4" stroke-linecap="round"></path>
+                <g id="编组" transform="translate(28, 26)" stroke="#4E7F3E" stroke-width="3.44">
+                    <circle id="椭圆形" fill="#FFFFFF" cx="8" cy="8" r="8"></circle>
+                    <line x1="14.5" y1="14.5" x2="18" y2="18" id="直线" stroke-linecap="round" transform="translate(16, 16) rotate(-0) translate(-16, -16)"></line>
+                </g>
+                <path d="M22.0672821,44 L3.47826087,44 C1.55727044,44 0,42.5407799 0,40.7407407 L0,3.25925926 C0,1.45922007 1.55727044,0 3.47826087,0 L36.5217391,0 C38.4427296,0 40,1.45922007 40,3.25925926 L40,14.8460614 L40,16.4355209 L40,19.6624165" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round"></path>
+                <path d="M22.0672821,44 L3.47826087,44 C1.55727044,44 0,42.5407799 0,40.7407407 L0,3.25925926 C0,1.45922007 1.55727044,0 3.47826087,0 L36.5217391,0 C38.4427296,0 40,1.45922007 40,3.25925926 L40,14.8460614 L40,16.4355209 L40,19.6624165" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/停诊查询</title>
+    <g id="图标/金刚区/停诊查询" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(24, 20)">
+                <rect id="矩形" fill="#FEF4DA" x="5" y="13" width="30" height="30" rx="2"></rect>
+                <g id="编组" transform="translate(12, 20)" stroke="#D49B07" stroke-width="4">
+                    <circle id="椭圆形" cx="7" cy="7" r="7"></circle>
+                    <line x1="13.145087" y1="11.9819779" x2="16.4916278" y2="15.8873656" id="直线" stroke-linecap="round" transform="translate(14.8184, 13.9347) rotate(-4.4066) translate(-14.8184, -13.9347)"></line>
+                </g>
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" x="0" y="4" width="40" height="44" rx="4"></rect>
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" x="9" y="0" width="22" height="8" rx="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

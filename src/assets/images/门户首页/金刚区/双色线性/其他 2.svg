@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/其他 2</title>
+    <g id="图标/金刚区/其他" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形备份-4" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="编组-5" transform="translate(21, 21)">
+                <circle id="椭圆形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" cx="38" cy="8" r="8"></circle>
+                <circle id="椭圆形备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" cx="8" cy="8" r="8"></circle>
+                <circle id="椭圆形" stroke="#4E7F3E" stroke-width="4" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" cx="23.5" cy="23.5" r="20"></circle>
+                <circle id="椭圆形" fill="#FEF4DA" cx="23.5" cy="23.5" r="15"></circle>
+                <path d="M21.5,17.5 L21.5,26.5 M28.5,26.5 L21.5,26.5" id="形状结合" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <line x1="11.5" y1="41.4019238" x2="8.5" y2="46.5980762" id="直线-6" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="38.5" y1="41.4019238" x2="35.5" y2="46.5980762" id="直线-6备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(37, 44) scale(-1, 1) translate(-37, -44)"></line>
+            </g>
+        </g>
+    </g>
+</svg>

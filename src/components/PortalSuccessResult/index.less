@@ -1,0 +1,187 @@
+.portal-success-result {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 60px 0 260px;
+  box-sizing: border-box;
+}
+
+.portal-success-result__status-card {
+  position: relative;
+  width: 698px;
+  height: 276px;
+  margin: 0 auto;
+  overflow: visible;
+  box-sizing: border-box;
+  border: 2px solid #ffffff;
+  border-radius: 40px;
+  background: linear-gradient(180deg, rgba(216, 239, 255, 0.95) 0%, rgba(244, 249, 255, 0) 90%);
+  box-shadow: 0 4px 16px #c7e0ff;
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+}
+
+.portal-success-result__status-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  padding-top: 124px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.portal-success-result__icon {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  width: 168px;
+  height: 168px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transform-origin: center bottom;
+  animation: portal-success-icon-appear 980ms cubic-bezier(0.2, 0.72, 0.22, 1) 520ms forwards;
+}
+
+.portal-success-result__icon-img {
+  display: block;
+  width: 168px;
+  height: 168px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 9px #81b5ff);
+  transform-origin: center center;
+  animation: portal-success-icon-breath 2200ms ease-in-out 1700ms infinite;
+}
+
+.portal-success-result__title {
+  margin: 0 0 8px;
+  color: @blue;
+  font-family: @font-medium;
+  font-size: 36px;
+  font-weight: @font-weight-medium;
+  line-height: 48px;
+}
+
+.portal-success-result__desc {
+  margin: 0;
+  color: @text-color;
+  font-family: @font-regular;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.portal-success-result__details-card {
+  width: 702px;
+  margin: 16px auto 0;
+  padding: 0 40px;
+  box-sizing: border-box;
+  border: 2px solid #ffffff;
+  border-radius: 32px;
+  background: #F7FCFA;
+  box-shadow: 0 4px 10px #E4F3EE;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.portal-success-result__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 116px;
+  box-sizing: border-box;
+  border-bottom: 2px solid rgba(32, 80, 148, 0.12);
+
+  &.no-border {
+    border-bottom: 0;
+  }
+}
+
+@keyframes portal-success-icon-appear {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(64px) scale(0.82);
+  }
+
+  36% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-14px) scaleX(0.96) scaleY(1.06);
+  }
+
+  54% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(7px) scaleX(1.055) scaleY(0.94);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px) scaleX(0.985) scaleY(1.02);
+  }
+
+  86% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(2px) scaleX(1.01) scaleY(0.99);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes portal-success-icon-breath {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 9px #81b5ff);
+  }
+
+  50% {
+    transform: scale(1.055);
+    filter: drop-shadow(0 0 15px #6aa8ff);
+  }
+}
+
+.portal-success-result__row-key {
+  width: 200px;
+  color: @text-color;
+  font-family: @font-regular;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.portal-success-result__row-val {
+  flex: 1;
+  min-width: 0;
+  color: @text-color-dark;
+  font-family: @font-medium;
+  font-size: 32px;
+  font-weight: @font-weight-medium;
+  line-height: 44px;
+  text-align: right;
+
+  &.is-highlight {
+    color: @blue;
+  }
+}
+
+.portal-success-result__actions.fixed-bottom-bar {
+  padding: 24px 40px 92px !important;
+  background: linear-gradient(0deg, @bg-color-blue-1 80%, fade(@bg-color-blue-1, 0%) 100%) !important;
+
+  .btn-group {
+    gap: 16px;
+  }
+
+  .btn-secondary,
+  .btn-primary {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 104px;
+    font-family: @font-medium;
+    font-size: 36px !important;
+    font-weight: @font-weight-medium !important;
+    line-height: 48px;
+  }
+}

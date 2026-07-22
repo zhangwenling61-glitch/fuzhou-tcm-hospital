@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/婚检查询</title>
+    <defs>
+        <path d="M35,34.8125715 C33.1205716,33.094011 30,34.2306938 30,37.0077143 C30,40.8164238 35,43 35,43 C35,43 40,40.6280419 40,37.0077143 C40.0002998,34.2306938 37.2189977,33.1408804 35,34.8125715 Z" id="path-1"></path>
+        <filter x="-320.0%" y="-244.4%" width="740.0%" height="811.1%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="9" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.458823529   0 0 0 0 0.494117647   0 0 0 0 0.682352941  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="图标/金刚区/婚检查询" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形备份-20" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <path d="M51.3535534,21.232233 C58.2571128,21.232233 63.8535534,26.8286737 63.8535534,33.732233 L63.8535534,59.232233 C63.8535534,61.441372 62.0626924,63.232233 59.8535534,63.232233 L42.8535534,63.232233 C40.6444144,63.232233 38.8535534,61.441372 38.8535534,59.232233 L38.8535534,33.732233 C38.8535534,26.8286737 44.449994,21.232233 51.3535534,21.232233 Z" id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(51.3536, 42.2322) rotate(-315) translate(-51.3536, -42.2322)"></path>
+            <path d="M39.3535534,21.232233 C46.2571128,21.232233 51.8535534,26.8286737 51.8535534,33.732233 L51.8535534,59.232233 C51.8535534,61.441372 50.0626924,63.232233 47.8535534,63.232233 L30.8535534,63.232233 C28.6444144,63.232233 26.8535534,61.441372 26.8535534,59.232233 L26.8535534,33.732233 C26.8535534,26.8286737 32.449994,21.232233 39.3535534,21.232233 Z" id="矩形" stroke="#4E7F3E" stroke-width="4" fill="#FEF4DA" stroke-linecap="round" stroke-linejoin="round" transform="translate(39.3536, 42.2322) rotate(-45) translate(-39.3536, -42.2322)"></path>
+            <g id="路径">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#D49B07" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

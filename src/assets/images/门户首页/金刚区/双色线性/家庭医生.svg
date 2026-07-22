@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/家庭医生</title>
+    <g id="图标/金刚区/家庭医生" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="医生" transform="translate(24, 18)">
+                <path d="M12.3333333,0 L27.6666667,0 C29.5076159,-3.38176867e-16 31,1.49238413 31,3.33333325 L31,12 L31,12 L9,12 L9,3.33333325 C9,1.49238413 10.4923841,2.25451245e-16 12.3333333,0 Z" id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="square" stroke-linejoin="round"></path>
+                <path d="M4.74024583,52.3856266 L40.2339613,52.2953161 C38.3973623,43.5121526 35.7267826,38.0671835 32.2222222,35.960409 C28.7176619,33.8536345 26.1250693,31.4668315 24.4444444,28.8 L17.3642564,28.8 L14.9235551,31.1286925 C8.76027543,35.1610208 5.17613455,37.8390535 4.17113249,39.1627907 C3.16613044,40.4865279 1.80588579,44.8941398 0.0903985463,52.3856266 L4.74024583,52.3856266 Z" id="路径-3" fill="#FEF4DA"></path>
+                <path d="M20,12 C26.0751322,12 31,16.9248678 31,23 L31,28.8 L31,28.8 L20,28.8 L9,28.8 L9,23 C9,16.9248678 13.9248678,12 20,12 Z" id="矩形" stroke="#4E7F3E" stroke-width="4" fill="#FEF4DA" stroke-linecap="square" stroke-linejoin="round" transform="translate(20, 20.4) scale(1, -1) translate(-20, -20.4)"></path>
+                <path d="M0,50.3255814 L1.77284048,43.2012364 C2.75877396,39.2391595 5.4899633,35.9453867 9.19070122,34.2554092 L15.5555556,31.3488372 L15.5555556,28 M24.4444444,28 L24.4444444,31.3488372 L30.8092988,34.2554092 C34.5100367,35.9453867 37.241226,39.2391595 38.2271595,43.2012364 L40,50.3255814" id="形状" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <polyline id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="square" stroke-linejoin="round" transform="translate(20.7778, 38.4651) rotate(-180) translate(-20.7778, -38.4651)" points="13 42.9302326 20.7777778 34 28.5555556 42.9302326"></polyline>
+                <line x1="27" y1="45.5" x2="32" y2="45.5" id="路径-2" stroke="#D49B07" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="29.5" y1="43" x2="29.5" y2="48" id="路径-2备份" stroke="#D49B07" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

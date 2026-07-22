@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/报告查询</title>
+    <g id="图标/金刚区/报告查询" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#D8D8D8" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(23, 20)">
+                <path d="M7,5 L37,5 L37,5 L37,34 C37,38.9705627 32.9705627,43 28,43 L7,43 C5.8954305,43 5,42.1045695 5,41 L5,7 C5,5.8954305 5.8954305,5 7,5 Z" id="矩形" fill="#FEF4DA"></path>
+                <ellipse id="椭圆形" stroke="#4E7F3E" stroke-width="4" cx="28.326087" cy="32.5853659" rx="9.5" ry="9.47425474"></ellipse>
+                <line x1="35.1122674" y1="39.9871439" x2="41.7075187" y2="47.503969" id="直线" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" transform="translate(38.4099, 43.7456) rotate(-3.8141) translate(-38.4099, -43.7456)"></line>
+                <path d="M23.1706463,48 L3.65217391,48 C1.63513396,48 0,46.4081236 0,44.4444444 L0,3.55555556 C0,1.59187645 1.63513396,0 3.65217391,0 L38.3478261,0 C40.364866,0 42,1.59187645 42,3.55555556 L42,16.1957034 L42,17.9296591 L42,21.4499089" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round"></path>
+                <line x1="10.0032633" y1="12.2284782" x2="25.9967367" y2="11.7715218" id="直线-3" stroke="#D49B07" stroke-width="4" stroke-linecap="round" transform="translate(18, 12) rotate(1.6366) translate(-18, -12)"></line>
+                <line x1="10.0088594" y1="19.266076" x2="17.9911406" y2="18.733924" id="直线-3备份" stroke="#D49B07" stroke-width="4" stroke-linecap="round" transform="translate(14, 19) rotate(3.8141) translate(-14, -19)"></line>
+            </g>
+        </g>
+    </g>
+</svg>

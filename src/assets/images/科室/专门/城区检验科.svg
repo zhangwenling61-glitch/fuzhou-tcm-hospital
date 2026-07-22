@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/科室/专门/城区检验科</title>
+    <g id="图标/科室/专门/城区检验科" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g id="供应商" transform="translate(9, 4)">
+            <rect id="矩形" fill="#FFD5C7" x="0" y="0" width="31" height="6" rx="3"></rect>
+            <path d="M25,4 C25.5522847,4 26,4.44771525 26,5 L26,30.5 C26,36.2989899 21.2989899,41 15.5,41 C9.70101013,41 5,36.2989899 5,30.5 L5,5 C5,4.44771525 5.44771525,4 6,4 L25,4 Z M22,6 L9,6 L9,17 C10.3212443,15.5055628 11.8212443,14.7583442 13.5,14.7583442 C16.0181336,14.7583442 16.5115145,16.7967304 18.7262966,17.7900876 C20.1454003,18.4265732 21.2085998,18.2080464 21.9180631,17.1359294 C21.9712634,17.054837 21.9997312,16.9600226 21.9999981,16.8630371 L22,6 Z" id="形状结合" fill="#FFD5C7"></path>
+            <rect id="矩形" fill="#C26B54" x="16" y="23" width="5" height="5" rx="2.5"></rect>
+            <rect id="矩形备份-2" fill="#C26B54" x="11" y="31" width="3" height="3" rx="1.5"></rect>
+        </g>
+    </g>
+</svg>

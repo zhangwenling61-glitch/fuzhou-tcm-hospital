@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/取药凭证</title>
+    <g id="图标/金刚区/取药凭证" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(24, 20)">
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" x="7" y="0" width="26" height="8" rx="2"></rect>
+                <path d="M6.374125,15.401 C7.086,14.51525 8.161,14 9.297375,14 L30.702625,14 C31.839,14 32.914,14.51525 33.625875,15.401 L39.173125,22.304375 C39.70825,22.970375 40,23.799 40,24.653375 L40,45.25 C40,47.321125 38.321125,49 36.25,49 L3.75,49 C1.6789375,49 0,47.321125 0,45.25 L0,24.653375 C0,23.799 0.2917125,22.970375 0.8268375,22.304375 L6.374125,15.401 Z" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M9.78059375,20.0007143 C10.3145,19.3680357 11.12075,19 11.9730313,19 L28.0269688,19 C28.87925,19 29.6855,19.3680357 30.2194062,20.0007143 L34.3798437,24.9316964 C34.7811875,25.4074107 35,25.9992857 35,26.6095536 L35,41.3214286 C35,42.8008036 33.7408437,44 32.1875,44 L7.8125,44 C6.25920312,44 5,42.8008036 5,41.3214286 L5,26.6095536 C5,25.9992857 5.21878438,25.4074107 5.62012812,24.9316964 L9.78059375,20.0007143 Z" id="路径" fill="#FEF4DA"></path>
+                <g id="编组" transform="translate(13.5, 25)" stroke="#D49B07" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.33333333">
+                    <line x1="0" y1="6.5" x2="13" y2="6.5" id="路径"></line>
+                    <line x1="6.5" y1="0" x2="6.5" y2="13" id="路径"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

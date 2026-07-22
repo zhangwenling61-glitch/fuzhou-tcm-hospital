@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/入学检查</title>
+    <g id="图标/金刚区/入学检查" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形备份-2" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <path d="M20,21.5 L47,21.5 C48.1045695,21.5 49,22.3954305 49,23.5 L49,38 C49,46.5604136 42.0604136,53.5 33.5,53.5 C24.9395864,53.5 18,46.5604136 18,38 L18,23.5 C18,22.3954305 18.8954305,21.5 20,21.5 Z" id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M22.84375,29.5 L44.15625,29.5 L44.15625,37.84375 C44.15625,43.7290344 39.3852844,48.5 33.5,48.5 C27.6147156,48.5 22.84375,43.7290344 22.84375,37.84375 L22.84375,29.5 L22.84375,29.5 Z" id="矩形" fill="#FEF4DA"></path>
+            <path d="M65,44.2 L65,54 C65,62.5604136 58.0604136,69.5 49.5,69.5 C40.9395864,69.5 34,62.5604136 34,54" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <line x1="26.5" y1="18" x2="26.5" y2="25" id="直线-2" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <line x1="40.5" y1="18" x2="40.5" y2="25" id="直线-2备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <circle id="椭圆形" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" cx="65" cy="37.5" r="6"></circle>
+        </g>
+    </g>
+</svg>

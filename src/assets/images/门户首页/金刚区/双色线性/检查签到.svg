@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/检查签到</title>
+    <g id="图标/金刚区/检查签到" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(18, 19)">
+                <ellipse id="椭圆形" fill="#FEF4DA" cx="26" cy="26.0343699" rx="21" ry="21.0343699"></ellipse>
+                <path d="M9.74988512,46 C3.80594481,41.2657089 0,33.990965 0,25.8330045 C0,11.5658301 11.6405965,0 26,0 C40.3594035,0 52,11.5658301 52,25.8330045 C52,33.9904713 48.1945158,41.2648284 42.2511939,45.9991405" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M15,19.5106383 C16.9362384,15.6495937 20.9261043,13 25.5338048,13 C30.1415052,13 34.1313711,15.6495937 36.0676095,19.5106383" id="路径" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" x="14" y="27" width="24" height="9" rx="2.16666675"></rect>
+                <path d="M19,36 L34,36 L34,48.8333333 C34,50.0299503 33.0299503,51 31.8333333,51 L21.1666667,51 C19.9700497,51 19,50.0299503 19,48.8333333 L19,36 L19,36 Z" id="矩形备份" stroke="#4E7F3E" stroke-width="4" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

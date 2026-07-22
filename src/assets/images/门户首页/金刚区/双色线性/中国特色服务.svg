@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/中国特色服务</title>
+    <g id="图标/金刚区/中国特色服务" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(16, 20)">
+                <path d="M48,5.5 L48,40.5 C48,40.849916 47.9550693,41.1893379 47.8706624,41.5128111 L29.5,35.5 L10.2196113,41.8104883 C10.0773073,41.399922 10,40.958989 10,40.5 L10,5.5 L48,5.5 Z" id="形状结合" fill="#FEF4DA"></path>
+                <line x1="-9.36750677e-17" y1="0.5" x2="57" y2="0.5" id="直线" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="21" y1="20.5" x2="38" y2="20.5" id="直线备份" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="29.5" y1="12" x2="29.5" y2="29" id="直线备份-2" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <path d="M53,0.5 L53,47.5 C53,47.7537548 52.9763711,48.0019908 52.9311934,48.2426277 L29,40.5 L5.06880661,48.2426277 C5.02362895,48.0019908 5,47.7537548 5,47.5 L5,0.5 L53,0.5 Z" id="形状结合" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,100 @@
+// PortalSegmentNav 全局组件样式
+// 导航栏 + 毛玻璃 + Segment 切换器
+// 层级：glass(19) < NavBar(20) < segment(21)
+
+// ── 毛玻璃底层（在 PortalNavBar 下方） ──
+.portal-segment-nav__glass-wrapper {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  z-index: 19; // 低于 PortalNavBar 的 z-index: 20，不遮挡标题和按钮
+  width: 100%;
+  max-width: 750px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.portal-segment-nav__glass {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 420px; // 覆盖到 segment 下方
+  background: rgba(214, 232, 254, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  -webkit-mask-image: linear-gradient(180deg, #000000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000000 70%, transparent 100%);
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+// ── Segment 按钮 (带绝对定位滑动胶囊) ──
+.portal-segment-nav__segment {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: calc(750px - 48px);
+  z-index: 21; // 高于 PortalNavBar 的 z-index: 20
+  display: flex;
+  align-items: center;
+  height: 84px;
+  background: #f4f8fd;
+  border-radius: 24px;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* Absolutely positioned sliding active pill with physics transition */
+  .portal-segment-nav__active-bg {
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
+    background: #d9f5ec;
+    border-radius: 16px;
+    z-index: 1;
+    /* Spring physics curve for inertia wobble and overshoot */
+    transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: left;
+  }
+
+  button {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    border: none;
+    border-radius: 16px;
+    background: transparent; /* Clean overlays */
+    line-height: 1;
+    color: #646566;
+    font-size: 28px;
+    font-family: @font-regular;
+    box-sizing: border-box;
+    z-index: 2; /* Renders text cleanly above the sliding pill background */
+    transition: transform 0.2s ease, color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-weight: 500;
+    outline: none;
+
+    &::after {
+      display: none;
+    }
+
+    &.is-active {
+      color: @theme-color;
+      font-family: @font-medium;
+      font-weight: bold;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}

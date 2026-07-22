@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/处方订单</title>
+    <g id="图标/金刚区/处方订单" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="编组" transform="translate(24, 21)">
+                <rect id="矩形" fill="#FEF4DA" x="5" y="13" width="30" height="28" rx="2"></rect>
+                <path d="M32.6589248,4 L36.3636364,4 C38.3719445,4 40,5.6013519 40,7.57671958 L40,42.4497354 C40,44.4251031 38.3719445,46.026455 36.3636364,46.026455 L3.63636364,46.026455 C1.62805546,46.026455 0,44.4251031 0,42.4497354 L0,7.57671958 C0,5.6013519 1.62805546,4 3.63636364,4 L7.34574866,4" id="路径" stroke="#4E7F3E" stroke-width="4"></path>
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" x="8" y="0" width="24" height="8" rx="4"></rect>
+                <line x1="15" y1="27.5" x2="26" y2="27.5" id="直线-5" stroke="#D49B07" stroke-width="4" stroke-linecap="round"></line>
+                <line x1="20.5" y1="22" x2="20.5" y2="33" id="直线-5备份-2" stroke="#D49B07" stroke-width="4" stroke-linecap="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

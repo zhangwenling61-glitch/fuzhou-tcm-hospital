@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/呼叫120</title>
+    <g id="图标/金刚区/呼叫120" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="编组" transform="translate(19, 19)" stroke-width="4">
+                <path d="M23.6024844,8.22580645 L28.2546584,8.22580645 C29.4552774,8.22580645 30.4285714,9.19910046 30.4285714,10.3997195 L30.4285714,14.2258065 L30.4285714,14.2258065 L21.4285714,14.2258065 L21.4285714,10.3997195 C21.4285714,9.19910046 22.4018654,8.22580645 23.6024844,8.22580645 Z" id="矩形" stroke="#D49B07"></path>
+                <path d="M4.347826,14.9995942 L35,14.9995942 C43.2842712,14.9995942 50,21.715323 50,29.9995942 L50,40.6517682 C50,43.0530062 48.053412,44.9995942 45.652174,44.9995942 L4.347826,44.9995942 C1.94658801,44.9995942 1.47033421e-16,43.0530062 0,40.6517682 L0,19.3474202 C-2.94066843e-16,16.9461822 1.94658801,14.9995942 4.347826,14.9995942 Z" id="矩形" stroke="#4E7F3E" fill="#FEF4DA"></path>
+                <path d="M31.2888199,22.6770136 L37.3105589,22.6770136 C40.0119517,22.6770136 42.2018634,24.8669252 42.2018634,27.5683181 L42.2018634,31.5900571 C42.2018634,32.1903666 41.7152164,32.6770136 41.1149069,32.6770136 L31.2888199,32.6770136 C30.6885104,32.6770136 30.2018634,32.1903666 30.2018634,31.5900571 L30.2018634,23.7639701 C30.2018634,23.1636606 30.6885104,22.6770136 31.2888199,22.6770136 Z" id="矩形" stroke="#4E7F3E"></path>
+                <ellipse id="椭圆形" stroke="#4E7F3E" fill="#FFFFFF" cx="12.2981366" cy="44.5451613" rx="5" ry="5.04516129"></ellipse>
+                <line x1="25.2329193" y1="0" x2="25.2329193" y2="3.29032258" id="直线-3" stroke="#D49B07" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="33.9945064" y1="1.57863078" x2="31.6887234" y2="3.90524019" id="直线-3备份" stroke="#D49B07" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="18.7771151" y1="1.57863078" x2="16.4713321" y2="3.90524019" id="直线-3备份-2" stroke="#D49B07" stroke-linecap="round" stroke-linejoin="round" transform="translate(17.6242, 2.7419) scale(-1, 1) translate(-17.6242, -2.7419)"></line>
+                <ellipse id="椭圆形备份" stroke="#4E7F3E" fill="#FFFFFF" cx="36.2111801" cy="44.5451613" rx="5" ry="5.04516129"></ellipse>
+                <line x1="8" y1="27.5" x2="17" y2="27.5" id="直线-2" stroke="#4E7F3E" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="12.5" y1="23" x2="12.5" y2="32" id="直线-2" stroke="#4E7F3E" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="scoreGrad" x1="8.7" y1="4" x2="21.5" y2="25.4" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4FFFD9"/>
+      <stop offset="0.52" stop-color="#22C5B1"/>
+      <stop offset="1" stop-color="#128DD7"/>
+    </linearGradient>
+    <linearGradient id="scoreSide" x1="4.5" y1="12" x2="8.6" y2="25" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#45EEDB"/>
+      <stop offset="1" stop-color="#1B8BE0"/>
+    </linearGradient>
+  </defs>
+  <rect x="3.2" y="12" width="5.2" height="12.2" rx="1.4" fill="url(#scoreSide)"/>
+  <path d="M9.5 23.7V11.1c2.1-1.3 3.2-3.1 3.8-5.3.3-1.2 1.6-1.8 2.7-1.2 1.2.6 1.7 2 1.2 3.4l-.8 2.3h4.6c2.3 0 4 2.1 3.5 4.4l-1.2 5.6a4.3 4.3 0 0 1-4.2 3.4H9.5Z" fill="url(#scoreGrad)"/>
+  <path d="M9.5 12.1c2.4-1.5 3.9-3.3 4.5-6.1.1-.5.7-.8 1.2-.5.7.4.9 1.1.6 2l-1.4 4h6.7c1.4 0 2.5 1.3 2.2 2.7l-1.2 5.6c-.3 1.5-1.6 2.6-3.1 2.6H9.5" stroke="#0C7ACF" stroke-opacity="0.35" stroke-width="1"/>
+  <path d="M12.4 10.7c1.4-1.2 2-2.5 2.5-4.4" stroke="white" stroke-opacity="0.75" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

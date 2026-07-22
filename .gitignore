@@ -1,0 +1,15 @@
+dist/
+deploy_versions/
+.temp/
+.rn_temp/
+node_modules/
+.DS_Store
+*.inspect.config.js
+
+.vscode
+.idea
+package-lock.json
+yarn.lock
+.pnp.*
+.swc
+#pnpm-lock.yaml

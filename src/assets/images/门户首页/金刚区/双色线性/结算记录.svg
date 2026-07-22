@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/结算记录</title>
+    <g id="图标/金刚区/结算记录" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g transform="translate(44, 44.0007) scale(-1, 1) rotate(-180) translate(-44, -44.0007)translate(-0, 0.0007)">
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <path d="M51.27,20 L65,33.729 L65,64.0006695 C65,66.2098085 63.209139,68.0006695 61,68.0006695 L27,68.0006695 C24.790861,68.0006695 23,66.2098085 23,64.0006695 L23,24.0006695 C23,21.7915305 24.790861,20.0006695 27,20.0006695 L51.27,20 Z" id="形状结合" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M49.113,25.0006695 L60,36.1326695 L60,59.0006695 C60,61.2098085 58.209139,63.0006695 56,63.0006695 L32,63.0006695 C29.790861,63.0006695 28,61.2098085 28,59.0006695 L28,29.0006695 C28,26.7915305 29.790861,25.0006695 32,25.0006695 L49.113,25.0006695 Z" id="形状结合" fill="#FEF4DA"></path>
+            <path d="M48.2147536,20.0006695 L48.2147536,34.8848876 C48.2147536,35.9894571 49.1101841,36.8848876 50.2147536,36.8848876 L65,36.8848876 L65,36.8848876" id="路径" stroke="#4E7F3E" stroke-width="4" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M34,48.1690467 L46,48.1690467 M34.6810728,42.0006695 L39.9843737,47.2749459 M45.2343737,42.0006695 L39.9310728,47.2749459 M40.0434394,49.2876117 L40.0434394,56.2876117 M34,53.390314 L46,53.390314" id="形状结合" stroke="#D49B07" stroke-width="4" stroke-linecap="round" transform="translate(40, 49.1441) scale(1, -1) translate(-40, -49.1441)"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/智能客服</title>
+    <g id="图标/金刚区/智能客服" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(18, 19)">
+                <circle id="椭圆形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" cx="25" cy="25" r="25"></circle>
+                <circle id="椭圆形" fill="#FEF4DA" cx="25" cy="25" r="20"></circle>
+                <g id="编组" transform="translate(16, 18)" stroke="#4E7F3E" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                    <line x1="0.5" y1="0" x2="0.5" y2="6" id="直线"></line>
+                    <line x1="17.5" y1="0" x2="17.5" y2="6" id="直线备份"></line>
+                </g>
+                <path d="M48.9088621,19.2178269 C48.05186,27.2465817 41.2562121,33.5 33,33.5" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <line x1="22.5" y1="33.5" x2="31.5" y2="33.5" id="直线-3" stroke="#D49B07" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/注意事项</title>
+    <g id="图标/金刚区/注意事项" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="提示_tips" transform="translate(25, 17)">
+                <path d="M38,18.6205291 C38,26.5432151 32.951225,33.3102646 25.8346563,36 L19,36 L12.1653437,36 C5.048775,33.3102646 0,26.5432151 0,18.6205291 C0,8.33664365 8.5065375,0 19,0 C29.4934625,0 38,8.33664365 38,18.6205291 Z" id="路径" stroke="#4E7F3E" stroke-width="4"></path>
+                <path d="M32.7222222,18.4481599 C32.7222222,24.1700998 29.0758847,29.0574133 23.9361406,31 L19,31 L14.0638594,31 C8.92411528,29.0574133 5.27777778,24.1700998 5.27777778,18.4481599 C5.27777778,11.0209093 11.4213882,5 19,5 C26.5786118,5 32.7222222,11.0209093 32.7222222,18.4481599 Z" id="路径" fill="#FEF4DA"></path>
+                <path d="M26,35 L25.1150715,43.9886835 C25.058778,44.5603547 24.4941491,45 23.816412,45 L13.183588,45 C12.5058509,45 11.941222,44.5603547 11.8850588,43.9886835 L11,35" id="路径" stroke="#4E7F3E" stroke-width="4"></path>
+                <polyline id="路径" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="12 15 12 22 19 18.5 26 22 26 15"></polyline>
+            </g>
+            <line x1="38.1190476" y1="68.5423729" x2="50.1190476" y2="68.5423729" id="直线" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/约满候补</title>
+    <g id="图标/金刚区/约满候补" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(22, 22)">
+                <path d="M26.77,0 L36,10.999 L36,40.0002733 C36,42.2094123 34.209139,44.0002733 32,44.0002733 L4,44.0002733 C1.790861,44.0002733 1.3527075e-16,42.2094123 0,40.0002733 L0,4.00027332 C-2.705415e-16,1.79113432 1.790861,0.000273317353 4,0.000273317353 L26.77,0 Z" id="形状结合" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M24.293,5.00013666 L31,13.6081367 L31,35.0002733 C31,37.2094123 29.209139,39.0002733 27,39.0002733 L9,39.0002733 C6.790861,39.0002733 5,37.2094123 5,35.0002733 L5,9.00027332 C5,6.79113432 6.790861,5.00027332 9,5.00027332 L24.293,5.00013666 Z" id="形状结合" fill="#FEF4DA"></path>
+                <g id="编组" transform="translate(20, 20.0003)" stroke="#4E7F3E" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.42857143">
+                    <circle id="椭圆形" fill="#FFFFFF" cx="12" cy="12" r="12"></circle>
+                    <polyline id="直线-2备份-2" points="11 7 11 12.1428571 15.2528391 16.0577224"></polyline>
+                </g>
+                <line x1="10" y1="14.5002733" x2="19" y2="14.5002733" id="直线-2" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="14.5" y1="10.0002733" x2="14.5" y2="19.0002733" id="直线-2备份" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

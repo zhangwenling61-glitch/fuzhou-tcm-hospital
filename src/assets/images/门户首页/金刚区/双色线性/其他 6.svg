@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/其他 6</title>
+    <g id="图标/金刚区/其他" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形备份-18" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <rect id="矩形备份-21" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" x="28" y="19" width="33" height="50" rx="4"></rect>
+            <rect id="矩形备份-21" fill="#FEF4DA" x="33" y="24" width="23" height="40" rx="2"></rect>
+            <line x1="39" y1="58" x2="49" y2="58" id="路径" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <line x1="41" y1="28" x2="47" y2="28" id="路径备份-4" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>

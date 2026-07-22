@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/健康管理</title>
+    <g id="图标/金刚区/健康管理" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g id="图标/金刚区/其他">
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="病案首页-(1)" transform="translate(20, 19)">
+                <path d="M8,4 L40,4 L40,19 L34,19 L26,25 L8,25 L8,4 Z M44,46 L4,46 L4,29 L28,29 L35,23 L44,23 L44,46 Z" id="形状" fill="#FBFFFB" fill-rule="nonzero"></path>
+                <path d="M46,19 L44,19 L44,2 C44,0.943073248 43.0569268,0 42,0 L6,0 C4.94307325,0 4,0.943073248 4,2 L4,25 L2,25 C0.943073248,25 0,25.9430732 0,27 L0,48 C0,49.0569268 0.943073248,50 2,50 L46,50 C47.0569268,50 48,49.0569268 48,48 L48,21 C48,19.9430732 47.0569268,19 46,19 Z M8,4 L40,4 L40,19 L34,19 L26,25 L8,25 L8,4 Z M44,46 L4,46 L4,29 L28,29 L35,23 L44,23 L44,46 Z" id="形状备份" fill="#4E7F3E" fill-rule="nonzero"></path>
+                <rect id="矩形" fill="#D49B07" x="28" y="35" width="14" height="4" rx="2"></rect>
+                <rect id="矩形备份" fill="#D49B07" transform="translate(35, 37) rotate(90) translate(-35, -37)" x="28" y="35" width="14" height="4" rx="2"></rect>
+                <path d="M14.75,9 L33.25,9 C34.2164983,9 35,9.78350169 35,10.75 C35,11.7164983 34.2164983,12.5 33.25,12.5 L14.75,12.5 C13.7835017,12.5 13,11.7164983 13,10.75 C13,9.78350169 13.7835017,9 14.75,9 Z" id="矩形" fill="#4E7F3E"></path>
+                <path d="M14.75,17 L22.25,17 C23.2164983,17 24,17.7835017 24,18.75 C24,19.7164983 23.2164983,20.5 22.25,20.5 L14.75,20.5 C13.7835017,20.5 13,19.7164983 13,18.75 C13,17.7835017 13.7835017,17 14.75,17 Z" id="矩形" fill="#4E7F3E"></path>
+            </g>
+        </g>
+    </g>
+</svg>

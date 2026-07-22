@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/线上取号</title>
+    <g id="图标/金刚区/线上取号" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形备份-5" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(20, 24)">
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" x="0" y="0" width="48" height="40" rx="4"></rect>
+                <path d="M5,14 L43,14 L43,33 C43,34.1045695 42.1045695,35 41,35 L7,35 C5.8954305,35 5,34.1045695 5,33 L5,14 L5,14 Z" id="矩形" fill="#FEF4DA"></path>
+                <line x1="0" y1="9" x2="48" y2="9" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round"></line>
+                <line x1="9" y1="22.5" x2="18" y2="22.5" id="路径" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="13.5" y1="18" x2="13.5" y2="27" id="路径备份" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/健康体检</title>
+    <g id="图标/金刚区/健康体检" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(19, 23)">
+                <path d="M4,17 L4,40.4 C4,41.83598 5.17525187,43 6.625,43 L43.375,43 C44.8247875,43 46,41.83598 46,40.4 L46,17" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M9,20 L9,36.2 C9,37.19414 9.89543,38 11,38 L39,38 C40.1046,38 41,37.19414 41,36.2 L41,20" id="路径" fill="#FEF4DA"></path>
+                <polygon id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="0 7 50 7 50 15 0 15"></polygon>
+                <polygon id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="34 0 16 0 16 7 34 7"></polygon>
+                <g id="编组" transform="translate(20, 24)" stroke="#D49B07" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                    <line x1="0" y1="4.65625" x2="10.5263158" y2="4.65625" id="路径"></line>
+                    <line x1="5.65789474" y1="0" x2="5.65789474" y2="10.5" id="路径"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
