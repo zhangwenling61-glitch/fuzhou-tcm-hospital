@@ -1,6 +1,6 @@
 <template>
   <view class="dermatology-page">
-    <PortalNavBar :title="pageTitle" secondary force-dark-text />
+    <PortalNavBar :title="pageTitle" :scroll-top="scrollTop" secondary />
 
     <view class="dermatology-scroll">
       <view v-if="view === 'home'" class="dermatology-home">
@@ -50,7 +50,7 @@
 </template>
 
 <script setup lang="ts">
-import Taro from '@tarojs/taro'
+import Taro, { usePageScroll } from '@tarojs/taro'
 import { computed, ref } from 'vue'
 import PortalNavBar from '@/components/PortalNavBar/index.vue'
 import orderIcon from './dermatology-order.svg'
@@ -63,6 +63,7 @@ const selectedArea = ref('鼓楼')
 const currentPackage = ref<PackageItem | null>(null)
 const patientModal = ref(false)
 const toastText = ref('')
+const scrollTop = ref(0)
 const areas = ['鼓楼', '五四北']
 const categories = [{ id: 'all', name: '全部服务' }, { id: 'hair', name: '生发养发' }, { id: 'tcm', name: '中医疗法' }, { id: 'mole', name: '点痣祛疣' }, { id: 'whiten', name: '祛斑美白' }, { id: 'acne', name: '痘印痘坑' }, { id: 'antiaging', name: '光电抗衰' }, { id: 'soothe', name: '舒敏修复' }]
 const packages: PackageItem[] = [
@@ -76,6 +77,7 @@ const packages: PackageItem[] = [
 const filteredPackages = computed(() => packages.filter(item => (activeCategory.value === 'all' || item.cat === activeCategory.value) && item.area.includes(selectedArea.value)))
 const pageTitle = computed(() => view.value === 'home' ? '皮肤科专科特色服务' : view.value === 'detail' ? '服务详情' : '开单确认')
 const patients = [{ id: 1, name: '张明', rel: '本人', card: '自费卡 · **** 5678' }, { id: 2, name: '李芳', rel: '配偶', card: '电子健康卡 · **** 9012' }, { id: 3, name: '张小明', rel: '子女', card: '电子健康卡 · **** 3456' }]
+usePageScroll(({ scrollTop: value }) => { scrollTop.value = value || 0 })
 const openDetail = (item: PackageItem) => { currentPackage.value = item; view.value = 'detail' }
 const openConfirm = () => { view.value = 'confirm' }
 const showPatients = () => { patientModal.value = true }
