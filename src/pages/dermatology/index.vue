@@ -17,10 +17,7 @@
           <view class="consult-arrow">›</view>
         </view>
 
-        <view class="area-options">
-          <button v-for="area in areas" :key="area" :class="['area-btn', { on: selectedArea === area }]" @tap="selectedArea = area">{{ area }}院区</button>
-          <button :class="['area-btn', { on: selectedArea === 'orders' }]" @tap="showOrders">我的订单</button>
-        </view>
+        <view class="area-options"><button v-for="area in areas" :key="area" :class="['area-btn', { on: selectedArea === area }]" @tap="selectedArea = area">{{ area }}院区</button></view>
         <view class="address">📍 {{ selectedArea === '五四北' ? '五四北院区 · 福建省福州市晋安区' : '鼓楼院区 · 福建省福州市鼓楼区' }}</view>
 
         <view class="content-layout">
@@ -46,6 +43,8 @@
       <view v-else class="confirm-view"><view class="confirm-card"><view class="section-title">就诊人信息</view><view class="patient"><text class="avatar">👤</text><view><view class="patient-name">张明 <text>本人</text></view><view class="patient-card">自费卡 · **** 5678</view></view><button @tap="showPatients">切换</button></view></view><view v-if="currentPackage" class="confirm-card"><view class="section-title">服务项目</view><view class="confirm-row"><text>{{ currentPackage.name }}</text><strong>¥{{ currentPackage.price }}</strong></view></view><view class="confirm-notice">ℹ️ 本次就诊需使用患者本人的自费卡结算。如无自费卡，请先添加电子健康卡。</view><view class="confirm-bottom"><view><text>实付</text><strong>¥{{ currentPackage?.price || 0 }}</strong></view><button @tap="submitOrder">申请开单</button></view></view>
     </scroll-view>
 
+    <button class="orders-fab" @tap="showOrders"><image :src="orderIcon" mode="aspectFit" /><text>我的订单</text></button>
+
     <view v-if="patientModal" class="modal-mask" @tap="patientModal = false"><view class="modal-card" @tap.stop><view class="modal-title">选择就诊卡 <text @tap="patientModal = false">×</text></view><view v-for="patient in patients" :key="patient.id" class="patient-option" @tap="selectPatient(patient)"><text>{{ patient.name }} · {{ patient.rel }}</text><small>{{ patient.card }}</small></view><view class="add-card" @tap="toast('电子健康卡添加功能建设中')">＋ 添加电子健康卡</view></view></view>
     <view v-if="toastText" class="toast">{{ toastText }}</view>
   </view>
@@ -55,6 +54,7 @@
 import Taro from '@tarojs/taro'
 import { computed, ref } from 'vue'
 import PortalNavBar from '@/components/PortalNavBar/index.vue'
+import orderIcon from '@/assets/icons/message/order-notice.svg'
 import './index.less'
 
 type PackageItem = { id: string; cat: string; name: string; price: number; area: string[]; note: string; desc: string; duration: string; icon: string; intro: string; steps: string[] }
