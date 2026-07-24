@@ -702,26 +702,35 @@
   }
 
   .portal-home__settlement-copy-scroll {
+    align-self: stretch;
     flex: 1;
     min-width: 0;
-    height: 36px;
+    height: auto;
     font-size: 0;
-    line-height: 36px;
-    overflow: hidden;
+    line-height: normal;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
     white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+    }
   }
 
   .portal-home__settlement-copy {
     display: inline-flex;
     align-items: center;
     min-width: 100%;
-    height: 36px;
+    height: 100%;
     margin: 0;
     color: @settlement-reminder-text;
     font-family: @font-regular;
     font-size: 26px;
     font-weight: @font-weight-regular;
-    line-height: 36px;
+    line-height: normal;
     white-space: nowrap;
 
     strong {
