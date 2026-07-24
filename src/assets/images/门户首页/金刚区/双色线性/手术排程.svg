@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/手术排程</title>
+    <g id="图标/金刚区/手术排程" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标">
+                <rect id="矩形" fill="#FEF4DA" x="23" y="32" width="42" height="29" rx="2"></rect>
+                <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" x="18" y="27" width="52" height="39" rx="3.77358484"></rect>
+                <line x1="31" y1="21" x2="31" y2="33" id="直线" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="29.5" y1="43.5" x2="44.5" y2="43.5" id="直线-2" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="29.5" y1="53.5" x2="53.5" y2="53.5" id="直线-2备份" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="57" y1="21" x2="57" y2="33" id="直线备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

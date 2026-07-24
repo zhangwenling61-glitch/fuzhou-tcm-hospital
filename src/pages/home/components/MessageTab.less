@@ -1,0 +1,328 @@
+.tabview-message {
+  &.message-page {
+    min-height: auto;
+    padding-bottom: 180px;
+    background-color: @bg-color-blue-1;
+  }
+
+  // ── 内容容器卡片（Figma: 02 Layout内容）──
+  .message-page__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 24px 24px 0 24px;
+    gap: 16px;
+    box-sizing: border-box;
+    border-radius: 40px 40px 0 0;
+    background: linear-gradient(180deg, @bg-color-blue-2 0%, @bg-color-blue-2 75%, rgba(238, 247, 244, 0) 100%);
+  }
+
+  // ── 通知图标：多彩圆形切体直接铺满 ──
+  .message-page__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    overflow: visible;
+  }
+
+  .message-page__icon-img {
+    display: block;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    &.is-padded-icon {
+      transform: scale(1.18);
+    }
+  }
+
+  // ── 医生消息卡片 ──
+  .doctor-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 28px @card-padding-x;
+    text-align: left;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: 0;
+    margin: 0;
+    border: 2px solid #ffffff;
+    border-radius: @card-radius;
+    background: #F7FCFA;
+    box-shadow: 0 4px 20px 0 #E4F3EE;
+    backdrop-filter: blur(20px);
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: auto;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      width: auto;
+      height: auto;
+      border: 0;
+      border-radius: 0;
+      transform: none;
+      pointer-events: none;
+    }
+
+    &:active {
+      opacity: 0.85;
+    }
+
+    & + & {
+      margin-top: 0;
+    }
+
+    .doctor-card__follow-btn {
+      position: absolute;
+      top: 28px;
+      right: @card-padding-x;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 40px;
+      padding: 0 12px;
+      border-radius: 24px;
+      box-sizing: border-box;
+      color: #ffffff;
+      font-family: @font-medium;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+      overflow: visible;
+      background: transparent;
+
+      &::before {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        border-radius: inherit;
+        background: #457130;
+        box-shadow:
+          inset 0 16px 15px 0 rgba(255, 255, 255, 0.25);
+        animation: user-card-primary-breath 2.8s infinite ease-in-out;
+        content: '';
+        pointer-events: none;
+        transform-origin: center center;
+        will-change: transform;
+      }
+
+      > span {
+        position: relative;
+        z-index: 2;
+      }
+
+      .doctor-card__follow-plus {
+        position: relative;
+        z-index: 2;
+        width: 12px;
+        height: 12px;
+        margin-right: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before,
+        &::after {
+          position: absolute;
+          background: #ffffff;
+          content: '';
+        }
+
+        &::before {
+          width: 12px;
+          height: 2px;
+        }
+
+        &::after {
+          width: 2px;
+          height: 12px;
+        }
+      }
+
+      &.is-active {
+        color: @text-color-secondary;
+
+        &::before {
+          background: @bg-color-blue-2;
+          box-shadow: none;
+          animation: none;
+        }
+      }
+    }
+  }
+
+  .doctor-card__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .doctor-card__avatar {
+    display: block;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .doctor-card__info {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .doctor-card__name-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .doctor-card__name {
+    color: @text-color-dark;
+    font-family: @font-medium;
+    font-size: 30px;
+    font-weight: @font-weight-medium;
+    line-height: 44px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .doctor-card__time {
+    margin-left: auto;
+    color: @text-color-secondary;
+    font-size: 22px;
+    font-family: @font-regular;
+    line-height: 36px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .doctor-card__dept-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .doctor-card__dept {
+    color: @text-color;
+    font-size: 24px;
+    font-family: @font-regular;
+    line-height: 36px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .doctor-card__status {
+    display: inline-flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 8px;
+    font-size: 22px;
+    font-family: @font-regular;
+    line-height: 36px;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    &.is-done {
+      background: @border-color;
+      color: @text-color;
+    }
+
+    &.is-active {
+      background: fade(@theme-color, 10%);
+      color: @theme-color;
+    }
+  }
+
+  .doctor-card__message {
+    position: relative;
+    display: block;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid @border-color;
+    max-height: 80px;
+    overflow: hidden;
+    font-size: 28px;
+    line-height: 40px;
+    color: @text-color-dark;
+    text-align: justify;
+    word-break: break-all;
+
+    .doctor-card__desc-content {
+      display: block;
+    }
+
+    .portal-home__expert-desc-label {
+      margin-right: 8px;
+      color: @theme-color;
+      font-family: @font-medium;
+      font-weight: @font-weight-medium;
+      display: inline;
+    }
+
+    .doctor-card__desc-text {
+      display: inline;
+    }
+
+    .doctor-card__desc-float-spacer {
+      float: right;
+      width: 0;
+      height: 40px;
+    }
+
+    .doctor-card__desc-detail-btn {
+      float: right;
+      clear: right;
+      margin-left: 4px;
+      color: @theme-color;
+      font-family: @font-medium;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 40px;
+      cursor: pointer;
+
+      &::before {
+        content: '...';
+        margin-right: 8px;
+        color: @text-color-secondary;
+        font-family: @font-regular;
+        font-weight: 400;
+      }
+
+      &:active {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+@keyframes user-card-primary-breath {
+  0%, 100% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+}

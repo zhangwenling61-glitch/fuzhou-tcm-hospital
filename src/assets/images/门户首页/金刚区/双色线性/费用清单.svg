@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/费用清单</title>
+    <g id="图标/金刚区/费用清单" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(24, 20)">
+                <rect id="矩形" fill="#FEF4DA" x="5" y="13" width="30" height="30" rx="2"></rect>
+                <path d="M14,27.1683772 L26,27.1683772 M14.6810728,21 L19.9843737,26.2742764 M25.2343737,21 L19.9310728,26.2742764 M20.0434394,28.2869421 L20.0434394,35.2869421 M14,32.3896444 L26,32.3896444" id="形状结合" stroke="#D49B07" stroke-width="4" stroke-linecap="round"></path>
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" x="0" y="4" width="40" height="44" rx="4"></rect>
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" x="9" y="0" width="22" height="8" rx="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

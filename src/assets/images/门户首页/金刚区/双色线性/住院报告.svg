@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/住院报告</title>
+    <g id="图标/金刚区/住院报告" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(23, 20)">
+                <path d="M28.27,0 L42,13.729 L42,44.0006695 C42,46.2098085 40.209139,48.0006695 38,48.0006695 L4,48.0006695 C1.790861,48.0006695 1.3527075e-16,46.2098085 0,44.0006695 L0,4.00066953 C-2.705415e-16,1.79153053 1.790861,0.000669529663 4,0.000669529663 L28.27,0 Z" id="形状结合" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M26.113,5.00066953 L37,16.1326695 L37,39.0006695 C37,41.2098085 35.209139,43.0006695 33,43.0006695 L9,43.0006695 C6.790861,43.0006695 5,41.2098085 5,39.0006695 L5,9.00066953 C5,6.79153053 6.790861,5.00066953 9,5.00066953 L26.113,5.00066953 Z" id="形状结合" fill="#FEF4DA"></path>
+                <path d="M25.2147536,0.000669529663 L25.2147536,14.8848876 C25.2147536,15.9894571 26.1101841,16.8848876 27.2147536,16.8848876 L42,16.8848876 L42,16.8848876" id="路径" stroke="#4E7F3E" stroke-width="4" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+                <line x1="12" y1="29.5" x2="25" y2="29.5" id="直线" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="18.5" y1="23" x2="18.5" y2="36" id="直线备份" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

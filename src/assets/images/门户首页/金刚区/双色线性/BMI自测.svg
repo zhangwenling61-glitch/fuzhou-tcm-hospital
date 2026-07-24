@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/BMI自测</title>
+    <g id="图标/金刚区/BMI自测" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="编组-7" transform="translate(19, 19)">
+                <rect id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" x="0" y="0" width="50" height="50" rx="6"></rect>
+                <rect id="矩形" fill="#FEF4DA" x="5" y="5" width="40" height="40" rx="4"></rect>
+                <text id="kg" font-family="AlibabaPuHuiTiB, Alibaba PuHuiTi" font-size="13.0434783" font-weight="bold" fill="#D49B07">
+                    <tspan x="17.3913043" y="39.0869565">kg</tspan>
+                </text>
+                <path d="M37.1644778,19.5770055 C34.4055841,15.617533 30.0061655,13.0552664 25.0500326,13.0552664 C20.2287908,13.0552664 15.9343715,15.4799565 13.1644778,19.256839" id="路径" stroke="#4E7F3E" stroke-width="5" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

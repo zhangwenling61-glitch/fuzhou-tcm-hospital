@@ -1,0 +1,234 @@
+.portal-general-dialog {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-general-dialog__mask {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.portal-general-dialog__box {
+  position: relative;
+  z-index: 2;
+  width: 598px;
+  height: auto;
+  overflow: visible;
+  isolation: isolate;
+  animation: portalGeneralDialogPop 0.28s ease-out;
+
+  &::before {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+    left: 0;
+    right: 0;
+    top: 125px;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 0 0 68px 68px;
+    background: #ffffff;
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@keyframes portalGeneralDialogPop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.portal-general-dialog__top-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: 598px;
+  height: 260px;
+  border-radius: 68px 68px 0 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.portal-general-dialog__top-bg-img {
+  display: block;
+  width: 598px;
+  height: 523px;
+  pointer-events: none;
+}
+
+.portal-general-dialog__corner {
+  position: absolute;
+  left: 370px;
+  top: 25px;
+  z-index: 2;
+  width: 228px;
+  height: 90px;
+  display: block;
+  pointer-events: none;
+}
+
+.portal-general-dialog__bell {
+  position: absolute;
+  left: 429px;
+  top: -36px;
+  z-index: 5;
+  width: 117px;
+  height: 127px;
+  object-fit: contain;
+  animation: portalGeneralBellFloat 3.2s ease-in-out infinite;
+  transform-origin: 50% 70%;
+}
+
+.portal-general-dialog__shadow-large,
+.portal-general-dialog__shadow-small {
+  position: absolute;
+  z-index: 4;
+  display: block;
+  pointer-events: none;
+  animation: portalGeneralBellShadow 3.2s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+
+.portal-general-dialog__shadow-large {
+  left: 421px;
+  top: 64px;
+  width: 145px;
+  height: 52px;
+}
+
+.portal-general-dialog__shadow-small {
+  left: 441px;
+  top: 78px;
+  width: 87px;
+  height: 24px;
+}
+
+@keyframes portalGeneralBellFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0) rotate(-1.5deg);
+  }
+}
+
+@keyframes portalGeneralBellShadow {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.72;
+    transform: scale(0.78);
+  }
+}
+
+.portal-general-dialog__content {
+  position: relative;
+  z-index: 6;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 44px 38px 34px;
+
+  h3 {
+    width: 520px;
+    color: #001725;
+    font-family: @font-medium;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 64px;
+    margin: 0;
+  }
+}
+
+.portal-general-dialog__message {
+  display: block;
+  width: 520px;
+  color: #000000;
+  font-family: @font-regular;
+  font-size: 32px;
+  line-height: 48px;
+  margin: 35px 0 46px;
+  display: -webkit-box;
+  min-height: 48px;
+  max-height: 192px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-align: left;
+
+  span {
+    color: #196ffa;
+    font-family: @font-medium;
+    font-weight: 600;
+  }
+}
+
+.portal-general-dialog__content {
+  .fixed-bottom-bar {
+    position: relative !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 534px !important;
+    margin: 0 auto !important;
+    z-index: 1 !important;
+
+    .btn-primary {
+      width: 100% !important;
+      height: 98px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 1000px !important;
+      font-size: 36px !important;
+      font-weight: 600 !important;
+      line-height: 98px !important;
+      animation: none !important;
+    }
+  }
+}
+
+.portal-general-dialog__btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 520px;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.portal-general-dialog__btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 !important;
+  height: 98px !important;
+  border-radius: 1000px !important;
+  font-family: @font-medium !important;
+  font-size: 32px !important;
+  font-weight: 600 !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  animation: none !important;
+}
+
+@keyframes portalGeneralButtonBreathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}

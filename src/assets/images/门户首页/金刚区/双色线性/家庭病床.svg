@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/家庭病床</title>
+    <g id="图标/金刚区/家庭病床" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(16, 18)" stroke-linejoin="round" stroke-width="4">
+                <line x1="0.5" y1="1.5" x2="0.5" y2="51.5" id="直线-2" stroke="#4E7F3E" stroke-linecap="round"></line>
+                <line x1="55.3559035" y1="36.9994014" x2="54.6899914" y2="50.9835553" id="直线-2备份" stroke="#4E7F3E" stroke-linecap="round" transform="translate(55.1905, 44.4779) rotate(-2.7263) translate(-55.1905, -44.4779)"></line>
+                <path d="M32,19 L51,19 C53.209139,19 55,20.790861 55,23 L55,40 L55,40 L28,40 L28,23 C28,20.790861 29.790861,19 32,19 Z" id="矩形" stroke="#4E7F3E" fill="#FEF4DA" stroke-linecap="round"></path>
+                <line x1="0.5" y1="40.5" x2="54.5" y2="40.5" id="直线-3" stroke="#4E7F3E" stroke-linecap="square"></line>
+                <path d="M9,33 C7.8954305,33 7,32.1045695 7,31 L7,19 C7,17.8954305 7.8954305,17 9,17 L14,17 C15.1045695,17 16,17.8954305 16,19 L16,23 L26,23 C27.1045695,23 28,23.8954305 28,25 L28,31 C28,32.1045695 27.1045695,33 26,33 L9,33 Z" id="形状结合" stroke="#4E7F3E" fill="#FEF4DA" stroke-linecap="round"></path>
+                <circle id="椭圆形" stroke="#D49B07" stroke-linecap="round" cx="11.5" cy="5.5" r="5.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

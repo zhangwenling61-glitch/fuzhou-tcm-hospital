@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/便民寄送</title>
+    <g id="图标/金刚区/便民寄送" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(20, 20)">
+                <line x1="24" y1="18" x2="24" y2="46" id="直线-2" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <polyline id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="24 48 0 37 0 9"></polyline>
+                <polyline id="路径备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(36, 28.5) scale(-1, 1) translate(-36, -28.5)" points="48 48 24 37 24 9"></polyline>
+                <polygon id="路径-2" fill="#FEF4DA" points="5 16.013395 5 34.1099479 19 40.4938779 19 21.2631815"></polygon>
+                <polygon id="路径-2备份" fill="#FEF4DA" transform="translate(36, 28.2536) scale(-1, 1) translate(-36, -28.2536)" points="29 16.013395 29 34.1099479 43 40.4938779 43 21.2631815"></polygon>
+                <line x1="13.0313566" y1="4.6330564" x2="35.4372868" y2="13.2338872" id="直线-3" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="35.9279121" y1="13.6079725" x2="34.6735705" y2="25.5422352" id="直线-3备份" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(35.3007, 19.5751) rotate(-6) translate(-35.3007, -19.5751)"></line>
+                <polygon id="多边形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="24 0 48 9 24 18 0 9"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

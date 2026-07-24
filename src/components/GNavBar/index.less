@@ -1,0 +1,55 @@
+.g-nav-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  width: 100%;
+  &.bg-ff {
+    background: #ffffff;
+  }
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    &.center {
+      position: relative;
+      background: transparent;
+
+      .nav-bar__icon {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    &__title {
+      font-size: 32px;
+      line-height: 50px;
+    }
+
+    &__icon {
+      padding: 0 20px;
+    }
+
+    .van-icon {
+      font-size: 40px;
+      line-height: 40PX;
+    }
+    &__icon:active {
+      background-color: rgba(0, 0, 0, .1);
+    }
+
+    /* #ifdef alipay */
+    &__icon {
+      width: 40px;
+      height: 40PX;
+      .van-icon {
+        display: none;
+      }
+    }
+    /* #endif */
+  }
+}

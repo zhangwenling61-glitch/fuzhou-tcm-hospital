@@ -1,0 +1,16 @@
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="starGrad" x1="9" y1="4" x2="20.2" y2="25" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE858"/>
+      <stop offset="0.46" stop-color="#FF9F18"/>
+      <stop offset="1" stop-color="#F06A00"/>
+    </linearGradient>
+    <linearGradient id="starStroke" x1="6" y1="5" x2="23" y2="24" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF59B"/>
+      <stop offset="1" stop-color="#E85A00"/>
+    </linearGradient>
+  </defs>
+  <path d="M13.1 4.3c.4-1 1.8-1 2.2 0l2.2 5.2 5.6.5c1.1.1 1.5 1.5.7 2.2l-4.2 3.7 1.3 5.5c.2 1.1-.9 1.9-1.8 1.4l-4.8-2.9-4.8 2.9c-.9.6-2.1-.3-1.8-1.4L9 15.9l-4.2-3.7c-.8-.7-.4-2.1.7-2.2l5.6-.5 2-5.2Z" fill="url(#starGrad)" stroke="url(#starStroke)" stroke-width="1.4"/>
+  <path d="M14.1 7.2 15.7 11c.2.4.5.6.9.7l4.1.3-3.1 2.7c-.3.3-.4.7-.4 1.1l.9 4-3.5-2.1c-.3-.2-.8-.2-1.1 0l-3.5 2.1 1-4c.1-.4-.1-.8-.4-1.1L7.5 12l4.1-.3c.4 0 .8-.3.9-.7l1.6-3.8Z" fill="#FFD13B"/>
+  <path d="M11.5 10.5 13 7.1" stroke="white" stroke-opacity="0.75" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

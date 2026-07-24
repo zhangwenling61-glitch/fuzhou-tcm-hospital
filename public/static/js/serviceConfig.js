@@ -1,0 +1,3 @@
+window.YHSERVICECONFIG = {
+  base: ''
+}

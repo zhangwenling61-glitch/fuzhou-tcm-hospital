@@ -1,0 +1,9 @@
+{
+  "format": 2,
+  "miniprogramRoot": "./dist",
+  "compileOptions": {
+    "enableNodeModuleBabelTransform": true
+  },
+  "compileType": "mini",
+  "enableAppxNg": true
+}

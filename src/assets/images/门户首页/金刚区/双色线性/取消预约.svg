@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/取消预约</title>
+    <g id="图标/金刚区/取消预约" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(20, 19)">
+                <path d="M5,21 L43,21 L43,43 C43,44.1045695 42.1045695,45 41,45 L7,45 C5.8954305,45 5,44.1045695 5,43 L5,21 L5,21 Z" id="矩形" fill="#FEF4DA"></path>
+                <path d="M18.9525685,50 L18.9525685,50 L3.77358484,50 C1.68949148,50 0,48.3105085 0,46.2264152 L0,8.77358484 C0,6.68949148 1.68949148,5 3.77358484,5 L44.2264152,5 C46.3105085,5 48,6.68949148 48,8.77358484 L48,21.0774537 L48,21.0774537" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <line x1="1" y1="16" x2="48" y2="16" id="直线-2" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="9" y1="27" x2="21" y2="27" id="直线-2备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="9" y1="35" x2="17" y2="35" id="直线-2备份-2" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="14" y1="0" x2="14" y2="8" id="直线" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="34" y1="0" x2="34" y2="8" id="直线备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <circle id="椭圆形" stroke="#4E7F3E" stroke-width="4" fill="#FEF4DA" cx="38" cy="39" r="11"></circle>
+                <g id="编组-3" transform="translate(35, 36)" stroke="#D49B07" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                    <line x1="2.82842712" y1="-0.671572875" x2="2.82842712" y2="6.32842712" id="直线-3" transform="translate(2.8284, 2.8284) rotate(-315) translate(-2.8284, -2.8284)"></line>
+                    <line x1="6.32842712" y1="2.82842712" x2="-0.671572875" y2="2.82842712" id="直线-3备份" transform="translate(2.8284, 2.8284) rotate(-315) translate(-2.8284, -2.8284)"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

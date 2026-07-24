@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/检查预约</title>
+    <g id="图标/金刚区/检查预约" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(21, 17)">
+                <path d="M21,54 C32.5979797,54 42,45.5625 42,32.4 C42,23.625 35,12.825 21,0 C7,12.825 0,23.625 0,32.4 C0,45.5625 9.40202025,54 21,54 Z" id="椭圆形" stroke="#4E7F3E" stroke-width="4"></path>
+                <path d="M21,49.2501964 C29.836556,49.2501964 37,42.8829393 37,32.9500182 C37,26.3280709 31.6666667,17.3585824 21,6.04155281 C10.3333333,17.3585824 5,26.3280709 5,32.9500182 C5,42.8829393 12.163444,49.2501964 21,49.2501964 Z" id="椭圆形" fill="#FEF4DA"></path>
+                <line x1="16" y1="30.5658832" x2="26.2411223" y2="30.5658832" id="路径-6" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="16" y1="30.5" x2="26.1858984" y2="30.5" id="路径-6" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(21.0929, 30.5) rotate(90) translate(-21.0929, -30.5)"></line>
+                <path d="M38.5,27 C42.6421356,27 46,23.875 46,19 C46,15.75 43.5,11.75 38.5,7 C33.5,11.75 31,15.75 31,19 C31,23.875 34.3578644,27 38.5,27 Z" id="椭圆形备份-13" stroke="#4E7F3E" stroke-width="4" fill="#FEF4DA"></path>
+            </g>
+        </g>
+    </g>
+</svg>

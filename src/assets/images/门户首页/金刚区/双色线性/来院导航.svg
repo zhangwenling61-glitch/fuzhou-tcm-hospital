@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/来院导航</title>
+    <g id="图标/金刚区/来院导航" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(21, 21)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                <circle id="椭圆形" stroke="#4E7F3E" fill="#FEF4DA" cx="23" cy="23" r="23"></circle>
+                <polygon id="多边形" stroke="#D49B07" fill="#FFFFFF" transform="translate(23.5, 23) rotate(-45) translate(-23.5, -23)" points="23.5 16 36 23 23.5 30 11 23"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

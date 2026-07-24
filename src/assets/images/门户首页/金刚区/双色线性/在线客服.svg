@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/在线客服</title>
+    <g id="图标/金刚区/在线客服" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="编组" transform="translate(20, 24)">
+                <path d="M4,28 C1.790861,28 1.3527075e-16,26.209139 0,24 L0,4 C-2.705415e-16,1.790861 1.790861,2.705415e-16 4,0 L33,0 C35.209139,-4.05812251e-16 37,1.790861 37,4 L37,24 C37,26.209139 35.209139,28 33,28 L16,28 L6,38 L6,28 L4,28 Z" id="形状结合" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <rect id="矩形" fill="#FEF4DA" x="5" y="5" width="27" height="18" rx="2"></rect>
+                <path d="M44,9 C46.7614237,9 49,11.2385763 49,14 L49,30 C49,32.7614237 46.7614237,35 44,35 L44,41.9975303 L36.1135325,35 L27.9775509,35" id="形状结合" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <line x1="14" y1="13.5" x2="23" y2="13.5" id="直线" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="18.5" y1="9" x2="18.5" y2="18" id="直线备份" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

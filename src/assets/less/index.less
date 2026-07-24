@@ -1,0 +1,1792 @@
+/* #ifndef H5 */
+.h5-span {
+  display: inline;
+}
+
+.h5-button,
+.h5-input {
+  display: inline-block;
+}
+
+// van 按钮使用 button，button 组件在小程序有默认样式，需要覆盖
+.h5-button::after {
+  border: none;
+}
+
+.van-button--hairline::after {
+  transform-origin: unset;
+  width: unset;
+  height: unset;
+}
+
+// 小程序页面高度自适应
+page {
+  height: 100vh; // 支付宝对100%没有生效
+  background: @bg-color-blue-1 !important;
+}
+/* #endif */
+
+.is-portal-page-leaving {
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* #ifdef H5 */
+html, body {
+  height: 100%;
+  background: @bg-color-blue-1 !important;
+
+  taro-textarea-core {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+body {
+  font-size: 32px;
+}
+
+// h5页面高度自适应
+.taro-tabbar__container,
+.taro-tabbar__panel,
+.taro_router,
+.taro_page {
+  height: 100%;
+  background: @bg-color-blue-1 !important;
+}
+/* #endif */
+
+// ── 医保数字身份 3.0 全局标准卡片及网格样式体系 ──
+// 后续所有主面板、操作面板、卡片模块默认复用这套类名。
+// 标准卡片视觉：白底、白色描边、32px 圆角、柔和绿灰阴影。
+
+.yh-card {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: @card-padding-y @card-padding-x;
+  border: 2px solid @card-border-color;
+  border-radius: @card-radius;
+  background: @card-bg;
+  box-shadow: @card-shadow;
+}
+
+// 1. 标准容器卡片 (大白卡底 + 圆角 + 微渐变描边)
+.yh-portal-card {
+  width: 702px;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 40px @card-padding-x;
+  border: 2px solid @card-border-color;
+  border-radius: @card-radius;
+  background: @card-bg;
+  box-shadow: @card-shadow;
+
+  // 标题
+  .yh-portal-card__title {
+    margin: 0 0 32px;
+    color: #457130;
+    font-family: @font-medium;
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+
+// 2. 网格容器
+.yh-portal-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+// 3. 子级操作按钮卡片 (白色背景 + 绿色发光阴影)
+.yh-portal-action-btn {
+  display: flex;
+  align-items: center;
+  height: 140px;
+  padding: 0 28px;
+  box-sizing: border-box;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 4px 16px fade(@theme-color, 8%);
+
+  // 左侧圆角线性叠加小图标
+  .yh-portal-action-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin-right: 18px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #457130 0%, #66E3CA 100%);
+    box-shadow: 0 8px 18px fade(@theme-color, 22%);
+  }
+
+  // 右侧文字
+  .yh-portal-action-text {
+    color: #222222;
+    font-family: @font-medium;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 44px;
+  }
+}
+
+// 4. 双行列表容器 (带细线分割的项)
+.yh-portal-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .yh-portal-list-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 126px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    text-align: left;
+    background: transparent;
+    border: 0;
+
+    + .yh-portal-list-item {
+      border-top: 1px solid #ebedf0;
+    }
+
+    // 左侧圆形图标
+    .yh-portal-list-icon {
+      flex: 0 0 auto;
+      width: 64px;
+      height: 64px;
+      margin-right: 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #457130 0%, #66E3CA 100%);
+      box-shadow: 0 8px 18px fade(@theme-color, 24%);
+    }
+
+    // 右侧内容区
+    .yh-portal-list-content {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    // 主标题
+    .yh-portal-list-title {
+      display: block;
+      color: #222222;
+      font-family: @font-medium;
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 44px;
+    }
+
+    // 副标题/描述
+    .yh-portal-list-desc {
+      margin: 4px 0 0;
+      color: #666666;
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+}
+
+// ── 5. 二级列表/表单页面规范样式体系 ──
+// 后续所有新建的 2 级页面必须默认套用这套全局类名：
+// const contentTop = menuButtonInfo.bottom + @nav-bottom-gap   ← 8px 固定间距
+// <div class="yh-secondary-page" :style="{ paddingTop: contentTop + 'px' }">
+//   <PortalNavBar title="页面标题" :scroll-top="scrollTop" secondary />
+//   <div class="yh-secondary-content">...</div>
+// </div>
+.yh-secondary-page {
+  min-height: 101vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: @bg-color-blue-1;
+  color: @text-color-dark;
+  font-family: @font-regular;
+  padding-bottom: 0;
+
+  &.yh-scroll-locked {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+  }
+}
+
+.internet-home,
+.profile-page {
+  &.yh-scroll-locked {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+  }
+}
+
+.yh-secondary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 24px 24px calc(50px + env(safe-area-inset-bottom)) 24px; // Keep bottom gap strictly at 50px as global standard
+  box-sizing: border-box;
+  border-radius: 40px 40px 0 0;
+  background: linear-gradient(180deg, var(--Background-Color-4, @bg-color-blue-2) 0%, rgba(238, 247, 244, 0.00) 100%);
+}
+
+.address-content,
+.button-disabled-content,
+.button-double-content,
+.button-single-content,
+.card-doctor-content,
+.common-list-content,
+.empty-state-page__content,
+.feedback-content,
+.form-page-content,
+.health-archive-content,
+.info-page-content,
+.invoice-content,
+.logout-content,
+.medical-guide-content,
+.message-settings-content,
+.navigation-content,
+.packages-list-wrap,
+.pathology-content,
+.personal-info-content,
+.pickup-detail-content,
+.prescription-content,
+.recharge-content,
+.report-detail-content,
+.self-order-settle-content {
+  gap: 0 !important;
+
+  > * + * {
+    margin-top: 32px !important;
+  }
+
+  > .yh-secondary-section-title {
+    margin-top: 32px !important;
+    margin-bottom: 8px !important;
+  }
+
+  > .yh-secondary-section-title:first-child {
+    margin-top: 0 !important;
+  }
+
+  > .yh-secondary-section-title + * {
+    margin-top: 0 !important;
+  }
+}
+
+.all-services-section,
+.settle-group {
+  gap: 0 !important;
+
+  > .yh-secondary-section-title {
+    margin-bottom: 8px !important;
+  }
+
+  > .yh-secondary-section-title + * {
+    margin-top: 0 !important;
+  }
+}
+
+.yh-secondary-card {
+  width: 100%;
+  padding: 0 @card-padding-x;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 2px solid #ffffff; // 1px * 2
+  border-radius: @card-radius;
+  background: #F7FCFA;
+  box-shadow: 0 4px 20px 0 #E4F3EE; // 0 2px 10px 0 #E4F3EE * 2 = 0 4px 20px 0
+  backdrop-filter: blur(20px); // blur(10px) * 2 = 20px
+  transition: transform 0.1s ease-out, border-color 0.1s ease-out, box-shadow 0.1s ease-out;
+
+  &:active:not(:focus-within):not(.is-focused) {
+    transform: scale(0.99); // Tactile micro-scale down press effect when clicked
+    transition: transform 0.1s ease;
+  }
+
+  &:focus-within,
+  &.is-focused {
+    border-color: #457130 !important; // Premium brand green border
+    box-shadow: 0 0 32px fade(@theme-color, 45%), 0 0 8px fade(@theme-color, 20%) !important; // Bloom radiant neon green glow shadow!
+    transform: scale(1.012) translateY(-2px) !important; // Elastic tactile spring-up zoom effect!
+  }
+
+  // Single-row input card container: entire card green outer glow on focus with gorgeous spring-pop animation!
+  &.is-single-input {
+
+    &:active:not(:focus-within) {
+      transform: scale(0.985); // Tactile micro-scale down press effect when clicked
+      transition: transform 0.1s ease;
+    }
+
+    &:focus-within,
+    &.is-focused {
+      border-color: #457130 !important; // Premium brand green border
+      box-shadow: 0 0 32px fade(@theme-color, 45%), 0 0 8px fade(@theme-color, 20%) !important; // Bloom radiant neon green glow shadow!
+      transform: scale(1.015) translateY(-2px); // Elastic tactile spring-up zoom effect!
+    }
+
+    // Hide the bottom active expanding line for single-row cards as they already use the container outer glow
+    .yh-secondary-row__focus-line {
+      display: none !important;
+    }
+  }
+
+  // Set spacing dynamically based on single-row vs multi-row
+  .yh-secondary-row {
+    &:only-child {
+      padding: 24px 0; // Keep original regular padding (12px @1x top/bottom) for single-row cards
+    }
+
+    &:not(:only-child) {
+      &:first-child {
+        padding-top: 40px; // First row's top gap is exactly 20px (40px @2x)
+        padding-bottom: 24px;
+      }
+      &:last-child {
+        padding-top: 24px;
+        padding-bottom: 40px; // Last row's bottom gap is exactly 20px (40px @2x)
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+.detail-card {
+  padding: 0 @card-padding-x;
+}
+
+.detail-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 104px;
+  border-bottom: 2px solid @border-color-light;
+  box-sizing: border-box;
+}
+
+.detail-card__title {
+  position: relative;
+  padding-left: 20px;
+  color: @text-color-dark;
+  font-family: @font-medium;
+  font-size: @font-size-body-lg;
+  font-weight: @font-weight-bold;
+  line-height: 48px;
+}
+
+.detail-card__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 28px;
+  border-radius: 4px;
+  background: @blue;
+}
+
+.detail-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+// Standard vertical stack for multiple secondary cards in one result/list area.
+// Use this instead of page-local `margin-bottom` or ad-hoc gaps.
+.yh-secondary-list-stack,
+.invoice-list,
+.prescription-list,
+.recharge-list,
+.inpatient-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; // Figma 12px
+}
+
+// Standard content rhythm inside custom business cards.
+// Children get the Figma 12px vertical breathing room by default.
+.yh-secondary-card-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; // Figma 12px
+}
+
+.yh-secondary-card-flow__divider {
+  height: 2px;
+  background-color: rgba(32, 80, 148, 0.08);
+  flex: 0 0 auto;
+}
+
+.yh-secondary-info-body,
+.invoice-card__body,
+.prescription-card__body,
+.recharge-card__body,
+.inpatient-card__body,
+.clinic-record-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.yh-secondary-info-body .info-row,
+.invoice-card__body .info-row,
+.prescription-card__body .info-row,
+.recharge-card__body .info-row,
+.inpatient-card__body .info-row,
+.clinic-record-card__body .info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 8px 0;
+  box-sizing: border-box;
+  color: @text-color;
+  font-size: @font-size-body-md;
+  line-height: @line-height-body-md;
+  font-weight: @font-weight-regular;
+}
+
+.yh-secondary-info-body .info-row .label,
+.invoice-card__body .info-row .label,
+.prescription-card__body .info-row .label,
+.recharge-card__body .info-row .label,
+.inpatient-card__body .info-row .label,
+.clinic-record-card__body .info-row .label {
+  color: @text-color;
+}
+
+.yh-secondary-info-body .info-row .val,
+.invoice-card__body .info-row .val,
+.prescription-card__body .info-row .val,
+.recharge-card__body .info-row .val,
+.inpatient-card__body .info-row .val,
+.clinic-record-card__body .info-row .val {
+  color: @text-color-dark;
+}
+
+.yh-empty-state-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 420px);
+  padding: 96px 40px 120px !important;
+  box-sizing: border-box;
+
+  .portal-empty-state {
+    min-height: 520px;
+  }
+}
+
+.font-bold {
+  font-family: @font-medium !important;
+  font-weight: @font-weight-bold !important;
+}
+
+.font-heavy {
+  font-family: @font-medium !important;
+  font-size: @font-size-body-lg !important;
+  font-weight: @font-weight-heavy !important;
+}
+
+.text-blue {
+  color: @blue !important;
+}
+
+.text-green {
+  color: @success-color !important;
+}
+
+.text-orange {
+  color: @orange-dark !important;
+}
+
+.text-monospace {
+  font-size: 24px;
+  word-break: break-all;
+}
+
+.amount-blue {
+  color: @blue !important;
+  font-family: @font-medium !important;
+  font-size: @font-size-body-lg;
+  font-weight: @font-weight-bold !important;
+}
+
+.yh-status-tag,
+.status-tag,
+.settle-type-tag,
+.online-tag,
+.default-tag,
+.category-tag,
+.card-type-tag,
+.dept-tag,
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-family: @font-medium;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.yh-status-tag.is-prominent,
+.inpatient-card .status-tag,
+.ticket-card__badge,
+.clinic-card__badge,
+.recharge-card .status-tag,
+.record-status-tag,
+.sync-tag,
+.pickup-card__badge,
+.inspect-badge,
+.drug-tag {
+  padding: 4px 14px;
+  border-radius: 8px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.yh-secondary-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 112px;
+  padding: 24px 0;
+  box-sizing: border-box;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  outline: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  font-family: inherit;
+  line-height: normal;
+  overflow: visible; /* Prevent children (like scaled icons) from clipping */
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+
+  &:active {
+    opacity: 0.75;
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  &::after {
+    content: '';
+    position: absolute !important;
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0;
+    right: 0;
+    height: 2px !important;
+    background: rgba(32, 80, 148, 0.12) !important; // Premium soft green-gray divider line!
+    width: auto !important;
+    border: none !important; // Wipes out WeChat native button border on ::after!
+    border-radius: 0 !important; // Resets WeChat native button border-radius!
+    transform: none !important; // Wipes out WeChat scale(0.5)!
+    transform-origin: unset !important;
+    pointer-events: none;
+    transition: background-color 0.28s ease, box-shadow 0.28s ease, height 0.28s ease, left 0.15s ease;
+  }
+
+  &.has-icon {
+    &::after {
+      left: 96px !important;
+      width: auto !important;
+    }
+  }
+
+  &.no-border,
+  &:last-child {
+    &::after {
+      display: none !important;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  &__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: @icon-corner-radius;
+    background: @blue;
+    box-shadow: inset -1px -1px 12px rgba(255, 255, 255, 0.25), inset 3px 3px 10px rgba(255, 255, 255, 0.25), 0 8px 18px fade(@theme-color, 28%);
+    flex-shrink: 0;
+
+    &-img {
+      display: block;
+      width: 36px; // 18px * 2 = 36px (Figma 18px at 1x)
+      height: 36px; // 18px * 2 = 36px (Figma 18px at 1x)
+      object-fit: contain;
+    }
+  }
+
+  &__text {
+    overflow: hidden;
+    color: @text-color-dark;
+    font-family: @font-regular;
+    font-size: @font-size-body-md;
+    font-weight: @font-weight-regular;
+    line-height: @line-height-body-md;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &.no-icon {
+      font-size: @font-size-body-md;
+      font-weight: @font-weight-regular;
+    }
+  }
+
+  // 双行样式
+  &.is-double {
+    min-height: 148px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 2px;
+  }
+
+  &__title {
+    overflow: hidden;
+    color: @text-color-dark;
+    font-family: @font-regular;
+    font-size: @font-size-body-md;
+    font-weight: @font-weight-regular;
+    line-height: @line-height-body-md;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__sub {
+    overflow: hidden;
+    color: @text-color-secondary;
+    font-family: @font-regular;
+    font-size: @font-size-caption;
+    font-weight: @font-weight-regular;
+    line-height: @line-height-caption;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  // 键值对样式
+  &.is-key-value {
+    min-height: 112px;
+    padding: 32px 0;
+  }
+
+  &__key {
+    color: @text-color;
+    font-family: @font-regular;
+    font-size: @font-size-body-md;
+    font-weight: @font-weight-regular;
+    line-height: @line-height-body-md;
+  }
+
+  &__val {
+    color: @text-color-dark;
+    font-family: @font-regular;
+    font-size: @font-size-body-md;
+    font-weight: @font-weight-regular;
+    line-height: @line-height-body-md;
+  }
+
+  // 输入框表单样式
+  &.is-input {
+    min-height: 108px;
+    padding: 20px 0;
+    cursor: default;
+
+    &:active {
+      opacity: 1;
+      background-color: transparent;
+    }
+
+    .yh-secondary-row__label {
+      flex: 0 0 auto;
+      width: 120px * 2; // Figma 1x: 120px
+      color: @text-color;
+      font-family: @font-regular;
+      font-size: @font-size-body-md;
+      line-height: @line-height-body-md;
+      font-weight: @font-weight-regular;
+    }
+
+    .yh-secondary-row__input {
+      flex: 1 1 auto;
+      width: 100%;
+      height: 44px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: @text-color-dark;
+      font-family: @font-regular;
+      font-size: @font-size-body-md;
+      line-height: @line-height-body-md;
+      text-align: right;
+      font-weight: @font-weight-regular;
+      outline: none;
+      box-sizing: border-box;
+
+      &::placeholder,
+      &-placeholder {
+        color: @text-color-placeholder;
+        font-family: @font-regular;
+        font-weight: @font-weight-regular;
+      }
+
+      &[disabled],
+      &.is-disabled {
+        color: @text-color-secondary;
+        font-family: @font-regular;
+        font-weight: @font-weight-regular;
+        opacity: 1;
+        -webkit-text-fill-color: @text-color-secondary;
+      }
+    }
+  }
+}
+
+// Global horizontal expanding glowing focus line for multi-row input cards
+.yh-secondary-row__focus-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: 2px; // Match standard divider thickness perfectly
+  background: #457130; // Brilliant brand green
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.15s ease-out; // Snappy instant animation
+  z-index: 5;
+  pointer-events: none;
+}
+
+// Divider alignment for focus line when left icon exists
+.yh-secondary-row {
+  &:has(.yh-secondary-row__icon),
+  &.has-icon {
+    .yh-secondary-row__focus-line {
+      left: 96px;
+      width: auto;
+    }
+  }
+}
+
+.yh-secondary-row:focus-within,
+.yh-secondary-row.is-focused {
+  .yh-secondary-row__focus-line {
+    transform: scaleX(1) !important;
+  }
+}
+
+// Compact secondary list/form rhythm for non-appointment flows.
+// Appointment registration keeps its existing larger row scale for the closed-loop booking flow.
+.yh-secondary-page {
+  .yh-secondary-row {
+    min-height: 96px;
+    padding: 20px 0;
+    align-items: center !important;
+
+    &__text,
+    &__text.no-icon,
+    &__title,
+    &__key,
+    &__val,
+    &__label,
+    &__input,
+    &__right-val,
+    &__right-placeholder {
+      font-size: 32px !important;
+      line-height: 44px !important;
+    }
+
+    &__input {
+      height: 38px !important;
+    }
+
+    &__sub {
+      font-size: 22px !important;
+      line-height: 32px !important;
+    }
+
+    &.is-double {
+      min-height: 120px;
+      padding: 16px 0;
+    }
+
+    &.is-key-value {
+      display: flex !important;
+      height: 96px !important;
+      min-height: 96px !important;
+      padding: 0 !important;
+      align-items: center !important;
+    }
+
+    &.is-input {
+      display: flex !important;
+      height: 96px !important;
+      min-height: 96px !important;
+      padding: 0 !important;
+      align-items: center !important;
+    }
+  }
+
+  .yh-secondary-row .yh-secondary-row__text,
+  .yh-secondary-row .yh-secondary-row__title,
+  .yh-secondary-row .yh-secondary-row__key,
+  .yh-secondary-row .yh-secondary-row__val,
+  .yh-secondary-row .yh-secondary-row__label,
+  .yh-secondary-row .yh-secondary-row__input,
+  .yh-secondary-row .yh-secondary-row__right-val,
+  .yh-secondary-row .yh-secondary-row__right-placeholder {
+    font-size: 32px !important;
+    line-height: 44px !important;
+  }
+
+  .yh-secondary-row.is-key-value .yh-secondary-row__key,
+  .yh-secondary-row.is-key-value .yh-secondary-row__val {
+    display: block !important;
+    height: 96px !important;
+    min-height: 96px !important;
+    line-height: 96px !important;
+  }
+
+  .yh-secondary-row.is-input .yh-secondary-row__label,
+  .yh-secondary-row.is-input .yh-secondary-row__input {
+    display: block !important;
+    height: 96px !important;
+    min-height: 96px !important;
+    line-height: 96px !important;
+  }
+
+  .yh-secondary-info-body .info-row,
+  .invoice-card__body .info-row,
+  .prescription-card__body .info-row,
+  .recharge-card__body .info-row,
+  .inpatient-card__body .info-row,
+  .clinic-record-card__body .info-row {
+    min-height: 36px;
+    padding: 2px 0;
+    font-size: 30px;
+    line-height: 42px;
+  }
+
+  .yh-secondary-info-body .info-row .label,
+  .yh-secondary-info-body .info-row .val,
+  .invoice-card__body .info-row .label,
+  .invoice-card__body .info-row .val,
+  .prescription-card__body .info-row .label,
+  .prescription-card__body .info-row .val,
+  .recharge-card__body .info-row .label,
+  .recharge-card__body .info-row .val,
+  .inpatient-card__body .info-row .label,
+  .inpatient-card__body .info-row .val,
+  .clinic-record-card__body .info-row .label,
+  .clinic-record-card__body .info-row .val {
+    font-size: 30px !important;
+    line-height: 42px !important;
+  }
+}
+
+
+.yh-secondary-section-title {
+  margin-top: 24px; // 向上留出 12px/24px @2x 的黄金间隙
+  margin-bottom: 8px; // 向下留出 8px @2x (Figma 4px) 的黄金间隙
+  padding-left: 32px; // Align perfectly with cards' internal padding (32px @2x)
+  color: @text-color-secondary;
+  font-family: @font-regular;
+  font-size: 26px;
+  font-weight: @font-weight-regular;
+  line-height: 36px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+// 底部固定/悬浮按钮区域全局规范 (Golden Fixed Bottom Layout with Gradient Mask)
+.fixed-bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  box-sizing: border-box;
+
+  // 默认白底实色带圆角和阴影（如果需要）
+  background: #ffffff;
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0 -8px 40px rgba(166, 186, 214, 0.2);
+  padding: 40px 32px calc(24px + env(safe-area-inset-bottom)) 32px;
+
+  // Figma 全局强制悬浮透明/遮罩样式（标准绿灰渐变底）
+  &.is-transparent {
+    background-color: transparent !important;
+    background: linear-gradient(0deg, @bg-color-blue-1 80%, fade(@bg-color-blue-1, 0%) 100%) !important;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 40px 32px calc(24px + env(safe-area-inset-bottom)) 32px;
+
+    // 双按钮特定间距优化：左右 margins 40px (20px @1x), 上下 margins 32px (16px @1x)
+    &.is-double {
+      padding: 32px 40px calc(32px + env(safe-area-inset-bottom)) 40px;
+    }
+  }
+
+  // 双按钮组全局规范
+  .btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; // 10px @1x
+    width: 100%;
+  }
+
+  // Single button specific layout (not in a group)
+  > .btn-primary {
+    width: 672px;
+    margin: 0 auto;
+    flex: none;
+  }
+
+  .btn-secondary {
+    flex: 1;
+  }
+
+  .btn-primary {
+    flex: 1;
+  }
+}
+
+// Global Button Utilities (Root Level)
+button.btn-primary,
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 104px; // 52px @1x
+  border-radius: 1000px;
+  background: var(--euxui-brand-primary, @blue) !important;
+  color: #ffffff !important;
+  font-size: @font-size-body-md !important;
+  font-weight: bold !important;
+  border: 0 !important;
+  box-shadow: 0 8px 7.7px 0 rgba(255, 255, 255, 0.25) inset, 
+              0 12px 24px fade(@theme-color, 25%) !important;
+  outline: none;
+  transition: all 0.15s ease;
+
+  &:active {
+    opacity: 0.85;
+  }
+
+  // Inactive / Disabled state matching Figma Inspect
+  &[disabled],
+  &.is-disabled {
+    background: @theme-color !important;
+    opacity: 0.5 !important;
+    border: 2px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: inset 0px 8px 7.7px rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    cursor: not-allowed;
+    pointer-events: auto;
+
+    &:active {
+      opacity: 0.5 !important;
+    }
+  }
+}
+
+button.btn-secondary,
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 104px; // 52px @1x
+  border-radius: 1000px;
+  border: 0.5px solid rgba(0, 0, 0, 0.10) !important;
+  background: linear-gradient(0deg, #ECF6E7 0%, #E2F2DB 63.7%, #D8EDCE 100%) !important;
+  color: @blue !important;
+  font-size: @font-size-body-md !important;
+  font-weight: bold !important;
+  box-shadow: 0 8px 30px 0 rgba(69, 113, 48, 0.05), 
+              0 6px 20px 0 rgba(69, 113, 48, 0.08), 
+              0 4px 10px 0 rgba(69, 113, 48, 0.1), 
+              0 0 20px 0 #CBE7BF inset !important;
+  outline: none;
+  transition: opacity 0.15s ease;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+// 隐藏全局滚动条 (全局视觉规范：完全隐藏系统滚动条)
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+}
+* {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE 10+ */
+}
+
+// ==========================================
+// 统一标准标签卡片样式 (Standard Tab Card Styles - Image 2)
+// ==========================================
+.yh-secondary-tab-bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 84px;
+  background: #f4f8fd;
+  border-radius: 24px;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0 24px 16px 24px; // Spacing matching page padding and tight 8px (16px @2x) bottom gap
+  width: auto !important; // Force auto width to prevent overflowing when margins are applied!
+}
+
+// Sibling styling override to keep vertical gap between switcher and content card perfectly tight at 8px (16px @2x)
+.yh-secondary-tab-bar + .yh-secondary-content {
+  padding-top: 16px !important;
+}
+
+.yh-secondary-tab-active-bg {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 8px;
+  background: #d8ebff;
+  border-radius: 16px;
+  z-index: 1;
+  /* Premium spring-physics cubic bezier for inertia wobble and overshoot */
+  transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: left;
+}
+
+.yh-secondary-tab-item {
+  flex: 1;
+  height: 100% !important;
+  border-radius: 16px !important;
+  font-size: 28px !important;
+  color: #646566 !important;
+  font-family: @font-regular !important;
+  background: transparent !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.2s ease, color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  font-weight: 500 !important;
+  outline: none !important;
+  position: relative;
+  z-index: 2; /* Sits cleanly above the absolute sliding bg */
+  line-height: 1 !important;
+
+  &::after {
+    display: none !important;
+  }
+
+  &.is-active {
+    color: @blue !important;
+    font-family: @font-medium !important;
+    font-weight: bold !important;
+  }
+
+  &:active {
+    transform: scale(0.95) !important;
+  }
+}
+
+.yh-secondary-tab-divider {
+  width: 2px;
+  height: 28px;
+  background: #e2eaf2;
+  flex-shrink: 0;
+}
+
+// Inline segment switcher used below a user card and above a secondary content card.
+// It shares PortalSegmentNav's visual language but stays in normal document flow.
+.yh-inline-segment {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: 84px;
+  margin: 0 24px;
+  width: auto !important;
+  max-width: none;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background: #f4f8fd;
+}
+
+.yh-inline-segment__active-bg {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 8px;
+  z-index: 1;
+  border-radius: 16px;
+  background: #d8ebff;
+  transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: left;
+  pointer-events: none;
+}
+
+.yh-inline-segment button {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none;
+  border-radius: 16px;
+  outline: none;
+  box-sizing: border-box;
+  background: transparent;
+  color: #646566;
+  font-family: @font-regular;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1;
+  transition: transform 0.2s ease, color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &::after {
+    display: none;
+  }
+
+  &.is-active {
+    color: @blue;
+    font-family: @font-medium;
+    font-weight: @font-weight-bold;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.yh-user-card-segment-content {
+  padding: 16px 0 calc(100px + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+// Global action sheet overlay and nested button overrides (to pierce shadow boundary isolation)
+.premium-action-sheet-popup {
+  position: relative;
+  width: 100%;
+  max-height: calc(100vh - 96px);
+  border-radius: 60px 60px 0 0 !important;
+  background: linear-gradient(0deg, @bg-color-blue-1 0%, @white 34%, @white 100%) !important;
+  border: 2px solid @white;
+  box-shadow: 0 -8px 40px rgba(166, 186, 214, 0.2) !important;
+  overflow: hidden !important;
+  animation: portal-action-sheet-slide-up 0.3s cubic-bezier(0.2, 0.85, 0.25, 1) both;
+
+  .item-tag {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 2px 12px !important;
+    font-size: 20px !important;
+    border-radius: 8px !important;
+    line-height: 1 !important;
+
+    &.is-yibao {
+      border: 1px * 2 solid fade(@theme-color, 35%) !important;
+      background: fade(@theme-color, 6%) !important;
+      color: #457130 !important;
+      box-sizing: border-box;
+    }
+
+    &.is-zifei {
+      border: 1px * 2 solid rgba(255, 143, 31, 0.35) !important;
+      background: rgba(255, 143, 31, 0.08) !important;
+      color: #FF8F1F !important;
+      box-sizing: border-box;
+    }
+  }
+
+  .fixed-bottom-bar {
+    position: relative !important;
+    background: linear-gradient(0deg, @bg-color-blue-1 80%, fade(@bg-color-blue-1, 0%) 100%) !important;
+    box-shadow: none !important;
+    border-top: 16px solid #f4f6fa !important;
+    padding: 40px 40px calc(24px + env(safe-area-inset-bottom)) 40px !important;
+    z-index: 10 !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+
+    .btn-primary {
+      width: 100% !important;
+      height: 104px !important;
+      background: linear-gradient(90deg, @blue 0%, #66E3CA 100%) !important;
+      color: #ffffff !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 1000px !important;
+      font-size: 36px !important;
+      font-family: @font-medium !important;
+      font-weight: @font-weight-medium !important;
+      border: 0 !important;
+      box-shadow: 0 8px 7.7px 0 rgba(255, 255, 255, 0.25) inset,
+                  0 12px 24px fade(@theme-color, 25%) !important;
+      outline: none !important;
+      opacity: 1 !important;
+    }
+  }
+
+  &.is-leaving {
+    animation: custom-slide-down-leave 0.25s cubic-bezier(0.3, 0, 1, 1) forwards !important;
+  }
+
+  &.is-custom-content {
+    background: linear-gradient(0deg, @bg-color-blue-1 0%, @white 62%, @bg-color-blue-1 100%) !important;
+
+    .premium-action-sheet-header,
+    .premium-action-sheet-body {
+      background: transparent !important;
+    }
+
+    .premium-action-sheet-header {
+      border-bottom: 0 !important;
+    }
+
+    .premium-action-sheet-body {
+      padding: 0 24px !important;
+    }
+  }
+}
+
+.premium-action-sheet-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 112px;
+  border-bottom: 1px solid #f4f6fa;
+  background: @white;
+}
+
+.premium-action-sheet-title {
+  color: @text-color-dark;
+  font-family: @font-medium;
+  font-size: 32px;
+  font-weight: @font-weight-medium;
+  line-height: 44px;
+}
+
+.premium-action-sheet-close {
+  position: absolute;
+  right: 44px;
+  top: 36px;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 40px;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L15 15M15 5L5 15' stroke='%23666' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.premium-action-sheet-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: calc(100vh - 360px);
+  padding: 32px 32px 40px;
+  background: @white;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.premium-action-sheet-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 124px;
+  margin: 0;
+  padding: 0 48px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: 28px;
+  outline: none;
+  background: #F4FBF8 !important;
+  color: @text-color-dark;
+  font-family: @font-medium;
+  font-size: 32px;
+  font-weight: @font-weight-medium;
+  line-height: 44px;
+
+  &::after {
+    display: none;
+  }
+
+  &.is-selected {
+    border-color: fade(@theme-color, 40%) !important;
+    background: #ebf3ff !important;
+    color: @blue !important;
+    box-shadow: 0 8px 20px fade(@theme-color, 6%);
+
+    .item-text {
+      color: @blue !important;
+    }
+  }
+}
+
+@keyframes portal-action-sheet-slide-up {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.premium-action-sheet-custom-body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.premium-action-sheet-section-title {
+  padding-left: 40px;
+  color: @text-color;
+  font-family: @font-medium;
+  font-size: 28px;
+  font-weight: @font-weight-medium;
+  line-height: 40px;
+}
+
+.premium-action-sheet-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin-top: 32px;
+  padding: 40px 40px calc(24px + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+  border-top: 16px solid #f4f6fa;
+  background: linear-gradient(0deg, @bg-color-blue-1 80%, fade(@bg-color-blue-1, 0%) 100%);
+}
+
+.premium-action-sheet-footer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 104px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 1000px;
+  box-sizing: border-box;
+  font-family: @font-medium;
+  font-size: 36px;
+  font-weight: @font-weight-medium;
+  line-height: 48px;
+
+  &::after {
+    display: none;
+  }
+
+  &.is-cancel {
+    color: @blue;
+    background: linear-gradient(0deg, #ECF6E7 0%, #E2F2DB 63.7%, #D8EDCE 100%);
+    box-shadow:
+      0 16px 60px rgba(69, 113, 48, 0.05),
+      0 12px 40px rgba(69, 113, 48, 0.08),
+      0 8px 20px rgba(69, 113, 48, 0.1),
+      inset 0 0 40px #CBE7BF;
+  }
+
+  &.is-confirm {
+    color: @white;
+    background: @blue;
+    box-shadow: inset 0 16px 15px rgba(255, 255, 255, 0.25);
+  }
+}
+
+// Portal module title cyan curved underline.
+// Use pure CSS so title marks are globally consistent and do not rely on old bitmap cuts.
+.yh-portal-title-mark,
+.portal-home__service-tab-line {
+  width: 40px;
+  height: 12px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 0;
+  background: @orange;
+  mask: url("data:image/svg+xml,%3Csvg width='20' height='6' viewBox='0 0 20 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5315 0.354744C18.1639 -0.180087 19.1107 -0.100806 19.6458 0.531501C20.1806 1.16391 20.1013 2.11073 19.469 2.64576C15.8392 5.71697 11.78 6.34776 8.32447 5.89967C4.92671 5.45904 2.0158 3.96663 0.503181 2.62135C-0.115842 2.0708 -0.171385 1.12221 0.379158 0.503181C0.929703 -0.115842 1.8783 -0.171385 2.49732 0.379158C3.53016 1.29774 5.86934 2.55567 8.71021 2.92408C11.4932 3.28497 14.6614 2.78327 17.5315 0.354744Z' fill='black'/%3E%3C/svg%3E") center / 40px 12px no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg width='20' height='6' viewBox='0 0 20 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5315 0.354744C18.1639 -0.180087 19.1107 -0.100806 19.6458 0.531501C20.1806 1.16391 20.1013 2.11073 19.469 2.64576C15.8392 5.71697 11.78 6.34776 8.32447 5.89967C4.92671 5.45904 2.0158 3.96663 0.503181 2.62135C-0.115842 2.0708 -0.171385 1.12221 0.379158 0.503181C0.929703 -0.115842 1.8783 -0.171385 2.49732 0.379158C3.53016 1.29774 5.86934 2.55567 8.71021 2.92408C11.4932 3.28497 14.6614 2.78327 17.5315 0.354744Z' fill='black'/%3E%3C/svg%3E") center / 40px 12px no-repeat;
+}
+
+.yh-portal-section-heading::after,
+.portal-home__module-heading::after,
+.internet-home__module-heading::after {
+  content: '';
+  position: absolute;
+  left: calc(50% - 20px);
+  bottom: -12px;
+  width: 40px;
+  height: 12px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 0;
+  background: @orange;
+  mask: url("data:image/svg+xml,%3Csvg width='20' height='6' viewBox='0 0 20 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5315 0.354744C18.1639 -0.180087 19.1107 -0.100806 19.6458 0.531501C20.1806 1.16391 20.1013 2.11073 19.469 2.64576C15.8392 5.71697 11.78 6.34776 8.32447 5.89967C4.92671 5.45904 2.0158 3.96663 0.503181 2.62135C-0.115842 2.0708 -0.171385 1.12221 0.379158 0.503181C0.929703 -0.115842 1.8783 -0.171385 2.49732 0.379158C3.53016 1.29774 5.86934 2.55567 8.71021 2.92408C11.4932 3.28497 14.6614 2.78327 17.5315 0.354744Z' fill='black'/%3E%3C/svg%3E") center / 40px 12px no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg width='20' height='6' viewBox='0 0 20 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5315 0.354744C18.1639 -0.180087 19.1107 -0.100806 19.6458 0.531501C20.1806 1.16391 20.1013 2.11073 19.469 2.64576C15.8392 5.71697 11.78 6.34776 8.32447 5.89967C4.92671 5.45904 2.0158 3.96663 0.503181 2.62135C-0.115842 2.0708 -0.171385 1.12221 0.379158 0.503181C0.929703 -0.115842 1.8783 -0.171385 2.49732 0.379158C3.53016 1.29774 5.86934 2.55567 8.71021 2.92408C11.4932 3.28497 14.6614 2.78327 17.5315 0.354744Z' fill='black'/%3E%3C/svg%3E") center / 40px 12px no-repeat;
+  pointer-events: none;
+  transform-origin: center center;
+  animation: yh-section-underline-check-pop 0.42s cubic-bezier(0.2, 1.25, 0.32, 1) both;
+}
+
+.yh-portal-section-heading,
+.portal-home__module-heading,
+.internet-home__module-heading {
+  color: @theme-color;
+}
+
+// Action sheet slide-down keyframes for premium exit transitions
+@keyframes custom-slide-down-leave {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+// Portal section active underline: check-mark-like pop for cyan curved decoration.
+@keyframes yh-section-underline-check-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) rotate(-12deg) translate3d(0, 4px, 0);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.18) rotate(4deg) translate3d(0, -1px, 0);
+  }
+  78% {
+    transform: scale(0.92) rotate(-2deg) translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+// ==========================================================================
+// 统一标准吸顶毛玻璃与 Tab 包裹定位类
+// ==========================================================================
+.yh-secondary-page--sticky-segment-glass {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+
+  .portal-nav-bar__gradient.is-secondary {
+    height: 340px !important;
+    -webkit-mask-image: linear-gradient(180deg, #000000 82%, transparent 100%) !important;
+    mask-origin: border-box !important;
+    mask-image: linear-gradient(180deg, #000000 82%, transparent 100%) !important;
+  }
+}
+
+.yh-secondary-tab-sticky-wrap {
+  position: sticky;
+  z-index: 100;
+  width: 100%;
+}
+
+// ── 医保数字身份 3.0 全局就诊医生卡片样式体系 ──
+.doctor-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 28px 32px;
+  text-align: left;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: 0;
+  margin: 0;
+  border: 2px solid #ffffff;
+  border-radius: 36px;
+  background: #F7FCFA;
+  box-shadow: 0 4px 20px 0 #E4F3EE;
+  backdrop-filter: blur(20px);
+  box-sizing: border-box;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    transform: none;
+    pointer-events: none;
+    background: transparent;
+  }
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.doctor-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.doctor-card__avatar {
+  display: block;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.doctor-card__info {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.doctor-card__name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+
+.doctor-card__name {
+  color: @text-color-dark;
+  font-family: @font-medium;
+  font-size: 30px;
+  font-weight: bold !important; /* Global bold name */
+  line-height: 44px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.doctor-card__divider {
+  color: rgba(34, 34, 34, 0.25) !important;
+  font-size: 24px !important;
+  margin: 0 4px !important;
+  user-select: none !important;
+}
+
+.doctor-card__dept {
+  color: @text-color !important;
+  font-size: 26px !important;
+  font-family: @font-regular !important;
+  white-space: nowrap !important;
+}
+
+.doctor-card__tags-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.doctor-card__rank {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 38px !important;
+  padding: 0 14px !important;
+  border-radius: 8px !important;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%) !important;
+  color: #b8560e !important;
+  font-size: 20px !important;
+  font-family: @font-medium !important;
+  font-weight: @font-weight-medium !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.doctor-card__type {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 38px !important;
+  padding: 0 14px !important;
+  border: 2px solid fade(@theme-color, 35%) !important;
+  border-radius: 8px !important;
+  background: fade(@theme-color, 6%) !important;
+  color: @blue !important;
+  font-size: 20px !important;
+  font-family: @font-regular !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+
+  &.is-yizhen {
+    border-color: rgba(237, 106, 12, 0.35) !important;
+    background: rgba(237, 106, 12, 0.06) !important;
+    color: @orange-dark !important;
+  }
+  &.is-cyan {
+    border-color: rgba(0, 194, 180, 0.35) !important;
+    background: rgba(0, 194, 180, 0.06) !important;
+    color: #009c91 !important;
+  }
+  &.is-purple {
+    border-color: rgba(124, 58, 237, 0.35) !important;
+    background: rgba(124, 58, 237, 0.06) !important;
+    color: #7c3aed !important;
+  }
+}
+
+.doctor-card__stats-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid @border-color-light;
+}
+
+.doctor-card__stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doctor-card__stat-icon-img {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.doctor-card__stat-label {
+  color: #222222;
+  font-size: 24px;
+  font-family: @font-regular;
+  line-height: 1;
+}
+
+.doctor-card__stat-val {
+  color: @blue;
+  font-size: 24px;
+  font-family: @font-medium;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.doctor-card__message {
+  position: relative;
+  display: block;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid @border-color-light;
+  max-height: 80px;
+  overflow: hidden;
+  font-size: 24px;
+  line-height: 36px;
+  color: #666666;
+  text-align: justify;
+  word-break: break-all;
+
+  .doctor-card__desc-content {
+    display: block;
+  }
+
+  .portal-home__expert-desc-label {
+    margin-right: 8px;
+    color: @blue;
+    font-family: @font-medium;
+    font-weight: @font-weight-medium;
+    display: inline;
+  }
+
+  .doctor-card__desc-text {
+    display: inline;
+  }
+
+  .doctor-card__desc-float-spacer {
+    float: right;
+    width: 0;
+    height: 36px;
+  }
+
+  .doctor-card__desc-detail-btn {
+    float: right;
+    clear: right;
+    margin-left: 4px;
+    color: @theme-color;
+    font-family: @font-medium;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    cursor: pointer;
+
+    &::before {
+      content: '...';
+      margin-right: 8px;
+      color: #666666;
+      font-family: @font-regular;
+    }
+  }
+}

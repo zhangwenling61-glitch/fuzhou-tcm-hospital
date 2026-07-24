@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/疫苗预约</title>
+    <g id="图标/金刚区/疫苗预约" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <line x1="28.7468218" y1="40.1354114" x2="33.1183148" y2="70.7486484" id="直线-5" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(30.9326, 55.442) rotate(-36.8699) translate(-30.9326, -55.442)"></line>
+            <line x1="25.0699431" y1="57.4360636" x2="26.4150179" y2="66.8555211" id="直线-5备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(25.7425, 62.1458) rotate(-36.8699) translate(-25.7425, -62.1458)"></line>
+            <path d="M41.7969031,19.6327997 L51.3113563,19.6339125 C53.93879,19.6340661 56.0687074,21.7639835 56.068861,24.3914172 L56.0715733,61.2618009 L56.0715733,61.2618009 L37.0415543,61.2606882 L37.038842,24.3903045 C37.0386884,21.7626535 39.1686958,19.632397 41.7963468,19.6322434 C41.7965322,19.6322433 41.7967177,19.6322433 41.7969032,19.6322434 Z" id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(46.5553, 40.4472) rotate(-315) translate(-46.5553, -40.4472)"></path>
+            <path d="M45.5815667,21.2001994 L55.0960198,21.2013122 C57.7234535,21.2014658 59.8533709,23.3313832 59.8535245,25.9588169 L59.8556109,52.1248149 L59.8556109,52.1248149 L40.8255919,52.1237022 L40.8235056,25.9577042 C40.8233519,23.3300532 42.9533593,21.1997967 45.5810103,21.1996431 C45.5811958,21.199643 45.5813812,21.199643 45.5815667,21.1996431 Z" id="矩形" stroke="#4E7F3E" stroke-width="4" fill="#FEF4DA" stroke-linecap="round" stroke-linejoin="round" transform="translate(50.3397, 36.6624) rotate(-315) translate(-50.3397, -36.6624)"></path>
+            <line x1="44.6153236" y1="33.1760934" x2="45.6241297" y2="40.2406866" id="直线-5备份-2" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(45.1197, 36.7084) rotate(-36.8699) translate(-45.1197, -36.7084)"></line>
+            <line x1="50.5618568" y1="27.2288647" x2="51.5706629" y2="34.2934579" id="直线-5备份-3" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(51.0663, 30.7612) rotate(-36.8699) translate(-51.0663, -30.7612)"></line>
+            <path d="M45.5815667,21.2001994 L55.0960198,21.2013122 C57.7234535,21.2014658 59.8533709,23.3313832 59.8535245,25.9588169 L59.8556109,52.1248149 L59.8556109,52.1248149 L40.8255919,52.1237022 L40.8235056,25.9577042 C40.8233519,23.3300532 42.9533593,21.1997967 45.5810103,21.1996431 C45.5811958,21.199643 45.5813812,21.199643 45.5815667,21.1996431 Z" id="矩形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(50.3397, 36.6624) rotate(-315) translate(-50.3397, -36.6624)"></path>
+            <line x1="61.6556154" y1="24.852442" x2="66.7014162" y2="19.8060511" id="直线-6" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <line x1="25.9764161" y1="61.7252598" x2="31.0222168" y2="56.6788689" id="直线-6备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>

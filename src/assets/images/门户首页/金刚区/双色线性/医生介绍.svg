@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/医生介绍</title>
+    <g id="图标/金刚区/医生介绍" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="图标" transform="translate(23, 19)" stroke-width="4">
+                <g id="图标/金刚区/风格1/01">
+                    <path d="M13.227919,0 L28.6818604,-2.22044605e-16 C29.7639726,-4.20825386e-16 30.649827,0.860669439 30.6810288,1.94233168 L31,13 L31,13 C28,12.1333333 24.6666667,11.7 21,11.7 C17.3333333,11.7 13.9197672,12.1333333 10.7593017,13 L11.2297176,1.91520049 C11.2751526,0.844577217 12.1563321,1.97320416e-15 13.227919,1.77635684e-15 Z" id="矩形" stroke="#4E7F3E"></path>
+                    <path d="M12.345987,12 C10.876457,13.8920171 10,16.2778581 10,18.8708109 C10,25.0172923 14.9248678,30 21,30 C27.0751322,30 32,25.0172923 32,18.8708109 C32,16.3074727 31.143449,13.9465423 29.7041318,12.06502" id="路径" stroke="#4E7F3E"></path>
+                    <path d="M42,51 C42,39.4020203 32.5979797,30 21,30 C9.40202025,30 0,39.4020203 0,51 L42,51 Z" id="路径" stroke="#4E7F3E" fill="#FEF4DA"></path>
+                    <polyline id="路径-14" stroke="#4E7F3E" points="15 32 21 42 27 32"></polyline>
+                    <line x1="28.029129" y1="44.2941742" x2="30.970871" y2="43.7058258" id="路径-2" stroke="#D49B07" stroke-linecap="round" stroke-linejoin="round" transform="translate(29.5, 44) rotate(11.3099) translate(-29.5, -44)"></line>
+                    <line x1="21" y1="49" x2="21" y2="41" id="路径-15" stroke="#4E7F3E"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

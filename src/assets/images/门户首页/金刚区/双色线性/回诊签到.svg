@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/回诊签到</title>
+    <g id="图标/金刚区/回诊签到" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <g id="编组" transform="translate(22, 21)">
+                <rect id="矩形" fill="#FEF4DA" x="5" y="5.5" width="34" height="35" rx="2"></rect>
+                <path d="M33.0010711,0.5 L40,0.5 C42.209139,0.5 44,2.290861 44,4.5 L44,41.5 C44,43.709139 42.209139,45.5 40,45.5 L4,45.5 C1.790861,45.5 0,43.709139 0,41.5 L0,4.5 C0,2.290861 1.790861,0.5 4,0.5 L11,0.5 L11,0.5" id="路径" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <line x1="13" y1="35" x2="31" y2="35" id="Stroke-7" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="17" y1="0.5" x2="27" y2="0.5" id="直线" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <path d="M14,19.6189159 L20.2483887,25.5 M30,16.5 L20.627417,25.3216262" id="形状结合" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

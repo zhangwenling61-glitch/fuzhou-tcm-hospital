@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/出院带药</title>
+    <g id="图标/金刚区/出院带药" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形备份-19" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <line x1="45.089746" y1="47.4330127" x2="65.0083302" y2="58.9330127" id="直线-12备份" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <circle id="椭圆形" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" cx="54" cy="52" r="13"></circle>
+            <g id="编组-11" transform="translate(16, 18)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                <rect id="矩形" stroke="#4E7F3E" fill="#FEF4DA" transform="translate(21.0263, 25.4186) rotate(-330) translate(-21.0263, -25.4186)" x="10.0262794" y="2.41858429" width="22" height="46" rx="11"></rect>
+                <line x1="12.6160254" y1="20.7176224" x2="29.9365335" y2="30.7176224" id="直线-12" stroke="#4E7F3E"></line>
+                <line x1="11" y1="34" x2="13" y2="30" id="直线-12" stroke="#D49B07"></line>
+            </g>
+        </g>
+    </g>
+</svg>

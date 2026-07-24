@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/金刚区/医技预约</title>
+    <g id="图标/金刚区/医技预约" stroke="none" fill="none" fill-rule="evenodd" stroke-width="1">
+        <g>
+            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="88" height="88"></rect>
+            <rect id="矩形" stroke="#4E7F3E" stroke-width="4" fill="#FEF4DA" stroke-linecap="round" stroke-linejoin="round" transform="translate(42.182, 34.9706) rotate(-315) translate(-42.182, -34.9706)" x="33.6819805" y="19.4705627" width="17" height="31" rx="2"></rect>
+            <line x1="21" y1="46.2383297" x2="31.6066017" y2="56.8449314" id="直线-7" stroke="#D49B07" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <circle id="椭圆形" stroke="#4E7F3E" stroke-width="4" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" cx="48.5" cy="40.7383297" r="5"></circle>
+            <path d="M51.8982034,45.7383297 C56.73443,52.3016117 55.6016955,59.134945 48.5,66.2383297" id="路径-4" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <line x1="23" y1="66.2383297" x2="67" y2="66.2383297" id="直线-8" stroke="#4E7F3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>
