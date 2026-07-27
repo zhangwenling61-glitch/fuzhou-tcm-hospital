@@ -1,5 +1,4 @@
-<!-- @license lucide-static v1.16.0 - ISC -->
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-  <path d="m9 11 3 3L22 4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M60 33.4V36a24 24 0 1 1-14.3-21.9"/>
+  <path d="m26.8 34.5 8.3 8.3L57.6 20.3"/>
 </svg>

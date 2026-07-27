@@ -1,6 +1,6 @@
 <template>
   <view class="orders-page">
-    <PortalNavBar title="订单" :scroll-top="scrollTop" secondary />
+    <PortalNavBar title="订单" :scroll-top="scrollTop" home-path="/pages/dermatology/index" secondary />
     <view class="orders-content" :style="{ paddingTop: `${contentTop}px` }">
       <view class="status-tabs">
         <button

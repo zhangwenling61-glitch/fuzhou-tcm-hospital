@@ -1,5 +1,6 @@
 export default defineAppConfig({
   pages: [
+    'pages/dermatology/index',
     'pages/home/index',
     'pages/winter-summer-treatment/index'
   ],
@@ -15,7 +16,6 @@ export default defineAppConfig({
       root: 'pages/dermatology',
       name: 'dermatology',
       pages: [
-        'index',
         'orders/index',
         'order-detail/index'
       ]

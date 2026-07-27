@@ -1,6 +1,6 @@
 <template>
   <view class="order-detail-page">
-    <PortalNavBar title="订单详情" :scroll-top="scrollTop" secondary />
+    <PortalNavBar title="订单详情" :scroll-top="scrollTop" home-path="/pages/dermatology/index" secondary />
     <view class="order-detail-content" :style="{ paddingTop: `${contentTop}px` }">
       <view v-if="loading" class="detail-skeleton" aria-label="正在加载订单详情">
         <view class="detail-skeleton__status"><view></view><view></view><view></view></view>

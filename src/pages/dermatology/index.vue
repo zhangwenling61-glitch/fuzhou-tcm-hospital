@@ -1,6 +1,6 @@
 <template>
   <view :class="['dermatology-page', { 'is-home-page': view === 'home', 'is-detail-page': view === 'detail', 'is-confirm-page': view === 'confirm', 'is-submitting-page': view === 'submitting', 'is-result-page': view === 'success' }]">
-    <PortalNavBar class="dermatology-nav" :class="{ 'is-scrolled': scrollTop > 16 }" :title="pageTitle" :scroll-top="scrollTop" :custom-back="handlePageBack" secondary />
+    <PortalNavBar class="dermatology-nav" :class="{ 'is-scrolled': scrollTop > 16 }" :title="pageTitle" :scroll-top="scrollTop" :custom-back="handlePageBack" home-path="/pages/dermatology/index" secondary />
 
     <view class="dermatology-scroll">
       <view v-if="view === 'home'" class="dermatology-home">
@@ -144,7 +144,7 @@
 </template>
 
 <script setup lang="ts">
-import Taro, { usePageScroll } from '@tarojs/taro'
+import Taro, { useDidShow, usePageScroll } from '@tarojs/taro'
 import { computed, nextTick, ref } from 'vue'
 import PortalNavBar from '@/components/PortalNavBar/index.vue'
 import PortalEmptyState from '@/components/PortalEmptyState/index.vue'
@@ -265,6 +265,11 @@ const handleTreatmentRoomImageError = () => {
   if (treatmentRoomSrc.value !== detailBannerImage) treatmentRoomSrc.value = detailBannerImage
 }
 usePageScroll(({ scrollTop: value }) => { scrollTop.value = value || 0 })
+useDidShow(() => {
+  scrollTop.value = 0
+  isSwitching.value = false
+  nextTick(() => { Taro.pageScrollTo({ scrollTop: 0, duration: 0 }).catch(() => {}) })
+})
 let switchTimer: ReturnType<typeof setTimeout> | undefined
 const playListSwitch = () => {
   isSwitching.value = true
@@ -330,7 +335,7 @@ const openConfirm = () => {
 }
 const openOrder = () => Taro.redirectTo({ url: `/pages/dermatology/orders/index?highlightOrderId=${orderNumber.value}` })
 const showOrders = () => Taro.navigateTo({ url: '/pages/dermatology/orders/index' })
-const goHome = () => Taro.reLaunch({ url: '/pages/home/index' })
+const goHome = () => Taro.reLaunch({ url: '/pages/dermatology/index' })
 const goConsult = () => Taro.navigateTo({ url: '/pages/appointment/ai-assistant/index' })
 const createOrderNumber = () => {
   const now = new Date()

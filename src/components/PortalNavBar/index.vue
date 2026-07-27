@@ -35,12 +35,14 @@ const props = withDefaults(defineProps<{
   forceDarkText?: boolean
   immersive?: boolean
   hideLeft?: boolean
+  homePath?: string
 }>(), {
   scrollTop: 0,
   secondary: false,
   forceDarkText: false,
   immersive: false,
-  hideLeft: false
+  hideLeft: false,
+  homePath: '/pages/home/index'
 })
 
 const menuButtonInfo = getSafeMenuButtonBoundingClientRect()
@@ -113,10 +115,14 @@ const goBack = () => {
     }
   }
 
-  Taro.reLaunch({ url: '/pages/home/index' })
+  Taro.reLaunch({ url: props.homePath })
 }
 
 const goHome = () => {
+  if (props.homePath !== '/pages/home/index') {
+    Taro.reLaunch({ url: props.homePath })
+    return
+  }
   const pages = Taro.getCurrentPages()
   const homeIndex = pages.findIndex(page => {
     const route = page.route || page.$taroPath || ''
