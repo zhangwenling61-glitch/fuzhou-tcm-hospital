@@ -1,12 +1,617 @@
-.dermatology-page { min-height: 100vh; background: @portal-home-bg-gradient; color: #2c3a2c; }
-.dermatology-scroll { min-height: calc(100vh - 176px); margin-top: 176px; padding-bottom: 160px; box-sizing: border-box; }
-.dermatology-page .portal-nav-bar__gradient.is-secondary { height: 176px; background: rgba(255,255,255,.72) !important; backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); -webkit-mask-image: none; mask-image: none; border-bottom: 2px solid rgba(69,113,48,.08); }
-.orders-fab { position: fixed; right: 32px; bottom: 40px; z-index: 12; display: flex; align-items: center; gap: 12px; margin: 0; padding: 16px 24px; border: 2px solid rgba(69,113,48,.16); border-radius: 48px; background: #fff; box-shadow: 0 10px 28px rgba(69,113,48,.2); color: #457130; font-size: 24px; line-height: 1.4; }
+@import '../../assets/less/variables.less';
+@derm-card-bg: @card-bg;
+@derm-card-border: @card-border-color;
+@derm-card-radius: 32px;
+@derm-card-shadow: @card-shadow;
+@derm-card-gap: 24px;
+@derm-text-primary: @text-color-dark;
+@derm-text-secondary: @text-color-secondary;
+@derm-brand: @green;
+@derm-orange: #E07C2C;
+
+.dermatology-page { min-height: 100vh; background: #fff; color: @derm-text-primary; }
+.dermatology-scroll { min-height: calc(100vh - 176px); margin-top: 176px; padding-bottom: calc(208px + env(safe-area-inset-bottom)); box-sizing: border-box; }
+.dermatology-page .portal-nav-bar__gradient.is-secondary { height: 176px; background: #DAF1CF !important; backdrop-filter: none; -webkit-backdrop-filter: none; -webkit-mask-image: none; mask-image: none; border-bottom: 0; opacity: 1 !important; }
+.orders-fab { position: fixed; right: 32px; bottom: 40px; z-index: 12; display: flex; align-items: center; gap: 12px; margin: 0; padding: 16px 24px; border: 2px solid rgba(69,113,48,.16); border-radius: 48px; background: #fff; box-shadow: 0 10px 28px rgba(69,113,48,.2); color: #457130; font-size: 24px; line-height: 1.4; transition: width 220ms ease, transform 120ms ease, box-shadow 160ms ease; }
+.orders-fab.is-compact { width: 72px; padding-right: 0; padding-left: 0; gap: 0; }
+.orders-fab.is-compact text { width: 0; opacity: 0; overflow: hidden; }
+.orders-fab--pressed { transform: scale(.96); box-shadow: 0 5px 14px rgba(69,113,48,.16); }
 .orders-fab image { width: 32px; height: 32px; }
-.dermatology-home, .detail-view, .confirm-view { padding: 32px; }
-.hero-card { position: relative; overflow: hidden; padding: 40px; border-radius: 32px; background: linear-gradient(135deg, #457130, #cce892); color: #fff; }
-.hero-badge { font-size: 24px; margin-bottom: 28px; opacity: .9; }.hero-title { font-size: 44px; font-weight: 700; margin-bottom: 24px; }.hero-desc { font-size: 26px; line-height: 1.8; opacity: .92; }.hero-seal { position: absolute; right: 36px; bottom: 36px; font-size: 60px; font-weight: 700; opacity: .18; }
-.consult-card, .info-card, .confirm-card { display: flex; align-items: center; gap: 24px; margin-top: 28px; padding: 32px; border-radius: 28px; background: #fff; box-shadow: 0 8px 28px rgba(91, 117, 61, .08); }.consult-card { background: #DFF3D5; }.consult-icon { font-size: 56px; }.consult-copy { flex: 1; }.consult-title { font-size: 30px; font-weight: 700; color: #526b37; }.consult-title text { margin-left: 12px; padding: 6px 12px; border-radius: 10px; background: #e8f5d6; color: #7b9c4c; font-size: 22px; }.consult-desc, .package-desc, .body-copy { margin-top: 12px; color: #718267; font-size: 24px; line-height: 1.6; }.consult-arrow { color: #457130; font-size: 56px; }
-.area-options { display: flex; gap: 16px; margin-top: 36px; }.area-btn, .category-btn { margin: 0; padding: 16px 20px; border: 2px solid #dce9c8; border-radius: 40px; background: #fff; color: #718267; font-size: 24px; line-height: 1.4; }.area-btn.on, .category-btn.active { background: #457130; color: #fff; border-color: #457130; }.address { padding: 24px 8px; color: #88977c; font-size: 24px; }
-.content-layout { display: flex; gap: 24px; align-items: flex-start; }.category-list { width: 152px; flex: none; }.category-title { padding: 16px 0; text-align: center; color: #457130; font-size: 26px; font-weight: 700; }.category-btn { width: 100%; margin-bottom: 16px; padding: 20px 6px; border-radius: 20px; font-size: 22px; }.package-list { flex: 1; }.package-card { display: flex; gap: 20px; margin-bottom: 24px; padding: 20px; border-radius: 28px; background: #fff; box-shadow: 0 6px 24px rgba(91,117,61,.08); }.package-visual { display: flex; width: 152px; height: 172px; flex: none; align-items: center; justify-content: center; border-radius: 20px; background: #e8f5d6; font-size: 60px; }.package-visual.acne { background: #fed5d6; }.package-visual.mole { background: #f8ead0; }.package-visual.antiaging { background: #fce9cf; }.package-body { min-width: 0; flex: 1; }.package-name { color: #435639; font-size: 28px; font-weight: 700; line-height: 1.4; }.package-note { margin-top: 6px; color: #b08c57; font-size: 22px; }.package-foot { display: flex; align-items: baseline; justify-content: space-between; margin-top: 12px; }.price { color: #d46060; font-size: 36px; font-weight: 700; }.duration { color: #9aaa8a; font-size: 20px; }.empty { padding: 60px 20px; color: #9aaa8a; font-size: 26px; text-align: center; }
-.detail-hero { display: flex; align-items: center; gap: 28px; padding: 36px; border-radius: 32px; background: linear-gradient(135deg,#457130,#e8f5d6); }.detail-icon { font-size: 80px; }.detail-name { color: #405334; font-size: 36px; font-weight: 700; }.detail-note { margin-top: 12px; color: #718267; font-size: 24px; }.info-card { display: block; }.section-title { margin-bottom: 20px; color: #6f9444; font-size: 30px; font-weight: 700; }.step { display: flex; align-items: center; gap: 16px; margin: 20px 0; color: #5c6e54; font-size: 26px; }.step text { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: #e8f5d6; color: #7b9c4c; font-size: 24px; }.detail-bottom, .confirm-bottom { position: fixed; right: 0; bottom: 0; left: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 24px 36px calc(24px + env(safe-area-inset-bottom)); background: #fff; box-shadow: 0 -6px 24px rgba(0,0,0,.08); }.detail-bottom text, .confirm-bottom text { display: block; color: #9aaa8a; font-size: 22px; }.detail-bottom strong, .confirm-bottom strong { color: #d46060; font-size: 48px; }.detail-bottom button, .confirm-bottom button { margin: 0; padding: 20px 48px; border-radius: 48px; background: #457130; color: #fff; font-size: 30px; }.confirm-view { padding-bottom: 200px; }.confirm-card { display: block; }.patient { display: flex; align-items: center; gap: 20px; }.avatar { font-size: 60px; }.patient-name { color: #405334; font-size: 30px; font-weight: 700; }.patient-name text { margin-left: 12px; color: #7b9c4c; font-size: 22px; }.patient-card { margin-top: 8px; color: #82917b; font-size: 24px; }.patient button { margin-left: auto; padding: 8px 24px; border-radius: 30px; color: #7b9c4c; border: 2px solid #457130; background: #fff; font-size: 24px; }.confirm-row { display: flex; justify-content: space-between; color: #526451; font-size: 28px; }.confirm-row strong { color: #d46060; }.confirm-notice { margin-top: 28px; padding: 24px; border-radius: 20px; background: #fff9dc; color: #8d7a45; font-size: 24px; line-height: 1.6; }.modal-mask { position: fixed; inset: 0; z-index: 20; display: flex; align-items: flex-end; background: rgba(0,0,0,.35); }.modal-card { width: 100%; padding: 36px; border-radius: 36px 36px 0 0; background: #fff; }.modal-title { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 34px; font-weight: 700; }.modal-title text { font-size: 48px; font-weight: 400; }.patient-option { display: flex; justify-content: space-between; padding: 30px 8px; border-bottom: 2px solid #edf1e8; color: #4d6045; font-size: 28px; }.patient-option small { color: #9aaa8a; font-size: 22px; }.add-card { padding: 32px 8px 8px; color: #7b9c4c; text-align: center; font-size: 28px; }.toast { position: fixed; bottom: 180px; left: 50%; z-index: 30; padding: 20px 32px; border-radius: 16px; transform: translateX(-50%); background: rgba(0,0,0,.75); color: #fff; font-size: 26px; white-space: nowrap; }
+.home-fab { position: fixed; right: 190px; bottom: 40px; z-index: 12; display: flex; width: 72px; height: 72px; align-items: center; justify-content: center; margin: 0; padding: 0; border: 2px solid rgba(69,174,68,.16); border-radius: 50%; background: #45AE44; box-shadow: 0 10px 28px rgba(69,174,68,.2); }.home-fab image { width: 40px; height: 40px; filter: brightness(0) invert(1); }
+.dermatology-home { padding: 0 32px 32px; animation: dermatology-page-enter 220ms ease-out; }.detail-view, .confirm-view { padding: 32px; animation: dermatology-page-enter 220ms ease-out; }
+@keyframes dermatology-page-enter {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.hero-card { position: relative; overflow: hidden; width: 654px; min-height: 288px; box-sizing: border-box; margin: 0 auto; padding: 32px; border-radius: 40px; background: #438823; color: #fff; }
+.hero-badge { font-size: 24px; margin-bottom: 28px; opacity: .9; }.hero-title { margin: 34px 0 24px; font-size: 44px; font-weight: 700; }.hero-desc { font-size: 26px; line-height: 1.8; opacity: .92; }.hero-seal { position: absolute; right: 36px; bottom: 36px; font-size: 60px; font-weight: 700; opacity: .18; }
+.consult-card, .info-card, .confirm-card { display: flex; align-items: center; gap: 24px; margin-top: 24px; padding: 24px 28px; border-radius: 40px; background: #fff; box-shadow: 0 8px 28px rgba(91, 117, 61, .08); }.consult-card { width: 654px; min-height: 172px; box-sizing: border-box; margin-right: auto; margin-left: auto; background: #DFF3D5; }.consult-icon { width: 86px; height: 96px; flex: none; }.consult-copy { flex: 1; }.consult-title { font-size: 30px; font-weight: 700; color: #458925; }.consult-title text { margin-left: 12px; padding: 6px 12px; border-radius: 10px; background: #e8f5d6; color: #7b9c4c; font-size: 22px; }.consult-desc, .package-desc, .body-copy { margin-top: 12px; color: #183d08; font-size: 20px; line-height: 1.6; }.consult-arrow { color: #457130; font-size: 56px; }
+.dermatology-page .yh-inline-segment.area-options { width: 686px !important; height: 80px; margin: 24px auto 0; padding: 8px; border-radius: 32px; background: #dff3d5; }.dermatology-page .yh-inline-segment__active-bg { top: 8px; bottom: 8px; border-radius: 24px; }.dermatology-page .yh-inline-segment button.area-btn { color: #6c8c5e; font-size: 28px; font-weight: 500; }.dermatology-page .yh-inline-segment button.area-btn.is-active { color: #fff; font-weight: 500; }.address { padding: 24px 8px; color: #88977c; font-size: 24px; }
+.content-layout { display: flex; gap: 24px; align-items: flex-start; margin: 0 -32px; padding: 32px 32px calc(176px + env(safe-area-inset-bottom)); border-radius: 40px 40px 0 0; background: #f7fdf5; }.category-list { position: sticky; top: 192px; width: 142px; flex: none; }.category-title { padding: 16px 0; text-align: center; color: #457130; font-size: 26px; font-weight: 700; }.category-btn { display: flex; width: 100%; min-height: 96px; align-items: center; justify-content: center; box-sizing: border-box; margin-bottom: 16px; padding: 20px 6px; border: 2px solid #DCE9CC; border-radius: 20px; background: #fff; color: #52644D; font-size: 22px; transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 100ms ease; }.category-btn--pressed { transform: scale(.98); background: #F5FAF1; }.category-btn.active { border-color: #45AE44; background: #45AE44; color: #fff; }.package-list { flex: 1; }.package-card { display: flex; gap: 20px; margin-bottom: 24px; padding: 20px; border-radius: 28px; background: #fff; box-shadow: 0 6px 24px rgba(91,117,61,.08); transition: transform 120ms ease, box-shadow 160ms ease; }.package-card.is-entering { animation: package-card-enter 190ms ease-out both; }.package-card--pressed { transform: scale(.985); box-shadow: 0 3px 12px rgba(91,117,61,.08); }.package-visual { display: flex; width: 152px; height: 172px; flex: none; align-items: center; justify-content: center; border-radius: 20px; background: #e8f5d6; font-size: 60px; }.package-visual.acne { background: #fed5d6; }.package-visual.mole { background: #f8ead0; }.package-visual.antiaging { background: #fce9cf; }.package-body { min-width: 0; flex: 1; }.package-name { color: #435639; font-size: 28px; font-weight: 700; line-height: 1.4; }.package-note { margin-top: 6px; color: #b08c57; font-size: 22px; }.package-foot { display: flex; align-items: baseline; justify-content: space-between; margin-top: 12px; }.price { color: #F1A23C; font-size: 36px; font-weight: 700; }.duration { color: #9aaa8a; font-size: 20px; }.empty { padding: 60px 20px; color: #9aaa8a; font-size: 26px; text-align: center; }
+@keyframes package-card-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.dermatology-page .package-card.is-entering .price { animation: package-price-enter 140ms ease-out both; }
+@keyframes package-price-enter {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.detail-hero { display: flex; align-items: center; gap: 28px; padding: 36px; border-radius: 32px; background: linear-gradient(135deg,#457130,#e8f5d6); }.detail-icon { font-size: 80px; }.detail-name { color: #405334; font-size: 36px; font-weight: 700; }.detail-note { margin-top: 12px; color: #718267; font-size: 24px; }.info-card { display: block; }.section-title { margin-bottom: 20px; color: #6f9444; font-size: 30px; font-weight: 700; }.step { display: flex; align-items: center; gap: 16px; margin: 20px 0; color: #5c6e54; font-size: 26px; }.step text { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: #e8f5d6; color: #7b9c4c; font-size: 24px; }.detail-bottom, .confirm-bottom { position: fixed; right: 0; bottom: 0; left: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 24px 36px calc(24px + env(safe-area-inset-bottom)); background: #fff; box-shadow: 0 -6px 24px rgba(0,0,0,.08); }.detail-bottom text, .confirm-bottom text { display: block; color: #9aaa8a; font-size: 22px; }.detail-bottom strong, .confirm-bottom strong { color: #F1A23C; font-size: 48px; }.detail-bottom button, .confirm-bottom button { margin: 0; padding: 20px 48px; border-radius: 48px; background: #457130; color: #fff; font-size: 30px; }.confirm-view { padding-bottom: 200px; }.confirm-card { display: block; }.patient { display: flex; align-items: center; gap: 20px; }.avatar { font-size: 60px; }.patient-name { color: #405334; font-size: 30px; font-weight: 700; }.patient-name text { margin-left: 12px; color: #7b9c4c; font-size: 22px; }.patient-card { margin-top: 8px; color: #82917b; font-size: 24px; }.patient button { margin-left: auto; padding: 8px 24px; border-radius: 30px; color: #7b9c4c; border: 2px solid #457130; background: #fff; font-size: 24px; }.confirm-row { display: flex; justify-content: space-between; color: #526451; font-size: 28px; }.confirm-row strong { color: #F1A23C; }.confirm-notice { margin-top: 28px; padding: 24px; border-radius: 20px; background: #fff9dc; color: #8d7a45; font-size: 24px; line-height: 1.6; }.modal-mask { position: fixed; inset: 0; z-index: 20; display: flex; align-items: flex-end; background: rgba(0,0,0,.35); }.modal-card { width: 100%; padding: 36px; border-radius: 36px 36px 0 0; background: #fff; }.modal-title { display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 34px; font-weight: 700; }.modal-title text { font-size: 48px; font-weight: 400; }.patient-option { display: flex; justify-content: space-between; padding: 30px 8px; border-bottom: 2px solid #edf1e8; color: #4d6045; font-size: 28px; }.patient-option small { color: #9aaa8a; font-size: 22px; }.add-card { padding: 32px 8px 8px; color: #7b9c4c; text-align: center; font-size: 28px; }.toast { position: fixed; bottom: 180px; left: 50%; z-index: 30; padding: 20px 32px; border-radius: 16px; transform: translateX(-50%); background: rgba(0,0,0,.75); color: #fff; font-size: 26px; white-space: nowrap; }
+.dermatology-page .category-btn { display: flex; align-items: center; justify-content: center; background: #fff !important; background-color: #fff !important; border: 2px solid #DCE9CC; box-sizing: border-box; }.dermatology-page .category-btn.active { border-color: #45AE44; background: #457130 !important; color: #fff; }
+
+/* Figma 1388:13027 — compact dermatology header */
+.dermatology-page .hero-card { width: auto; height: 184px; min-height: 0; margin: 0 -32px; padding: 64px 32px 0; border-radius: 0; background: transparent; color: #222; }
+.dermatology-page .hero-illustration { position: absolute; top: 0; right: 24px; width: 210px; height: 224px; }
+.dermatology-page .hero-badge { display: none; }
+.dermatology-page .hero-title { position: relative; z-index: 1; width: 440px; margin: 0 0 0 30px; font-size: 40px; font-weight: 500; line-height: 52px; white-space: nowrap; transform: translateY(-4px); }
+.dermatology-page .hero-desc { position: relative; z-index: 1; width: 480px; margin: 12px 0 0 30px; color: #556c4b; font-size: 26px; line-height: 34px; white-space: nowrap; transform: translateY(-12px); transform-origin: left center; }
+.dermatology-page .consult-card { position: relative; overflow: hidden; width: 654px; height: 140px; min-height: 0; margin-top: 0; box-sizing: border-box; background: linear-gradient(180deg, #35a735, #45ae44); color: #fff; }
+.dermatology-page .consult-card { transform-origin: center; transition: transform 120ms ease-out, box-shadow 120ms ease-out, filter 120ms ease-out; }
+.dermatology-page .consult-card.consult-card--pressed { transform: scale(.98); box-shadow: 0 4px 14px rgba(45,128,45,.16); filter: brightness(.97); }
+.dermatology-page .consult-shimmer { display: none; }
+@keyframes consult-shimmer-sweep {
+  0% { left: -36%; opacity: 0; }
+  15% { opacity: 1; }
+  82% { left: 112%; opacity: .9; }
+  100% { left: 112%; opacity: 0; }
+}
+.dermatology-page .consult-avatar { position: relative; width: 82px; height: 86px; flex: none; overflow: hidden; border-radius: 50%; background: #f4f8ef; }.dermatology-page .consult-icon { position: absolute; top: -5px; left: -7px; width: 94px; height: 106px; }
+.dermatology-page .consult-title { color: #fff; font-size: 32px; line-height: 36px; }
+.dermatology-page .consult-title text { position: absolute; top: 32px; right: 28px; display: inline-flex; width: 168px; height: 76px; align-items: center; justify-content: center; box-sizing: border-box; margin: 0; padding: 0; border-radius: 16px; background: #fff; color: #40ac3f; font-size: 24px; }
+.dermatology-page .consult-cta { transform-origin: center; animation: consult-cta-breathe 3s ease-in-out infinite; transition: transform 100ms ease-out, box-shadow 100ms ease-out; }
+.dermatology-page .consult-card.consult-card--pressed .consult-cta { animation: none; transform: scale(.97); box-shadow: 0 3px 10px rgba(24,166,94,.12); }
+@keyframes consult-cta-guide {
+  0% { box-shadow: 0 0 0 0 rgba(24,166,94,0); transform: scale(1); }
+  38% { box-shadow: 0 0 0 12px rgba(24,166,94,.2); transform: scale(1.03); }
+  100% { box-shadow: 0 0 0 24px rgba(24,166,94,0); transform: scale(1); }
+}
+@keyframes consult-cta-breathe {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 12px rgba(24,166,94,.08), 0 0 0 0 rgba(255,255,255,0); }
+  45% { transform: scale(1.035); box-shadow: 0 6px 16px rgba(24,166,94,.14), 0 0 0 10px rgba(255,255,255,.12); }
+}
+.dermatology-page .consult-desc { margin-top: 4px; color: #fff; font-size: 20px; line-height: 28px; }
+.dermatology-page .content-layout { margin-top: 20px; background: #fff; border-radius: 40px 40px 0 0; }
+.dermatology-page .orders-fab { background: #45AE44; color: #fff; border-color: #45AE44; box-shadow: 0 10px 28px rgba(69,174,68,.2); }
+.dermatology-page .category-btn.active,
+.dermatology-page .detail-bottom button,
+.dermatology-page .confirm-bottom button { background-color: #18A65E !important; background: #18A65E !important; }
+.dermatology-page .category-title,
+.dermatology-page .section-title,
+.dermatology-page .patient button { color: #45AE44; }
+.dermatology-page .yh-inline-segment.area-options { width: 686px !important; height: 96px; padding: 8px; border-radius: 32px; background: #CFEBC4; overflow: visible; }
+.dermatology-page .yh-inline-segment.area-options .yh-inline-segment__active-bg { display: none; }
+.dermatology-page .yh-inline-segment button.area-btn { position: relative; height: 80px; border-radius: 24px; background: transparent; color: #6c8c5e; font-size: 32px; font-weight: 500; }
+.dermatology-page .yh-inline-segment button.area-btn.is-active { color: #45AE44; font-weight: 700; }
+.dermatology-page .yh-inline-segment button.area-btn.is-active::after { position: absolute; right: 50%; bottom: 8px; display: block; width: 64px; height: 14px; box-sizing: border-box; border-bottom: 8px solid @derm-orange; border-radius: 0 0 50% 50%; background: transparent; content: ''; transform: translateX(50%); }
+.dermatology-page .package-name { position: relative; top: 4px; }
+.dermatology-page .package-note { color: #45AE44; }
+.dermatology-page .yh-inline-segment button.area-btn.is-active { background: transparent !important; }
+.dermatology-page .yh-inline-segment button.area-btn.is-active::after { display: none; }
+.dermatology-page .yh-inline-segment .yh-portal-title-mark { position: absolute; right: 50%; bottom: 8px; display: block; width: 40px; height: 12px; margin: 0; transform: translateX(50%); }
+.dermatology-page .yh-inline-segment .area-smile-indicator { right: auto; z-index: 2; transform: translateX(-50%); pointer-events: none; transition: left 200ms cubic-bezier(.22,.61,.36,1); }
+.dermatology-page .yh-inline-segment .area-smile-indicator { margin-left: 0; }
+.dermatology-page .yh-inline-segment button.area-btn { transition: color 200ms ease-out; }
+.dermatology-page .yh-inline-segment.area-options { margin-top: 4px; margin-right: 0; margin-left: 0; }
+.dermatology-page .yh-inline-segment.area-options { margin-top: 26px; }
+.dermatology-page .yh-inline-segment.area-options { width: auto !important; margin-left: -32px; margin-right: -32px; box-sizing: border-box; }
+.dermatology-page .yh-inline-segment.area-options { background: #fff; border-radius: 40px 40px 0 0; }
+.dermatology-page .yh-inline-segment.area-options { position: sticky; top: 176px; z-index: 15; box-shadow: 0 8px 16px rgba(55,82,50,.04); }
+.dermatology-page .content-layout { margin-top: 0; border-radius: 0; }
+.dermatology-page .orders-fab { width: 144px; height: 72px; box-sizing: border-box; align-items: center; justify-content: center; }
+.dermatology-page .orders-fab, .dermatology-page .home-fab { bottom: calc(64px + env(safe-area-inset-bottom)); }
+.dermatology-page .floating-actions { position: fixed; right: 32px; bottom: calc(64px + env(safe-area-inset-bottom)); z-index: 12; display: flex; align-items: center; gap: 12px; animation: floating-actions-enter 240ms ease-out both; }
+@keyframes floating-actions-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.dermatology-page .floating-actions .home-fab,
+.dermatology-page .floating-actions .orders-fab { position: static; right: auto; bottom: auto; flex: none; }
+.dermatology-page .home-fab image { width: 30px; height: 30px; }
+.dermatology-page .home-fab { right: 188px; }
+.dermatology-page .package-visual { width: 152px; height: 152px; background: transparent; overflow: hidden; }.dermatology-page .package-visual image { width: 152px; height: 152px; flex: none; border-radius: 20px; object-fit: contain; }
+.dermatology-page .category-btn { font-size: 24px; }
+.dermatology-page .category-list { position: relative; top: 0; z-index: 2; transform: translateX(-4px); }
+.dermatology-page .category-btn { height: 88px; min-height: 88px; margin: 0 0 16px; padding: 12px 6px; border: 2px solid #DCE9CC; appearance: none; }
+.dermatology-page .category-btn::after { border: 0; }
+.dermatology-page .package-note { font-size: 24px; }
+.dermatology-page .package-desc, .dermatology-page .consult-desc { font-size: 22px; }
+.dermatology-page .duration { font-size: 22px; }
+.dermatology-page .package-foot { align-items: center; transform: translateY(4px); }
+.dermatology-page .empty { display: flex; min-height: 360px; align-items: center; flex-direction: column; justify-content: center; box-sizing: border-box; padding: 44px 16px; text-align: center; }
+.dermatology-page .empty-icon-wrap { display: flex; width: 96px; height: 96px; align-items: center; justify-content: center; border-radius: 50%; background: #E9F7E2; }
+.dermatology-page .empty-icon { width: 48px; height: 48px; filter: invert(60%) sepia(55%) saturate(670%) hue-rotate(70deg) brightness(88%) contrast(88%); animation: empty-icon-pop 240ms cubic-bezier(.22,.72,.26,1.25) both; }
+.dermatology-page .empty-title { margin-top: 24px; color: #40553A; font-size: 28px; font-weight: 700; line-height: 40px; }
+.dermatology-page .empty-desc { margin-top: 8px; color: #82917B; font-size: 22px; line-height: 32px; }
+.dermatology-page .empty-switch-btn { display: flex; min-width: 240px; height: 72px; align-items: center; justify-content: center; box-sizing: border-box; margin: 28px 0 0; padding: 0 28px; border: 0; border-radius: 36px; background: #45AE44; color: #fff; font-size: 24px; line-height: 1; transition: transform 120ms ease-out, background-color 120ms ease-out; }
+.dermatology-page .empty-switch-btn::after { border: 0; }
+.dermatology-page .empty-switch-btn.empty-switch-btn--pressed { background: #358C35; transform: scale(.97); }
+@keyframes empty-icon-pop {
+  from { opacity: 0; transform: scale(.88); }
+  to { opacity: 1; transform: scale(1); }
+}
+.dermatology-page .dermatology-nav .portal-nav-bar__gradient.is-secondary {
+  background: #DAF1CF !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: background-color 180ms ease-out, backdrop-filter 180ms ease-out, box-shadow 180ms ease-out;
+}
+.dermatology-page .dermatology-nav.is-scrolled .portal-nav-bar__gradient.is-secondary {
+  background: rgba(255, 255, 255, .78) !important;
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  box-shadow: 0 1px 0 rgba(69, 174, 68, .08);
+}
+.dermatology-page .orders-fab.is-compact { width: 72px; gap: 0; padding-right: 0; padding-left: 0; }
+.dermatology-page .orders-fab.is-compact text { width: 0; opacity: 0; overflow: hidden; }
+.dermatology-page .category-btn {
+  transform-origin: center;
+  transition: color 120ms ease-out, background-color 120ms ease-out, border-color 120ms ease-out, transform 100ms ease-out, box-shadow 100ms ease-out;
+}
+.dermatology-page .category-btn.category-btn--pressed {
+  border-color: #BFD9AB;
+  background: #EEF7E9 !important;
+  background-color: #EEF7E9 !important;
+  transform: scale(.94);
+  box-shadow: inset 0 0 0 2px rgba(69,174,68,.08);
+}
+.dermatology-page .category-btn.active.category-btn--pressed {
+  border-color: #358C35;
+  background: #358C35 !important;
+  background-color: #358C35 !important;
+  transform: scale(.94);
+  box-shadow: inset 0 4px 10px rgba(29,91,29,.22);
+}
+.dermatology-page .package-visual {
+  width: 144px;
+  height: 192px;
+  border-radius: 20px;
+}
+.dermatology-page .package-visual image {
+  width: 144px;
+  height: 192px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.dermatology-page .detail-hero {
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(91,117,61,.08);
+}
+.dermatology-page .category-btn.is-pressed {
+  border-color: #B5D9A7;
+  background: #EAF6E5 !important;
+  background-color: #EAF6E5 !important;
+  transform: scale(.96);
+  box-shadow: inset 0 0 0 2px rgba(69,174,68,.1);
+}
+.dermatology-page .category-btn.active.is-pressed {
+  border-color: #358C35;
+  background: #358C35 !important;
+  background-color: #358C35 !important;
+  box-shadow: inset 0 4px 10px rgba(29,91,29,.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dermatology-page .dermatology-home { animation: none; }
+  .dermatology-page .floating-actions { animation: none; }
+  .dermatology-page .consult-shimmer { animation: none; display: none; }
+  .dermatology-page .consult-cta { animation: none; }
+  .dermatology-page .dermatology-nav .portal-nav-bar__gradient.is-secondary { transition: none; }
+  .dermatology-page .yh-inline-segment .area-smile-indicator,
+  .dermatology-page .yh-inline-segment button.area-btn { transition: none; }
+  .dermatology-page .package-card.is-entering { animation: none; }
+  .dermatology-page .package-card.is-entering .price { animation: none; }
+  .dermatology-page .empty-icon { animation: none; }
+  .dermatology-page .empty-switch-btn { transition: none; }
+  .dermatology-page .category-btn,
+  .dermatology-page .consult-card,
+  .dermatology-page .package-list,
+  .dermatology-page .package-card,
+  .dermatology-page .orders-fab { transition: none; }
+}
+
+.dermatology-page .toast { pointer-events: none; }
+
+/* 服务详情：按项目摘要—院区—服务内容—说明的阅读顺序组织。 */
+.dermatology-page .detail-view {
+  min-height: 100vh;
+  padding: 28px 28px 216px;
+  box-sizing: border-box;
+  background: #f3f5f1;
+}
+.dermatology-page .detail-banner {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #f3f5f1;
+}
+.dermatology-page .detail-banner image { display: block; width: 100%; height: 100%; }
+.dermatology-page .detail-environment-icon {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #111;
+}
+.dermatology-page .detail-banner-orb,
+.dermatology-page .detail-environment-orb { position: absolute; border-radius: 50%; background: rgba(255,255,255,.22); }
+.dermatology-page .detail-banner-orb--top { top: -72px; right: 10px; width: 220px; height: 220px; }
+.dermatology-page .detail-banner-orb--bottom { bottom: -88px; left: -60px; width: 240px; height: 240px; }
+.dermatology-page .detail-banner-arches,
+.dermatology-page .detail-environment-arches { position: absolute; right: 36px; bottom: 28px; width: 230px; height: 122px; }
+.dermatology-page .detail-banner-arches view,
+.dermatology-page .detail-environment-arches view { position: absolute; right: 0; bottom: 0; width: 192px; height: 92px; border: 12px solid rgba(255,255,255,.78); border-bottom: 0; border-radius: 192px 192px 0 0; box-sizing: border-box; }
+.dermatology-page .detail-banner-arches view + view,
+.dermatology-page .detail-environment-arches view + view { right: 20px; width: 144px; height: 68px; border-width: 9px; opacity: .75; }
+.dermatology-page .detail-banner-title { position: relative; z-index: 2; font-size: 38px; font-weight: 700; line-height: 52px; }
+.dermatology-page .detail-banner-dept { position: relative; z-index: 2; margin-top: 8px; color: #527464; font-size: 22px; line-height: 32px; }
+.dermatology-page .detail-card { margin: 16px 0 0; padding: 30px; border-radius: 24px; background: #fff; box-shadow: none; }
+.dermatology-page .detail-summary-card { margin-top: 0; border-radius: 0 0 24px 24px; }
+.dermatology-page .detail-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.dermatology-page .detail-tags > text { padding: 6px 12px; border-radius: 8px; background: #f1f8e9; color: #518c37; font-size: 18px; line-height: 26px; }
+.dermatology-page .detail-name { margin-top: 22px; color: #2e302b; font-size: 34px; font-weight: 700; line-height: 48px; }
+.dermatology-page .detail-desc { margin-top: 12px; color: #65746b; font-size: 23px; line-height: 36px; }
+.dermatology-page .detail-price { display: flex; align-items: baseline; gap: 14px; margin-top: 22px; }
+.dermatology-page .detail-price strong { color: #F1A23C; font-size: 48px; font-weight: 700; line-height: 56px; }
+.dermatology-page .detail-price text { color: #8d9790; font-size: 20px; }
+.dermatology-page .detail-stats { display: flex; gap: 16px; margin-top: 24px; }
+.dermatology-page .detail-stats view { display: flex; flex: 1; min-width: 0; flex-direction: column; gap: 8px; padding: 18px; border-radius: 16px; background: #f6f7f4; }
+.dermatology-page .detail-stats text { color: #8b948e; font-size: 19px; line-height: 28px; }
+.dermatology-page .detail-stats strong { color: #506051; font-size: 23px; line-height: 32px; }
+.dermatology-page .detail-section-title { padding-left: 18px; border-left: 5px solid #4aa53d; color: #30352e; font-size: 28px; font-weight: 700; line-height: 38px; }
+.dermatology-page .detail-area-selected { display: flex; align-items: center; min-height: 72px; margin-top: 24px; padding: 0 20px; border-radius: 16px; background: #f0f8e6; color: #3a8a35; font-size: 24px; font-weight: 600; }
+.dermatology-page .detail-section-tip { margin-top: 18px; color: #929b95; font-size: 20px; line-height: 30px; }
+.dermatology-page .detail-step { display: flex; align-items: center; gap: 14px; min-height: 56px; padding: 8px 0; color: #333a35; font-size: 24px; line-height: 34px; }
+.dermatology-page .detail-step > text { display: flex; width: 40px; height: 40px; flex: none; align-items: center; justify-content: center; border-radius: 50%; background: #eff8e7; color: #4e9c38; font-size: 20px; }
+.dermatology-page .detail-intro-copy { margin-top: 24px; color: #3f4942; font-size: 24px; line-height: 42px; }
+.dermatology-page .detail-environment-label { margin-top: 30px; color: #30352e; font-size: 28px; font-weight: 700; line-height: 40px; }
+.dermatology-page .detail-environment-image { display: block; width: 100%; aspect-ratio: 16 / 9; margin-top: 18px; border-radius: 16px; background: #f3f5f1; }
+.dermatology-page .detail-environment-copy { margin-top: 20px; color: #99aa8f; font-size: 23px; line-height: 38px; }
+.dermatology-page .detail-text-list-item { display: flex; align-items: flex-start; gap: 14px; margin-top: 18px; color: #3f4942; font-size: 24px; line-height: 38px; }.dermatology-page .detail-list-dot { display: block; width: 10px; height: 10px; flex: none; margin-top: 17px; border-radius: 50%; background: #4e9c38; color: transparent; font-size: 0; line-height: 0; }
+.dermatology-page .detail-environment { position: relative; min-height: 208px; overflow: hidden; margin-top: 26px; padding: 108px 28px 24px; border-radius: 18px; box-sizing: border-box; background: linear-gradient(135deg, #e9f5dc, #d2e9c2); color: #2d5535; }
+.dermatology-page .detail-environment-icon { top: 0; left: 24px; width: 80px; height: 62px; border-radius: 0 0 18px 18px; font-size: 42px; }
+.dermatology-page .detail-environment-orb { top: -76px; right: -6px; width: 210px; height: 210px; }
+.dermatology-page .detail-environment-arches { right: 22px; bottom: 12px; transform: scale(.72); transform-origin: right bottom; }
+.dermatology-page .detail-environment-title,
+.dermatology-page .detail-environment-dept { position: relative; z-index: 2; }
+.dermatology-page .detail-environment-title { font-size: 32px; font-weight: 700; line-height: 44px; }
+.dermatology-page .detail-environment-dept { margin-top: 6px; color: #5c8065; font-size: 19px; }
+.dermatology-page .detail-bottom { z-index: 20; display: flex; height: calc(146px + env(safe-area-inset-bottom)); min-height: 146px; align-items: center; justify-content: space-between; padding: 18px 28px calc(18px + env(safe-area-inset-bottom)); border-top: 1px solid #edf0ec; box-sizing: border-box; background: rgba(255,255,255,.98); box-shadow: 0 -8px 28px rgba(60,78,55,.08); }
+.dermatology-page .detail-bottom > view { display: flex; align-items: baseline; gap: 14px; }
+.dermatology-page .detail-bottom text { color: #8b948e; font-size: 20px; }
+.dermatology-page .detail-bottom strong { color: #F1A23C; font-size: 44px; line-height: 48px; }
+.dermatology-page .detail-bottom button { display: flex; min-width: 210px; height: 84px; align-items: center; justify-content: center; margin: 0; padding: 0; border: 0; border-radius: 44px; background: #3d9830; color: #fff; font-size: 28px; font-weight: 600; line-height: 1; box-shadow: 0 8px 14px rgba(61,152,48,.18); }
+.dermatology-page .detail-bottom button::after { border: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dermatology-page .detail-bottom button { transition: none; }
+}
+
+/* 详情页采用单一白色底，靠留白与细分隔线组织信息。 */
+.dermatology-page.is-detail-page,
+.dermatology-page.is-detail-page .dermatology-scroll,
+.dermatology-page.is-detail-page .detail-view { background: #fff; }
+.dermatology-page.is-detail-page .portal-nav-bar__gradient.is-secondary,
+.dermatology-page.is-detail-page .dermatology-nav .portal-nav-bar__gradient.is-secondary,
+.dermatology-page.is-detail-page .dermatology-nav.is-scrolled .portal-nav-bar__gradient.is-secondary { background: #fff !important; box-shadow: none; }
+.dermatology-page.is-detail-page .detail-view { padding: 28px 40px 216px; }
+.dermatology-page.is-detail-page .detail-card { margin-top: 0; padding: 32px 0; border: 0; border-bottom: 1px solid #edf0ec; border-radius: 0; background: transparent; }
+.dermatology-page.is-detail-page .detail-summary-card { padding-top: 28px; }
+.dermatology-page.is-detail-page .detail-text-list-card:last-of-type { border-bottom: 0; }
+.dermatology-page.is-detail-page .detail-bottom { background: #fff; box-shadow: 0 -4px 18px rgba(44,58,44,.05); }
+.dermatology-page.is-detail-page .detail-card + .detail-card { margin-top: 24px; }
+.dermatology-page.is-detail-page .detail-tags > text { padding: 8px 14px; font-size: 24px; line-height: 32px; }
+.dermatology-page.is-detail-page .detail-price text,
+.dermatology-page.is-detail-page .detail-stats text { font-size: 24px; line-height: 32px; }
+.dermatology-page.is-detail-page .detail-bottom > view { flex-direction: row; align-items: center; gap: 16px; }
+.dermatology-page.is-detail-page .detail-bottom text { font-size: 28px; line-height: 40px; }
+.dermatology-page.is-detail-page .detail-bottom strong { font-size: 52px; line-height: 60px; }
+/* 750rpx 设计稿：正文最小 28rpx（375px 设备实际 14px）。 */
+.dermatology-page.is-detail-page .detail-tags > text { font-size: 26px; line-height: 36px; }
+.dermatology-page.is-detail-page .detail-stats strong { font-size: 28px; line-height: 40px; }
+.dermatology-page.is-detail-page .detail-section-title { font-size: 32px; line-height: 46px; }
+.dermatology-page.is-detail-page .detail-step { min-height: 72px; font-size: 28px; line-height: 42px; }
+.dermatology-page.is-detail-page .detail-step > text { width: 44px; height: 44px; font-size: 22px; }
+.dermatology-page.is-detail-page .detail-intro-copy { font-size: 30px; line-height: 48px; }
+.dermatology-page.is-detail-page .detail-environment-label { font-size: 32px; line-height: 46px; }
+.dermatology-page.is-detail-page .detail-environment-copy { color: #65746b; font-size: 28px; line-height: 44px; }
+.dermatology-page.is-detail-page .detail-text-list-item { font-size: 28px; line-height: 44px; }
+.dermatology-page.is-detail-page .detail-list-dot { display: block; width: 8px; height: 8px; flex: none; margin-top: 18px; border-radius: 50%; background: #18A65E; color: transparent; font-size: 0; line-height: 0; }
+.dermatology-page.is-detail-page .detail-bottom button { height: 84px; border-radius: 42px; font-size: 28px; }
+
+/* 开单确认：单一白色信息面，按“就诊人—服务—费用—开单”组织。 */
+.dermatology-page.is-confirm-page,
+.dermatology-page.is-confirm-page .dermatology-scroll,
+.dermatology-page.is-confirm-page .confirm-view { background: #fff; }
+.dermatology-page.is-confirm-page .portal-nav-bar__gradient.is-secondary,
+.dermatology-page.is-confirm-page .dermatology-nav .portal-nav-bar__gradient.is-secondary,
+.dermatology-page.is-confirm-page .dermatology-nav.is-scrolled .portal-nav-bar__gradient.is-secondary { background: #fff !important; box-shadow: none; }
+.dermatology-page.is-confirm-page .confirm-view { min-height: calc(100vh - 176px); padding: 28px 40px 240px; box-sizing: border-box; }
+.dermatology-page.is-confirm-page .confirm-card { display: block; margin: 0; padding: 32px 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.dermatology-page.is-confirm-page .confirm-service-card { margin-top: 24px; }
+.dermatology-page.is-confirm-page .section-title { margin-bottom: 26px; color: #30352e; font-size: 32px; line-height: 46px; }
+.dermatology-page.is-confirm-page .confirm-user-card { width: 100%; padding: 20px 24px; border-color: #d9e8d1; border-radius: 20px; background: #fcfefb; }
+.dermatology-page.is-confirm-page .confirm-user-card .portal-user-card__main { position: relative; min-height: 88px; }
+.dermatology-page.is-confirm-page .confirm-user-card .portal-user-card__patient { padding-right: 160px; box-sizing: border-box; }
+.dermatology-page.is-confirm-page .confirm-user-card .portal-user-card__switch { position: absolute !important; top: 50%; right: 0; width: auto; height: 44px; margin: 0 !important; padding: 0 16px; border-radius: 22px; font-size: 26px; line-height: 1; transform: translateY(-50%); }
+.dermatology-page.is-confirm-page .confirm-user-card .portal-user-card__switch-arrow { width: 8px; height: 15px; margin-left: 6px; }
+.dermatology-page.is-confirm-page .confirm-row { align-items: center; color: #364338; font-size: 30px; line-height: 44px; }
+.dermatology-page.is-confirm-page .confirm-row strong { color: #F1A23C; font-size: 36px; line-height: 48px; }
+.dermatology-page.is-confirm-page .confirm-notice { display: flex; gap: 14px; margin-top: 28px; padding: 22px 24px; border: 0; border-radius: 16px; background: #fff8e1; color: #7c6b3c; font-size: 26px; line-height: 40px; }
+.dermatology-page.is-confirm-page .confirm-notice > image { display: block; width: 40px; height: 40px; flex: none; margin-top: 2px; }
+.dermatology-page.is-confirm-page .confirm-bottom { z-index: 20; height: calc(160px + env(safe-area-inset-bottom)); min-height: 160px; padding: 40px 32px calc(24px + env(safe-area-inset-bottom)); border-top: 1px solid #edf0ec; box-sizing: border-box; background: #fff; box-shadow: 0 -4px 18px rgba(44,58,44,.05); }
+.dermatology-page.is-confirm-page .confirm-bottom text { color: #71806f; font-size: 28px; line-height: 40px; }
+.dermatology-page.is-confirm-page .confirm-bottom strong { color: #F1A23C; font-size: 52px; line-height: 60px; }
+.dermatology-page.is-confirm-page .confirm-bottom button { display: flex; width: 100%; height: 96px; align-items: center; justify-content: center; margin: 0; padding: 0; border: 0; border-radius: 48px; background: #18A65E !important; color: #fff; font-size: 32px; font-weight: 600; line-height: 1; box-shadow: 0 8px 14px rgba(24,166,94,.18); }
+.dermatology-page.is-confirm-page .confirm-bottom button::after { border: 0; }
+.dermatology-page.is-confirm-page .confirm-bottom button text { color: #fff; font-size: 32px; line-height: 1; }
+.dermatology-page.is-confirm-page .confirm-bottom button.is-loading,
+.dermatology-page.is-confirm-page .confirm-bottom button[disabled] { opacity: .72; box-shadow: none; }
+.submit-spinner { width: 30px; height: 30px; margin-right: 14px; border: 4px solid rgba(255,255,255,.42); border-top-color: #fff; border-radius: 50%; animation: submit-spinner-rotate .72s linear infinite; }
+@keyframes submit-spinner-rotate { to { transform: rotate(360deg); } }
+.dermatology-page.is-submitting-page,
+.dermatology-page.is-submitting-page .dermatology-scroll { background: #f7fbf5; }
+.dermatology-page.is-submitting-page .portal-nav-bar__gradient.is-secondary,
+.dermatology-page.is-submitting-page .dermatology-nav .portal-nav-bar__gradient.is-secondary { background: #f7fbf5 !important; box-shadow: none; }
+.submitting-view { display: flex; min-height: calc(100vh - 176px); flex-direction: column; align-items: center; justify-content: center; padding: 0 40px 120px; box-sizing: border-box; text-align: center; }
+.submitting-orbit { position: relative; width: 164px; height: 164px; animation: submitting-orbit-rotate 1.1s linear infinite; }
+.submitting-orbit__ring { position: absolute; inset: 0; border: 8px solid #dcefd4; border-top-color: #45ae44; border-right-color: #45ae44; border-radius: 50%; box-sizing: border-box; }
+.submitting-orbit__dot { position: absolute; top: 5px; right: 18px; width: 16px; height: 16px; border-radius: 50%; background: #f1a23c; box-shadow: 0 2px 8px rgba(241,162,60,.28); }
+.submitting-mark { display: flex; width: 100px; height: 100px; align-items: center; justify-content: center; margin-top: -132px; border-radius: 50%; background: #eaf7e5; box-shadow: 0 10px 24px rgba(69,174,68,.12); animation: submitting-mark-breathe .75s ease-in-out infinite alternate; }
+.submitting-mark view { width: 34px; height: 20px; border-bottom: 7px solid #45ae44; border-left: 7px solid #45ae44; transform: translateY(-3px) rotate(-45deg); }
+.submitting-title { margin-top: 48px; color: #293329; font-size: 36px; font-weight: 700; line-height: 52px; animation: submitting-copy-enter .28s ease-out both; }
+.submitting-desc { margin-top: 12px; color: #65746b; font-size: 26px; line-height: 40px; animation: submitting-copy-enter .28s .08s ease-out both; }
+@keyframes submitting-orbit-rotate { to { transform: rotate(360deg); } }
+@keyframes submitting-mark-breathe { from { transform: scale(1); } to { transform: scale(1.06); } }
+@keyframes submitting-copy-enter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.submit-error { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 24px; padding: 20px 24px; border-radius: 16px; background: #fff1f0; color: #b94b47; font-size: 24px; line-height: 36px; }
+.submit-error button { flex: none; min-width: 132px; height: 64px; margin: 0; padding: 0 20px; border: 2px solid #d86a65; border-radius: 32px; background: #fff; color: #b94b47; font-size: 24px; line-height: 60px; }
+.submit-error button::after { border: 0; }
+
+/* 开单结果与订单详情：完整反馈、明确下一步、固定安全区操作。 */
+.dermatology-page.is-result-page,
+.dermatology-page.is-result-page .dermatology-scroll { background: #f7fbf5; }
+.dermatology-page.is-result-page .portal-nav-bar__gradient.is-secondary,
+.dermatology-page.is-result-page .dermatology-nav .portal-nav-bar__gradient.is-secondary { background: #f7fbf5 !important; box-shadow: none; }
+.result-view, .order-view { min-height: calc(100vh - 176px); padding: 56px 40px calc(64px + env(safe-area-inset-bottom)); box-sizing: border-box; animation: dermatology-page-enter 240ms ease-out; }
+.result-view { text-align: center; }
+.result-icon { position: relative; display: flex; width: 112px; height: 112px; align-items: center; justify-content: center; margin: 0 auto 28px; border-radius: 50%; background: #18A65E; box-shadow: 0 14px 34px rgba(24,166,94,.22); animation: result-icon-enter 280ms ease-out both; }
+.result-icon image { display: block; width: 64px; height: 64px; }
+@keyframes result-icon-enter { from { opacity: 0; transform: scale(.78); } to { opacity: 1; transform: scale(1); } }
+.result-title { color: #293329; font-size: 40px; font-weight: 700; line-height: 56px; }
+.result-desc { max-width: 590px; margin: 12px auto 0; color: #71806f; font-size: 26px; line-height: 40px; }
+.result-order-card, .order-detail-card, .order-status-card { margin-top: 40px; padding: 12px 28px; border: 1px solid #e1ebdd; border-radius: 28px; background: #fff; box-shadow: 0 8px 28px rgba(65,91,58,.06); text-align: left; }
+.result-order-card > view, .order-detail-card > view:not(.section-title) { display: flex; min-height: 82px; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid #edf2ea; color: #7a8876; font-size: 25px; }
+.result-order-card > view:last-child, .order-detail-card > view:last-child { border-bottom: 0; }
+.result-order-card strong, .order-detail-card strong { color: #344233; font-size: 26px; font-weight: 500; text-align: right; }
+.result-next { display: flex; gap: 18px; margin-top: 24px; padding: 24px 28px; border-radius: 20px; background: #e9f7e2; color: #53684d; font-size: 25px; line-height: 38px; text-align: left; }
+.result-next > text { flex: none; color: #45ae44; font-weight: 700; }
+.result-actions { display: flex; gap: 20px; margin-top: 44px; }
+.result-actions button, .order-bottom button { display: flex; height: 92px; align-items: center; justify-content: center; margin: 0; border-radius: 46px; font-size: 30px; font-weight: 600; line-height: 1; }
+.result-actions button::after, .order-bottom button::after { border: 0; }
+.result-primary { flex: 1.25; background: #45ae44; color: #fff; box-shadow: 0 8px 18px rgba(69,174,68,.18); }
+.result-secondary { flex: 1; border: 2px solid #b8d9ae; background: #fff; color: #45ae44; }
+.order-view { padding-bottom: calc(190px + env(safe-area-inset-bottom)); }
+.order-status-card { display: flex; align-items: center; gap: 22px; margin-top: 0; padding: 28px; }
+.order-status-dot { width: 20px; height: 20px; flex: none; border: 8px solid #dff3d5; border-radius: 50%; background: #45ae44; }
+.order-status-card strong, .order-status-card text { display: block; }
+.order-status-card strong { color: #45ae44; font-size: 32px; line-height: 46px; }
+.order-status-card text { margin-top: 4px; color: #71806f; font-size: 24px; line-height: 36px; }
+.order-detail-card { margin-top: 24px; padding: 20px 28px; }
+.order-detail-card .section-title { margin: 0; padding: 12px 0 18px; color: #303a30; font-size: 30px; }
+.order-detail-card .order-price { color: #F1A23C; font-size: 34px; font-weight: 700; }
+.order-tip { margin-top: 24px; padding: 22px 26px; border-radius: 18px; background: #fff8e1; color: #7c6b3c; font-size: 24px; line-height: 38px; }
+.order-bottom { position: fixed; right: 0; bottom: 0; left: 0; z-index: 20; padding: 16px 40px calc(16px + env(safe-area-inset-bottom)); border-top: 1px solid #edf0ec; background: #fff; box-shadow: 0 -4px 18px rgba(44,58,44,.05); }
+.order-bottom button { width: 100%; background: #45ae44; color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .submit-spinner { animation-duration: 1.4s; }
+  .dermatology-home, .detail-view, .confirm-view, .result-view, .order-view, .result-icon, .consult-shimmer { animation: none; }
+}
+
+/* 可读性基线：正文 >= 28rpx，次要信息 24–26rpx，辅助标记 20–22rpx。 */
+.dermatology-page .hero-card { height: 184px; }
+.dermatology-page .package-name { font-size: 32px; font-weight: 700; line-height: 44px; }
+.dermatology-page .hero-desc { color: #65746b; font-size: 22px; line-height: 28px; }
+.dermatology-page .consult-desc { font-size: 22px; line-height: 28px; opacity: .85; }
+.dermatology-page .consult-title text { color: #357c35; font-size: 26px; }
+.dermatology-page .category-btn { color: #435443; font-size: 28px; }
+.dermatology-page .package-note { color: #357c35; font-size: 24px; line-height: 34px; }
+.dermatology-page .package-desc { color: #344c32; font-size: 24px; line-height: 34px; }
+.dermatology-page .duration { color: #65746b; font-size: 22px; }
+.dermatology-page .empty-desc { color: #65746b; font-size: 26px; line-height: 38px; }
+.dermatology-page .empty-switch-btn { font-size: 26px; }
+.dermatology-page .detail-desc { color: #65746b; font-size: 28px; line-height: 42px; }
+.dermatology-page .detail-stats strong { color: #465746; font-size: 28px; line-height: 40px; }
+.dermatology-page .detail-area-selected { color: #357c35; font-size: 26px; }
+.dermatology-page .detail-section-tip { color: #65746b; font-size: 24px; line-height: 36px; }
+.dermatology-page .detail-order-tip { padding: 12px 8px 28px; color: #65746b; font-size: 24px; line-height: 36px; }
+.dermatology-page .detail-bottom text { color: #65746b; }
+.dermatology-page .patient button { color: #357c35; }
+.dermatology-page .patient-option small { color: #65746b; font-size: 24px; }
+.dermatology-page .add-card { color: #357c35; }
+.dermatology-page.is-confirm-page .confirm-notice { font-size: 28px; line-height: 42px; }
+.dermatology-page.is-confirm-page .confirm-bottom text { color: #65746b; }
+.submit-error, .submit-error button { font-size: 26px; }
+.result-desc { color: #65746b; font-size: 28px; line-height: 42px; }
+.result-order-card > view, .order-detail-card > view:not(.section-title) { color: #65746b; font-size: 26px; }
+.result-order-card strong, .order-detail-card strong { font-size: 28px; }
+.result-next { font-size: 28px; line-height: 42px; }
+.result-next > text { color: #357c35; }
+.order-status-card text { color: #65746b; font-size: 26px; line-height: 38px; }
+.order-tip { font-size: 28px; line-height: 42px; }
+
+/* 透明触控热区：视觉尺寸不变，实际点击区域至少约 88rpx。 */
+.dermatology-page .home-fab,
+.dermatology-page .orders-fab,
+.dermatology-page .empty-switch-btn,
+.dermatology-page .yh-inline-segment button.area-btn,
+.dermatology-page.is-confirm-page .confirm-user-card .portal-user-card__switch { overflow: visible; }
+.dermatology-page .empty-switch-btn { position: relative; }
+.dermatology-page .home-fab::before,
+.dermatology-page .orders-fab::before,
+.dermatology-page .empty-switch-btn::before,
+.dermatology-page .yh-inline-segment button.area-btn::before,
+.dermatology-page.is-confirm-page .confirm-user-card .portal-user-card__switch::before { position: absolute; z-index: 1; display: block; background: transparent; content: ''; }
+.dermatology-page .home-fab::before,
+.dermatology-page .orders-fab::before,
+.dermatology-page .empty-switch-btn::before { inset: -8px; }
+.dermatology-page .yh-inline-segment button.area-btn::before { inset: -4px; }
+.dermatology-page.is-confirm-page .confirm-user-card .portal-user-card__switch::before { inset: -22px; }
+
+/* 皮肤科专题主题色：仅作用于本专题的主操作与激活状态。 */
+.dermatology-page .consult-card { background: #18A65E; }
+.dermatology-page .home-fab,
+.dermatology-page .orders-fab,
+.dermatology-page .category-btn.active,
+.dermatology-page .empty-switch-btn,
+.dermatology-page .detail-bottom button,
+.dermatology-page .confirm-bottom button,
+.dermatology-page .result-icon,
+.dermatology-page .result-primary,
+.dermatology-page .order-status-dot,
+.dermatology-page .order-bottom button { border-color: #18A65E !important; background: #18A65E !important; }
+.dermatology-page .home-fab,
+.dermatology-page .orders-fab { box-shadow: 0 10px 28px rgba(24,166,94,.2); }
+.dermatology-page .floating-actions { animation: floating-actions-enter 240ms ease-out both; }
+.dermatology-page .orders-fab { position: relative; }
+.dermatology-page .floating-actions .home-fab { animation: home-fab-enter 240ms ease-out both; }
+.dermatology-page .floating-actions .orders-fab { animation: orders-fab-enter 320ms cubic-bezier(.22,.61,.36,1) 60ms both; }
+.dermatology-page .home-fab--pressed,
+.dermatology-page .orders-fab--pressed { filter: brightness(.86); box-shadow: 0 5px 14px rgba(24,166,94,.16); }
+.dermatology-page .home-fab image,
+.dermatology-page .orders-fab image,
+.dermatology-page .orders-fab text { transition: transform 100ms ease-out, opacity 100ms ease-out; }
+.dermatology-page .home-fab--pressed image,
+.dermatology-page .orders-fab--pressed image,
+.dermatology-page .orders-fab--pressed text { transform: scale(.9); }
+.dermatology-page .floating-actions .orders-fab text { animation: orders-fab-text-enter 180ms ease-out 210ms both; }
+.dermatology-page .orders-fab__shine { position: absolute; inset: 0; overflow: hidden; border-radius: 48px; pointer-events: none; }
+.dermatology-page .orders-fab__shine::before { position: absolute; top: -30%; bottom: -30%; left: -36%; width: 24%; background: linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.42),rgba(255,255,255,0)); content: ''; opacity: 0; transform: skewX(-18deg); }
+.dermatology-page .floating-actions .orders-fab__shine::before { animation: orders-fab-shine-loop 3.6s ease-in-out 520ms infinite; }
+@keyframes home-fab-enter {
+  from { opacity: 0; transform: translateY(12px) scale(.94); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes orders-fab-enter {
+  from { opacity: 0; transform: translateY(12px) scaleX(.72); transform-origin: left center; }
+  to { opacity: 1; transform: translateY(0) scaleX(1); transform-origin: left center; }
+}
+@keyframes orders-fab-text-enter {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes orders-fab-shine {
+  from { left: -36%; opacity: 0; }
+  18% { opacity: 1; }
+  to { left: 112%; opacity: 0; }
+}
+@keyframes orders-fab-shine-loop {
+  0% { left: -36%; opacity: 0; }
+  3% { opacity: 1; }
+  16% { left: 112%; opacity: 0; }
+  100% { left: 112%; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dermatology-page .home-fab,
+  .dermatology-page .orders-fab,
+  .dermatology-page .orders-fab text,
+  .dermatology-page .orders-fab__shine::before { animation: none; }
+}
+.dermatology-page .detail-bottom button,
+.dermatology-page .confirm-bottom button,
+.dermatology-page .result-primary { box-shadow: 0 8px 18px rgba(24,166,94,.18); }
+.dermatology-page .result-icon { box-shadow: 0 14px 34px rgba(24,166,94,.22); }
+.dermatology-page .yh-inline-segment button.area-btn.is-active,
+.dermatology-page .category-title,
+.dermatology-page .section-title,
+.dermatology-page .consult-title text,
+.dermatology-page .patient button,
+.dermatology-page .result-next > text,
+.dermatology-page .result-secondary,
+.dermatology-page .order-status-card strong { color: #18A65E; }
+.dermatology-page .result-secondary { border-color: rgba(24,166,94,.35); }
+
+/* DETAIL_CARD_TRIAL_START — 服务详情页卡片试稿，可整段删除恢复上一稿。 */
+.dermatology-page.is-detail-page,
+.dermatology-page.is-detail-page .dermatology-scroll,
+.dermatology-page.is-detail-page .detail-view { background: #f4f8f2; }
+.dermatology-page.is-detail-page .portal-nav-bar__gradient.is-secondary,
+.dermatology-page.is-detail-page .dermatology-nav .portal-nav-bar__gradient.is-secondary,
+.dermatology-page.is-detail-page .dermatology-nav.is-scrolled .portal-nav-bar__gradient.is-secondary { background: rgba(244,248,242,.94) !important; }
+.dermatology-page.is-detail-page .detail-view { padding: 24px 28px calc(160px + env(safe-area-inset-bottom)); }
+.dermatology-page.is-detail-page .detail-banner { overflow: hidden; border-radius: 28px; box-shadow: 0 8px 24px rgba(52,84,48,.08); }
+.dermatology-page.is-detail-page .detail-card { margin-top: @derm-card-gap; padding: @card-padding-y; border: 2px solid @derm-card-border; border-radius: @derm-card-radius; background: @derm-card-bg; box-shadow: @derm-card-shadow; }
+.dermatology-page.is-detail-page .detail-summary-card { padding-top: 30px; }
+.dermatology-page.is-detail-page .detail-card + .detail-card { margin-top: @derm-card-gap; }
+.dermatology-page.is-detail-page .detail-text-list-card:last-of-type { border-bottom: 1px solid rgba(24,166,94,.08); }
+.dermatology-page.is-detail-page .detail-stats view { background: #f5faf3; }
+.dermatology-page.is-detail-page .detail-order-tip { display: flex; min-height: 72px; align-items: center; gap: 14px; margin-top: 20px; padding: 16px 20px; border: 1px solid rgba(24,166,94,.12); border-radius: 16px; box-sizing: border-box; background: #eaf7ef; color: #65746b; }
+.dermatology-page.is-detail-page .detail-order-tip image { width: 32px; height: 32px; flex: none; }
+.dermatology-page.is-detail-page .detail-order-tip text { font-size: 24px; line-height: 36px; }
+/* DETAIL_CARD_TRIAL_END */
+
+/* 详情页底部安全区：固定操作栏之外，提示卡片下额外保留 50px 呼吸留白。 */
+.dermatology-page.is-detail-page .dermatology-scroll { padding-bottom: 0; }
+.dermatology-page.is-detail-page .detail-view { padding-bottom: calc(182px + env(safe-area-inset-bottom)); }
+.dermatology-page.is-detail-page .detail-bottom { height: calc(132px + env(safe-area-inset-bottom)); min-height: 132px; padding: 16px 32px calc(16px + env(safe-area-inset-bottom)); }
+.dermatology-page.is-detail-page .detail-bottom > view { display: flex !important; flex-direction: row !important; align-items: baseline; gap: 16px; }
+.dermatology-page.is-detail-page .detail-section-title { display: flex; align-items: center; gap: 16px; padding-left: 0; border-left: 0; }
+.dermatology-page.is-detail-page .detail-section-title::before { display: block; width: 8px; height: 32px; flex: none; border-radius: 4px; background: #18A65E; content: ''; }
+
+/* 开单确认页卡片布局。 */
+.dermatology-page.is-confirm-page,
+.dermatology-page.is-confirm-page .dermatology-scroll,
+.dermatology-page.is-confirm-page .confirm-view { background: #f4f8f2; }
+.dermatology-page.is-confirm-page .portal-nav-bar__gradient.is-secondary,
+.dermatology-page.is-confirm-page .dermatology-nav .portal-nav-bar__gradient.is-secondary,
+.dermatology-page.is-confirm-page .dermatology-nav.is-scrolled .portal-nav-bar__gradient.is-secondary { background: rgba(244,248,242,.94) !important; }
+.dermatology-page.is-confirm-page .dermatology-scroll { padding-bottom: 0; }
+.dermatology-page.is-confirm-page .confirm-view { padding: 24px 28px calc(236px + env(safe-area-inset-bottom)); }
+.dermatology-page.is-confirm-page .confirm-card { margin: 0; padding: @card-padding-y; border: 2px solid @derm-card-border; border-radius: @derm-card-radius; background: @derm-card-bg; box-shadow: @derm-card-shadow; }
+.dermatology-page.is-confirm-page .confirm-service-card { margin-top: @derm-card-gap; }
+.dermatology-page.is-confirm-page .confirm-user-card { padding: 20px 22px; border: 0; border-radius: 18px; background: #f5faf3; }
+.dermatology-page.is-confirm-page .confirm-patient-card { padding: 0; border: 0; background: transparent; box-shadow: none; }
+.dermatology-page.is-confirm-page .confirm-patient-card > .section-title { display: none; }
+.dermatology-page.is-confirm-page .confirm-patient-card .confirm-user-card { padding: @card-padding-y; border: 2px solid @derm-card-border; border-radius: @derm-card-radius; background: @derm-card-bg; box-shadow: @derm-card-shadow; }
+.dermatology-page.is-confirm-page .confirm-notice { margin-top: 20px; border: 1px solid rgba(188,145,49,.12); box-shadow: 0 6px 18px rgba(107,87,42,.04); }
+.dermatology-page.is-confirm-page .confirm-notice.warm-tip-card { border-radius: 32px; }
+.dermatology-page.is-confirm-page .submit-error { margin-top: 20px; }
+
+/* 温馨提示卡统一样式：黄色底、提示图标、棕色说明文字。 */
+.dermatology-page .price,
+.dermatology-page .detail-price strong,
+.dermatology-page .detail-bottom strong,
+.dermatology-page .confirm-row strong,
+.dermatology-page .confirm-bottom strong,
+.dermatology-page .order-detail-card .order-price { color: @derm-orange; }
+
+/* 首页随页面主滚动；院区 Tab 上滑后吸附在导航栏下方。 */
+.dermatology-page .dermatology-home { position: relative; overflow: visible; padding-bottom: 0; background: transparent; }
+.dermatology-page .dermatology-home::before { position: absolute; top: 0; right: -32px; left: -32px; z-index: 0; height: 472px; background: #DAF1CF; content: ''; pointer-events: none; }
+.dermatology-page .dermatology-home > .content-layout { position: relative; z-index: 1; }
+.dermatology-page.is-home-page .dermatology-scroll { padding-bottom: env(safe-area-inset-bottom); }
+.dermatology-page .yh-inline-segment.area-options { position: sticky; top: 176px; z-index: 10; box-shadow: none; }
+.dermatology-page .yh-inline-segment button.area-btn { z-index: 1; pointer-events: auto; }
+.dermatology-page .yh-inline-segment button.area-btn::before { display: none; }
+.dermatology-page .yh-inline-segment.area-options .area-btn { position: relative; z-index: 1; display: flex; height: 80px; align-items: center; justify-content: center; flex: 1; border-radius: 24px; background: transparent; color: #6c8c5e; font-size: 32px; font-weight: 500; line-height: 40px; text-align: center; }
+.dermatology-page .yh-inline-segment.area-options .area-btn.is-active { color: #18A65E; font-weight: 700; }
+.dermatology-page .yh-inline-segment.area-options .area-btn--pressed { opacity: .72; transform: scale(.98); }
+.dermatology-page .content-layout { height: auto; min-height: 0; overflow: visible; box-sizing: border-box; }
+.dermatology-page .category-list { position: sticky; top: 272px; align-self: flex-start; max-height: calc(100vh - 304px); overflow: hidden; }
+.dermatology-page .package-list { min-width: 0; height: auto; min-height: 0; overflow: visible; padding-bottom: 176px; box-sizing: border-box; }
+.dermatology-page,
+.dermatology-page .dermatology-scroll,
+.dermatology-page .dermatology-home { width: 100%; max-width: 100%; box-sizing: border-box; }
+.dermatology-page .dermatology-scroll { background: #fff; }
+.dermatology-page .warm-tip-card { display: flex; min-height: 96px; align-items: flex-start; gap: 16px; padding: 22px 24px; border: 1px solid rgba(190,145,42,.22); border-radius: 16px; box-sizing: border-box; background: #fff8e1; color: #7c6b3c; box-shadow: 0 6px 18px rgba(107,87,42,.04); font-size: 28px; line-height: 42px; text-align: left; }
+.dermatology-page .warm-tip-card image { display: block; width: 40px !important; height: 40px !important; flex: none; margin-top: 1px; }
+.dermatology-page .warm-tip-card text,
+.dermatology-page .warm-tip-card > view { color: #7c6b3c; font-size: 28px; line-height: 42px; }
+.dermatology-page.is-detail-page .detail-order-tip.warm-tip-card,
+.dermatology-page.is-confirm-page .confirm-notice.warm-tip-card,
+.dermatology-page .result-next.warm-tip-card,
+.dermatology-page .order-tip.warm-tip-card { margin-top: 20px; padding: 22px 24px; border-color: rgba(190,145,42,.22); background: #fff8e1; }

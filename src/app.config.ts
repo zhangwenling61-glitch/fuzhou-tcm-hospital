@@ -1,8 +1,7 @@
 export default defineAppConfig({
   pages: [
     'pages/home/index',
-    'pages/winter-summer-treatment/index',
-    'pages/dermatology/index'
+    'pages/winter-summer-treatment/index'
   ],
   subPackages: [
     {
@@ -10,6 +9,15 @@ export default defineAppConfig({
       name: 'appointment',
       pages: [
         'ai-assistant/index'
+      ]
+    },
+    {
+      root: 'pages/dermatology',
+      name: 'dermatology',
+      pages: [
+        'index',
+        'orders/index',
+        'order-detail/index'
       ]
     }
   ],

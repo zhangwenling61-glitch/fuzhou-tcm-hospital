@@ -29,6 +29,7 @@
         <div class="portal-user-card__patient-info">
           <div class="portal-user-card__patient-name">
             <span>{{ activeName }}</span>
+            <span v-if="relationLabel" class="portal-user-card__relation-tag">{{ relationLabel }}</span>
             <button
               v-if="showSwitch"
               class="portal-user-card__switch"
@@ -57,7 +58,7 @@
           </div>
         </div>
       </div>
-      <button class="portal-user-card__primary" type="button" hover-class="is-active" @click="onPrimaryClick">
+      <button v-if="showPrimary" class="portal-user-card__primary" type="button" hover-class="is-active" @click="onPrimaryClick">
         <image v-if="displayPrimaryIcon" class="portal-user-card__qr" :src="displayPrimaryIcon" mode="aspectFit" />
         <span>{{ primaryText }}</span>
       </button>
@@ -244,6 +245,7 @@ const props = withDefaults(defineProps<{
   kind?: UserCardKind
   avatar?: string
   name?: string
+  relationLabel?: string
   desc?: string
   showSwitch?: boolean
   switchText?: string
@@ -254,6 +256,7 @@ const props = withDefaults(defineProps<{
   switchArrowIcon?: string
   primaryText?: string
   primaryIcon?: string
+  showPrimary?: boolean
   showTodoBar?: boolean
   todoText?: string
   todoActionText?: string
@@ -267,6 +270,7 @@ const props = withDefaults(defineProps<{
   kind: 'clinic',
   avatar: AVATAR_MAP.childMale,
   name: '许*凯',
+  relationLabel: '',
   desc: 'AE****35',
   showSwitch: true,
   switchText: '切换就诊人',
@@ -277,6 +281,7 @@ const props = withDefaults(defineProps<{
   switchArrowIcon: iconSwitchArrow,
   primaryText: '医保码',
   primaryIcon: qrCodeImg,
+  showPrimary: true,
   showTodoBar: true,
   todoText: '当前暂无待办',
   todoActionText: '查看更多',

@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/weapp/",
   "projectname": "福州中医院门户",
   "description": "taro-vue2-ts",
-  "appid": "wx1c648db6efb3b65e",
+  "appid": "wxfcaeeddc96b398ec",
   "setting": {
     "urlCheck": true,
     "es6": false,

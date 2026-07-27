@@ -1,0 +1,79 @@
+@import '../../../assets/less/variables.less';
+@primary: #18A65E;
+@primary-dark: #147b49;
+@page-bg: #f3f8f1;
+@muted: #65746b;
+@orders-card-radius: 32px;
+@orders-card-bg: @card-bg;
+@orders-card-shadow: @card-shadow;
+@orders-orange: #E07C2C;
+
+.orders-page { min-height: 101vh; overflow-x: hidden; background: @page-bg; color: #26352c; }
+.orders-page .portal-nav-bar__gradient.is-secondary { background: rgba(243,248,241,.9) !important; backdrop-filter: blur(24px); }
+.orders-content { padding: 24px 24px calc(32px + env(safe-area-inset-bottom)); animation: orders-enter 220ms ease-out both; }
+.status-tabs { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; padding: 8px; border: 1px solid rgba(24,166,94,.08); border-radius: 28px; background: rgba(255,255,255,.92); box-shadow: 0 6px 20px rgba(42,75,48,.05); }
+.status-tabs button { position: relative; min-width: 0; min-height: 88px; margin: 0; padding: 0 4px; border: 0; border-radius: 22px; background: transparent; color: #526356; font-size: 26px; line-height: 88px; white-space: nowrap; transition: transform 100ms ease, background 180ms ease, color 180ms ease; }
+.status-tabs button::after { border: 0; }
+.status-tabs button:active { transform: scale(.97); }
+.status-tabs button.active { background: @primary; color: #fff; font-weight: 600; box-shadow: 0 7px 18px rgba(24,166,94,.18); }
+.orders-layout { margin-top: 20px; }
+.orders-list { min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.order-card { padding: 40px 32px; overflow: hidden; border: 2px solid @card-border-color; border-radius: @orders-card-radius; background: @orders-card-bg; box-shadow: @orders-card-shadow; animation: card-enter 260ms ease-out both; transition: transform 100ms ease; }
+.order-card--pressed { transform: scale(.98); }
+.order-card.highlighted { box-shadow: 0 0 0 3px rgba(24,166,94,.2),0 12px 30px rgba(24,166,94,.14); }
+.order-card__head,.order-card__amount,.order-card__footer { display: flex; align-items: center; }
+.order-card__head { justify-content: space-between; gap: 16px; }
+.order-card__head strong { min-width: 0; font-size: 30px; font-weight: 700; line-height: 42px; }
+.status { flex: none; padding: 8px 14px; border-radius: 999px; background: #e8f7ec; color: @primary-dark; font-size: 22px; line-height: 30px; }
+.is-pending .status { background: #fff2df; color: #a56817; }
+.is-cancelled .status { background: #f0f2f0; color: #788079; }
+.order-card__meta { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; color: @muted; font-size: 24px; line-height: 34px; }
+.order-card__time { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 8px; }
+.order-card__time text { color: @muted; font-size: 24px; line-height: 34px; }
+.order-card__time strong { color: #4d5a50; font-size: 24px; font-weight: 400; line-height: 34px; white-space: nowrap; }
+.order-card__amount { gap: 12px; margin-top: 20px; padding: 12px 0; }
+.order-card__amount > text { color: @muted; font-size: 24px; }
+.order-card__amount strong { margin-left: auto; color: #F1A23C; font-size: 24px; font-weight: 400; line-height: 34px; }
+.order-card__footer { position: relative; flex-wrap: wrap; padding-top: 18px; color: #4d5a50; font-size: 23px; line-height: 34px; }
+.order-card__patient { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 16px; }
+.order-card__patient text { flex: none; color: @muted; font-size: 24px; line-height: 34px; }
+.order-card__patient strong { min-width: 0; color: #4d5a50; font-size: 24px; font-weight: 400; line-height: 34px; text-align: right; }
+.order-card__actions { display: flex; width: 100%; align-items: center; justify-content: flex-end; gap: 16px; margin-top: 40px; }
+.order-card__actions .dermatology-area-tag { margin-right: auto; }
+.order-card__area-action { display: flex; min-height: 52px; align-items: center; gap: 8px; margin-right: auto; padding: 0 14px; border-radius: 16px; background: #eaf7ef; color: @primary-dark; box-sizing: border-box; }
+.order-card__area-action.is-wusibei { background: #fff1df; color: #c36a12; }
+.order-card__area-action image { width: 24px; height: 24px; flex: none; }
+.order-card__area-action text { color: inherit; font-size: 23px; font-weight: 600; line-height: 32px; white-space: nowrap; }
+.order-card__actions button { position: relative; flex: none; min-width: 152px; min-height: 72px; margin: 0; padding: 0 28px; border: 0; border-radius: 36px; box-sizing: border-box; font-size: 26px; line-height: 72px; }
+.order-card__actions button::after { border: 0; }
+.order-card__actions button::before { position: absolute; inset: -8px; content: ''; }
+.order-card__actions .detail-action { background: #eaf7ef; color: @primary-dark; }
+.order-card__actions .primary-action { background: @primary; color: #fff; }
+.order-card__actions button[disabled] { opacity: .65; }
+.orders-state { padding: 38px 12px; border: 2px solid @card-border-color; border-radius: @orders-card-radius; background: @orders-card-bg; box-shadow: @orders-card-shadow; text-align: center; }
+.orders-state .portal-empty-state__visual { width: 240px; height: 200px; transform: scale(.56); transform-origin: top center; margin-bottom: -90px; }
+.orders-state .portal-empty-state { gap: 8px; }
+.orders-state .portal-empty-state__title { font-size: 28px; line-height: 40px; }
+.orders-state .portal-empty-state__desc { font-size: 23px; line-height: 34px; }
+.orders-state > button { min-height: 88px; margin: 24px auto 0; padding: 0 28px; border: 0; border-radius: 44px; background: @primary; color: #fff; font-size: 26px; }
+.orders-state > button::after { border: 0; }
+.skeleton > view { height: 26px; margin-bottom: 20px; border-radius: 10px; background: linear-gradient(90deg,#edf4eb 25%,#f8fbf7 50%,#edf4eb 75%); background-size: 200% 100%; animation: skeleton 1.2s ease-in-out infinite; }
+.skeleton > view:nth-child(2) { width: 70%; }.skeleton > view:nth-child(3) { width: 48%; margin-bottom: 0; }
+@keyframes orders-enter { from { opacity: 0; transform: translateX(14px); } }
+@keyframes card-enter { from { opacity: 0; transform: translateY(10px); } }
+@keyframes skeleton { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .orders-content,.order-card,.skeleton > view { animation: none; } }
+.settlement-mask { position: fixed; z-index: 50; inset: 0; display: flex; align-items: center; justify-content: center; padding: 32px; background: rgba(20,32,24,.58); }
+.settlement-dialog { width: 100%; max-width: 620px; padding: 36px; border-radius: 28px; background: #fff; box-sizing: border-box; box-shadow: 0 20px 60px rgba(0,0,0,.18); }
+.settlement-dialog__title { margin-bottom: 28px; color: #26352c; font-size: 34px; font-weight: 700; text-align: center; }
+.settlement-dialog__row,.settlement-dialog__amount { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 64px; color: @muted; font-size: 26px; }
+.settlement-dialog__row strong { color: #26352c; font-size: 26px; font-weight: 500; text-align: right; }
+.settlement-dialog__amount { margin-top: 16px; padding-top: 20px; border-top: 1px solid #edf2ec; }
+.settlement-dialog__amount strong { color: #f1a23c; font-size: 38px; }
+.settlement-dialog__error { margin-top: 16px; padding: 14px 18px; border-radius: 12px; background: #fff1f0; color: #c84b43; font-size: 24px; line-height: 34px; }
+.settlement-dialog__actions { display: flex; gap: 16px; margin-top: 28px; }
+.settlement-dialog__actions button { position: relative; flex: 1; min-height: 88px; margin: 0; border: 0; border-radius: 44px; background: #edf5ee; color: @primary-dark; font-size: 28px; }
+.settlement-dialog__actions button::after { border: 0; }
+.settlement-dialog__actions .primary-action { background: @primary; color: #fff; }
+.order-card__amount strong { color: @orders-orange; }
+.is-pending .status,.order-card__area-action.is-wusibei { color: @orders-orange; }

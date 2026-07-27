@@ -1,0 +1,57 @@
+@import '../../../assets/less/variables.less';
+@primary: @green;
+@detail-card-radius: 32px;
+@detail-card-bg: @card-bg;
+@detail-card-shadow: @card-shadow;
+@detail-orange: #E07C2C;
+.order-detail-page { min-height: 101vh; background: #f3f8f1; color: #29362d; }
+.order-detail-page .portal-nav-bar__gradient.is-secondary { background: rgba(243,248,241,.9) !important; backdrop-filter: blur(24px); }
+.order-detail-content { display: flex; flex-direction: column; gap: 24px; padding: 24px 28px calc(236px + env(safe-area-inset-bottom)); animation: detail-enter 220ms ease-out both; }
+.detail-skeleton { display: flex; flex-direction: column; gap: 24px; }
+.detail-skeleton__status,.detail-skeleton__card { padding: @card-padding-y; border: 2px solid @card-border-color; border-radius: @detail-card-radius; background: @detail-card-bg; box-shadow: @detail-card-shadow; }
+.detail-skeleton__status { height: 170px; box-sizing: border-box; }
+.detail-skeleton__card { height: 220px; box-sizing: border-box; }
+.detail-skeleton__card:last-child { height: 160px; }
+.detail-skeleton view { border-radius: 12px; background: linear-gradient(90deg,#eaf2ed 25%,#f8fbf7 50%,#eaf2ed 75%); background-size: 200% 100%; animation: detail-skeleton-shimmer 1.2s ease-in-out infinite; }
+.detail-skeleton__status view { height: 26px; margin-bottom: 18px; }
+.detail-skeleton__status view:nth-child(1) { width: 36%; }.detail-skeleton__status view:nth-child(2) { width: 55%; height: 42px; }.detail-skeleton__status view:nth-child(3) { width: 72%; margin-bottom: 0; }
+.detail-skeleton__card view { height: 26px; margin-bottom: 24px; }.detail-skeleton__card view:nth-child(2) { width: 76%; }.detail-skeleton__card view:last-child { width: 58%; margin-bottom: 0; }
+@keyframes detail-skeleton-shimmer { to { background-position: -200% 0; } }
+.status-card,.detail-card,.detail-state { padding: @card-padding-y; border: 2px solid @card-border-color; border-radius: @detail-card-radius; background: @detail-card-bg; box-shadow: @detail-card-shadow; }
+.status-card { display: grid; grid-template-columns: 1fr auto; gap: 20px; background: linear-gradient(145deg,#e5f7ea,#fff); }
+.status-card > view { display: flex; flex-direction: column; gap: 8px; }
+.status-card text,.status-card small,.info-row > text { color: #65746b; font-size: 25px; line-height: 36px; }
+.status-card strong { color: @primary; font-size: 36px; line-height: 48px; }
+.status-card .status-price { text-align: right; }.status-card .status-price strong { color: #F1A23C; font-size: 42px; }
+.status-card > small { grid-column: 1 / -1; }
+.section-title { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; font-size: 32px; font-weight: 600; }
+.section-title::before { width: 8px; height: 32px; border-radius: 4px; background: @primary; content: ''; }
+.info-row { display: flex; min-height: 78px; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid #edf2ec; }
+.info-row:last-child { border-bottom: 0; }.info-row strong { color: #35463a; font-size: 27px; text-align: right; }
+.info-row .area { padding: 5px 12px; border-radius: 10px; background: #eaf7ef; color: #147b49; }.info-row .area.is-wusibei { background: #fff1df; color: #c36a12; }.info-row small { padding: 4px 10px; border-radius: 9px; background: #eaf7ef; color: #147b49; font-size: 21px; }
+.warm-tip { display: flex; gap: 16px; padding: 22px 24px; border: 1px solid rgba(190,145,42,.22); border-radius: 18px; background: #fff8e1; color: #7c6b3c; font-size: 27px; line-height: 40px; }
+.warm-tip image { width: 40px; height: 40px; flex: none; }
+.detail-state { display: flex; min-height: 380px; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: #65746b; font-size: 26px; }
+.detail-state strong { color: #29362d; font-size: 32px; }.detail-state button { min-height: 88px; padding: 0 34px; border: 0; border-radius: 44px; background: @primary; color: #fff; }
+.detail-state button::after { border: 0; }
+.detail-bottom { position: fixed; z-index: 30; right: 0; bottom: 0; left: 0; display: flex; height: calc(236px + env(safe-area-inset-bottom)); align-items: center; justify-content: space-between; padding: 40px 32px calc(100px + env(safe-area-inset-bottom)); box-sizing: border-box; background: rgba(255,255,255,.94); box-shadow: 0 -8px 28px rgba(41,70,47,.08); backdrop-filter: blur(20px); }
+.detail-bottom > view { display: flex; align-items: baseline; gap: 12px; }.detail-bottom text { color: #65746b; font-size: 24px; }.detail-bottom strong { color: #F1A23C; font-size: 40px; }
+.detail-bottom button { display: flex; min-width: 220px; height: 92px; min-height: 0; align-items: center; justify-content: center; box-sizing: border-box; margin: 0; padding: 0; border: 0; border-radius: 46px; background: #18A65E; color: #fff; font-size: 30px; font-weight: 600; line-height: 1; text-align: center; }
+.detail-bottom button::after { border: 0; }.detail-bottom button[disabled] { opacity: .65; }
+@keyframes detail-enter { from { opacity: 0; transform: translateX(14px); } }
+@media (prefers-reduced-motion: reduce) { .order-detail-content { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .detail-skeleton view { animation: none; } }
+.settlement-mask { position: fixed; z-index: 50; inset: 0; display: flex; align-items: center; justify-content: center; padding: 32px; background: rgba(20,32,24,.58); }
+.settlement-dialog { width: 100%; max-width: 620px; padding: 36px; border-radius: 28px; background: #fff; box-sizing: border-box; box-shadow: 0 20px 60px rgba(0,0,0,.18); }
+.settlement-dialog__title { margin-bottom: 28px; color: #29362d; font-size: 34px; font-weight: 700; text-align: center; }
+.settlement-dialog__row,.settlement-dialog__amount { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 64px; color: #65746b; font-size: 26px; }
+.settlement-dialog__row strong { color: #29362d; font-size: 26px; font-weight: 500; text-align: right; }
+.settlement-dialog__amount { margin-top: 16px; padding-top: 20px; border-top: 1px solid #edf2ec; }
+.settlement-dialog__amount strong { color: #f1a23c; font-size: 38px; }
+.settlement-dialog__error { margin-top: 16px; padding: 14px 18px; border-radius: 12px; background: #fff1f0; color: #c84b43; font-size: 24px; line-height: 34px; }
+.settlement-dialog__actions { display: flex; gap: 16px; margin-top: 28px; }
+.settlement-dialog__actions button { position: relative; display: flex; min-height: 88px; flex: 1; align-items: center; justify-content: center; box-sizing: border-box; margin: 0; padding: 0; border: 0; border-radius: 44px; background: #edf5ee; color: #147b49; font-size: 28px; line-height: 1; text-align: center; }
+.settlement-dialog__actions button::after { border: 0; }
+.settlement-dialog__actions .primary-action { background: #18A65E; color: #fff; }
+.status-card .status-price strong,.detail-bottom strong,.settlement-dialog__amount strong { color: @detail-orange; }
+.info-row .area.is-wusibei { color: @detail-orange; }

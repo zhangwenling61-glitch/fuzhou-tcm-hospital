@@ -13,6 +13,33 @@
   border: none;
 }
 
+/* 皮肤科按钮基线：规避小程序原生 button 的内边距与基线差异。 */
+button.dermatology-button {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 !important;
+  line-height: 1 !important;
+  text-align: center;
+}
+
+button.dermatology-button::after {
+  border: 0;
+}
+
+button.dermatology-button--primary {
+  background: #18A65E !important;
+  border-color: #18A65E !important;
+  color: #fff !important;
+}
+
+button.dermatology-button--secondary {
+  background: #EDF5EE !important;
+  color: #147B49 !important;
+}
+
 .van-button--hairline::after {
   transform-origin: unset;
   width: unset;

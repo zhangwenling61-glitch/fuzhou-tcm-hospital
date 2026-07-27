@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import { usePageScroll, useDidShow, useDidHide } from '@tarojs/taro'
-import { ref } from 'vue'
+import { nextTick, onMounted, ref } from 'vue'
 import { useAppStore } from '@/store'
 import HomeTab from './components/HomeTab.vue'
 import PortalActionSheet from '@/components/PortalActionSheet/index.vue'
@@ -53,10 +53,23 @@ const store = useAppStore()
 const pageVisible = ref(true)
 const activeScrollTop = ref(0)
 const activePortalTab = ref<'home' | 'message' | 'user' | 'ai'>('home')
+const hasCompletedFirstRender = ref(false)
+
+onMounted(() => {
+  // 小程序首屏渲染完成后再恢复本地状态，避免首个 setData 前发生响应式更新。
+  nextTick(() => {
+    if (isWeapp) {
+      store.syncFromStorage()
+      store.isSearchingGlobal = false
+    }
+    hasCompletedFirstRender.value = true
+  })
+})
 
 useDidShow(() => {
   pageVisible.value = true
-  if (isWeapp) {
+  // 首次进入由 onMounted 在首屏完成后处理；后续回到首页再即时刷新即可。
+  if (isWeapp && hasCompletedFirstRender.value) {
     store.syncFromStorage()
     store.isSearchingGlobal = false
   }

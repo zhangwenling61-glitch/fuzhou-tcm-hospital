@@ -558,7 +558,7 @@
 
 <script setup lang="ts">
 import Taro, { useDidShow, usePageScroll, useDidHide } from '@tarojs/taro'
-import { ref, computed, watch, onMounted, onUnmounted, PropType } from 'vue'
+import { ref, computed, watch, nextTick, onMounted, onUnmounted, PropType } from 'vue'
 import { useAppStore } from '@/store'
 import PortalActionSheet from '@/components/PortalActionSheet/index.vue'
 import PortalRowArrow from '@/components/PortalRowArrow/index.vue'
@@ -838,11 +838,9 @@ if (!isWeapp) {
 // Emulate visibility didShow/didHide hooks
 const handleTabShow = () => {
   console.log('[Home Tab] handleTabShow')
-  store.syncFromStorage()
   isSearching.value = false
   searchQuery.value = ''
   store.isSearchingGlobal = false
-  Taro.eventCenter.trigger('tabbar-bubble-control', 'start')
   const scrolled = isNavScrolled.value
   Taro.setNavigationBarColor({
     frontColor: '#000000',
@@ -853,7 +851,6 @@ const handleTabShow = () => {
 const handleTabHide = () => {
   console.log('[Home Tab] handleTabHide')
   isSearching.value = false
-  Taro.eventCenter.trigger('tabbar-bubble-control', 'stop')
 }
 
 const isTabActive = computed(() => {
@@ -871,7 +868,7 @@ watch(isTabActive, (active) => {
       handleTabHide()
     }
   }
-}, { immediate: true })
+})
 
 if (!isWeapp) {
   useDidShow(() => {
@@ -985,6 +982,11 @@ onMounted(() => {
   Taro.eventCenter.on('switchTab', (tab: 'home' | 'message' | 'user') => {
     activePortalTab.value = tab
   })
+
+  // 避免在小程序首个 setData 前写入响应式状态，导致首屏偶发白屏。
+  if (isWeapp && isTabActive.value) {
+    nextTick(() => handleTabShow())
+  }
 })
 
 onUnmounted(() => {
