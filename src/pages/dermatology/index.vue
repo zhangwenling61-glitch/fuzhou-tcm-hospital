@@ -7,8 +7,8 @@
         <view class="hero-card">
           <image class="hero-illustration" :src="heroIllustration" mode="aspectFit" />
           <view class="hero-badge">🏥 福州中医院 · 皮肤科</view>
-          <view class="hero-title">传承中医精髓  守护皮肤健康</view>
-          <view class="hero-desc">中医特色疗法结合现代技术，提供专业的诊疗服务</view>
+          <view class="hero-title">中医特色皮肤诊疗</view>
+          <view class="hero-desc">融合现代技术，提供专业诊疗</view>
         </view>
 
         <view class="consult-card" hover-class="consult-card--pressed" :hover-start-time="0" :hover-stay-time="120" @tap="goConsult">
@@ -22,7 +22,7 @@
           <view class="yh-portal-title-mark area-smile-indicator" :style="areaSmileStyle"></view>
         </view>
         <view class="content-layout">
-          <view class="category-list"><button v-for="cat in categories" :key="cat.id" type="button" :class="['category-btn', { active: activeCategory === cat.id, 'is-pressed': pressedCategory === cat.id }]" hover-class="category-btn--pressed" :hover-start-time="0" :hover-stay-time="100" @touchstart="pressCategory(cat.id)" @touchend="releaseCategory" @touchcancel="releaseCategory" @tap="selectCategory(cat.id)">{{ cat.name }}</button></view>
+          <view class="category-list"><button v-for="cat in categories" :key="cat.id" type="button" :class="['category-btn', { active: activeCategory === cat.id }]" hover-class="category-btn--pressed" :hover-start-time="0" :hover-stay-time="100" @tap="selectCategory(cat.id)">{{ cat.name }}</button></view>
           <view :class="['package-list', { 'is-switching': isSwitching }]">
             <view v-if="servicesLoading" class="services-skeleton" aria-label="正在加载服务">
               <view v-for="item in 3" :key="item" class="services-skeleton__card"><view></view><view></view><view></view></view>
@@ -104,25 +104,22 @@
         </view>
         <view class="confirm-notice warm-tip-card"><image :src="alertCircleIcon" mode="aspectFit" /><view>本次就诊需使用患者本人自费卡结算。如无自费卡，请先添加电子健康卡。</view></view>
         <view v-if="submitError" class="submit-error"><text>{{ submitError }}</text><button @tap="submitOrder">重新提交</button></view>
-        <view class="confirm-bottom"><button :disabled="isSubmitting" :class="{ 'is-loading': isSubmitting }" @tap="submitOrder"><view v-if="isSubmitting" class="submit-spinner"></view><text>{{ isSubmitting ? '开单中…' : '确认开单' }}</text></button></view>
+        <view class="confirm-bottom"><button :disabled="isSubmitting" :class="{ 'is-loading': isSubmitting }" hover-class="dermatology-bottom-button--pressed" :hover-start-time="0" :hover-stay-time="100" @tap="submitOrder"><view v-if="isSubmitting" class="submit-spinner"></view><text>{{ isSubmitting ? '开单中…' : '确认开单' }}</text></button></view>
       </view>
 
       <view v-else-if="view === 'submitting'" class="submitting-view">
-        <view class="submitting-orbit">
-          <view class="submitting-orbit__ring"></view>
-          <view class="submitting-orbit__dot"></view>
-        </view>
-        <view class="submitting-mark">
-          <view></view>
-        </view>
-        <view class="submitting-title">正在确认开单</view>
-        <view class="submitting-desc">请稍候，正在生成就诊订单</view>
+        <PortalEmptyState
+          class="dermatology-submitting-state"
+          title="正在确认开单"
+          desc="请稍候，正在生成就诊订单"
+          :animated="true"
+        />
       </view>
 
       <view v-else-if="view === 'success'" class="result-view">
-        <view class="result-icon" aria-hidden="true"><image :src="circleCheckIcon" mode="aspectFit" /></view>
+        <view class="result-icon" aria-hidden="true"><image :src="successIcon" mode="aspectFit" /></view>
         <view class="result-title">开单成功</view>
-        <view class="result-desc">请按就诊提示前往所选院区使用。</view>
+        <view class="result-desc">请按就诊提示前往所选院区使用</view>
         <view class="result-order-card">
           <view><text>订单编号</text><strong>{{ orderNumber }}</strong></view>
           <view><text>服务项目</text><strong>{{ currentPackage?.name }}</strong></view>
@@ -135,7 +132,7 @@
 
     </view>
 
-    <view v-if="view === 'detail' && currentPackage" class="detail-bottom"><view><text>项目费用</text><strong>¥{{ currentPackage.price }}</strong></view><button @tap="openConfirm">下一步</button></view>
+    <view v-if="view === 'detail' && currentPackage" class="detail-bottom"><view><text>项目费用</text><strong>¥{{ currentPackage.price }}</strong></view><button hover-class="dermatology-bottom-button--pressed" :hover-start-time="0" :hover-stay-time="100" @tap="openConfirm">下一步</button></view>
 
     <view class="floating-actions">
     <button v-if="view === 'home'" class="home-fab" aria-label="首页" hover-class="home-fab--pressed" :hover-stay-time="100" @tap="goHome"><image :src="homeIcon" mode="aspectFit" /></button>
@@ -150,6 +147,7 @@
 import Taro, { usePageScroll } from '@tarojs/taro'
 import { computed, nextTick, ref } from 'vue'
 import PortalNavBar from '@/components/PortalNavBar/index.vue'
+import PortalEmptyState from '@/components/PortalEmptyState/index.vue'
 import DermatologyAreaTag from '@/components/DermatologyAreaTag/index.vue'
 import PortalUserCard from '@/components/PortalUserCard/index.vue'
 import orderIcon from './dermatology-order.svg'
@@ -160,7 +158,7 @@ import treatmentRoomImage from '@/assets/images/dermatology-treatment-room-optim
 import defaultUserAvatar from '@/assets/images/user/default-user.png'
 import alertCircleIcon from '@/assets/icons/common/circle-alert.svg'
 import emptyAreaIcon from '@/assets/icons/message/hospital-message.svg'
-import circleCheckIcon from './circle-check.svg'
+import successIcon from '@/assets/images/成功图标-green.png'
 import { dermatologyOrderRepository } from './orders/order-repository'
 import './index.less'
 
@@ -172,7 +170,6 @@ const view = ref<'home' | 'detail' | 'confirm' | 'submitting' | 'success'>('home
 const activeCategory = ref('all')
 const selectedArea = ref('鼓楼')
 const isSwitching = ref(false)
-const pressedCategory = ref('')
 const currentPackage = ref<PackageItem | null>(null)
 const toastText = ref('')
 const isSubmitting = ref(false)
@@ -269,15 +266,6 @@ const handleTreatmentRoomImageError = () => {
 }
 usePageScroll(({ scrollTop: value }) => { scrollTop.value = value || 0 })
 let switchTimer: ReturnType<typeof setTimeout> | undefined
-let categoryPressTimer: ReturnType<typeof setTimeout> | undefined
-const pressCategory = (categoryId: string) => {
-  if (categoryPressTimer) clearTimeout(categoryPressTimer)
-  pressedCategory.value = categoryId
-}
-const releaseCategory = () => {
-  if (categoryPressTimer) clearTimeout(categoryPressTimer)
-  categoryPressTimer = setTimeout(() => { pressedCategory.value = '' }, 120)
-}
 const playListSwitch = () => {
   isSwitching.value = true
   if (switchTimer) clearTimeout(switchTimer)

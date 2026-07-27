@@ -20,12 +20,12 @@
           </template>
 
           <view v-else-if="errorMessage" class="orders-state">
-            <PortalEmptyState title="订单加载失败" desc="请检查网络后重新加载" :animated="false" />
+            <PortalEmptyState title="订单加载失败" desc="请检查网络后重新加载" :animated="true" />
             <button class="dermatology-button dermatology-button--primary" @tap="loadOrders">重新加载</button>
           </view>
 
           <view v-else-if="!visibleOrders.length" class="orders-state">
-            <PortalEmptyState :title="emptyTitle" desc="暂时没有符合条件的皮肤科订单" :animated="false" />
+            <PortalEmptyState :title="emptyTitle" desc="暂时没有符合条件的皮肤科订单" :animated="true" />
             <button v-if="activeFilter === 'all'" class="dermatology-button dermatology-button--primary" @tap="chooseService">去选择服务</button>
           </view>
 

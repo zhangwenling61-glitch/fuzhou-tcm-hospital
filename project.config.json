@@ -9,5 +9,17 @@
     "postcss": false,
     "minified": true
   },
-  "compileType": "miniprogram"
+  "compileType": "miniprogram",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "皮肤科首页",
+          "pathName": "pages/dermatology/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

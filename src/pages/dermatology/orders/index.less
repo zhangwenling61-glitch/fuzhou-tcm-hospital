@@ -6,6 +6,10 @@
 @orders-card-radius: 32px;
 @orders-card-bg: @card-bg;
 @orders-card-shadow: @card-shadow;
+
+.dermatology-orders-page button:active,
+.dermatology-orders-page button.button--pressed { filter: brightness(.88); transform: scale(.98); box-shadow: 0 4px 10px rgba(24,166,94,.12) !important; }
+.dermatology-orders-page button { transition: transform 100ms ease-out, filter 100ms ease-out, box-shadow 100ms ease-out; }
 @orders-orange: #E07C2C;
 
 .orders-page { min-height: 101vh; overflow-x: hidden; background: @page-bg; color: #26352c; }
@@ -23,7 +27,7 @@
 .order-card.highlighted { box-shadow: 0 0 0 3px rgba(24,166,94,.2),0 12px 30px rgba(24,166,94,.14); }
 .order-card__head,.order-card__amount,.order-card__footer { display: flex; align-items: center; }
 .order-card__head { justify-content: space-between; gap: 16px; }
-.order-card__head strong { min-width: 0; font-size: 30px; font-weight: 700; line-height: 42px; }
+.order-card__head strong { min-width: 0; font-size: 36px; font-weight: 700; line-height: 50px; }
 .status { flex: none; padding: 8px 14px; border-radius: 999px; background: #e8f7ec; color: @primary-dark; font-size: 22px; line-height: 30px; }
 .is-pending .status { background: #fff2df; color: #a56817; }
 .is-cancelled .status { background: #f0f2f0; color: #788079; }
@@ -55,6 +59,14 @@
 .orders-state .portal-empty-state { gap: 8px; }
 .orders-state .portal-empty-state__title { font-size: 28px; line-height: 40px; }
 .orders-state .portal-empty-state__desc { font-size: 23px; line-height: 34px; }
+.dermatology-orders-page .orders-state .portal-empty-state__radar { background: rgba(222, 243, 222, .92); }
+.dermatology-orders-page .orders-state .portal-empty-state__radar.is-two { background: rgba(24, 166, 94, .10); }
+.dermatology-orders-page .orders-state .portal-empty-state__radar.is-three { background: rgba(255, 255, 255, .52); }
+.dermatology-orders-page .orders-state .portal-empty-state__paper { box-shadow: 0 8px 18px rgba(69, 126, 76, .09); }
+.dermatology-orders-page .orders-state .portal-empty-state__line { background: #bfe4cf; }
+.dermatology-orders-page .orders-state .portal-empty-state__card { background: linear-gradient(180deg, #22b768 0%, #18a65e 100%); box-shadow: 0 12px 20px rgba(24, 166, 94, .18), inset 0 2px 10px rgba(255,255,255,.18); }
+.dermatology-orders-page .orders-state .portal-empty-state__title { color: #314b38; }
+.dermatology-orders-page .orders-state .portal-empty-state__desc { color: #65746b; }
 .orders-state > button { min-height: 88px; margin: 24px auto 0; padding: 0 28px; border: 0; border-radius: 44px; background: @primary; color: #fff; font-size: 26px; }
 .orders-state > button::after { border: 0; }
 .skeleton > view { height: 26px; margin-bottom: 20px; border-radius: 10px; background: linear-gradient(90deg,#edf4eb 25%,#f8fbf7 50%,#edf4eb 75%); background-size: 200% 100%; animation: skeleton 1.2s ease-in-out infinite; }

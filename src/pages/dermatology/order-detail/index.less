@@ -4,6 +4,10 @@
 @detail-card-bg: @card-bg;
 @detail-card-shadow: @card-shadow;
 @detail-orange: #E07C2C;
+
+.order-detail-page button:active,
+.order-detail-page button.button--pressed { filter: brightness(.88); transform: scale(.98); box-shadow: 0 4px 10px rgba(24,166,94,.12) !important; }
+.order-detail-page button { transition: transform 100ms ease-out, filter 100ms ease-out, box-shadow 100ms ease-out; }
 .order-detail-page { min-height: 101vh; background: #f3f8f1; color: #29362d; }
 .order-detail-page .portal-nav-bar__gradient.is-secondary { background: rgba(243,248,241,.9) !important; backdrop-filter: blur(24px); }
 .order-detail-content { display: flex; flex-direction: column; gap: 24px; padding: 24px 28px calc(236px + env(safe-area-inset-bottom)); animation: detail-enter 220ms ease-out both; }
