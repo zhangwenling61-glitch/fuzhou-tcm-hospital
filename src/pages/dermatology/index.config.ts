@@ -1,5 +1,7 @@
 export default definePageConfig({
-  navigationStyle: 'custom',
+  navigationStyle: 'default',
+  navigationBarTitleText: '皮肤科',
+  navigationBarBackgroundColor: '#DAF1CF',
   navigationBarTextStyle: 'black',
   backgroundColor: '#ffffff',
   backgroundColorBottom: '#ffffff'

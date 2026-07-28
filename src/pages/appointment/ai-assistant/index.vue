@@ -6,6 +6,7 @@
     <PortalNavBar
       title="仙草AI助手"
       :scroll-top="0"
+      nav-background="#ecf6e7"
       secondary
     />
 

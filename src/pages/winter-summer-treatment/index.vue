@@ -14,7 +14,7 @@
       <i></i>
     </div>
 
-    <PortalNavBar title="三伏灸活动" :scroll-top="scrollTop" secondary force-dark-text />
+    <PortalNavBar title="三伏灸活动" :scroll-top="scrollTop" nav-background="#feedd1" secondary force-dark-text />
 
     <img class="winter-summer-page__bg" :src="pageBg" mode="widthFix" alt="">
     <img class="winter-summer-page__top-bg" :src="topBg" mode="widthFix" alt="">
