@@ -1,8 +1,6 @@
 <template>
   <view :class="['dermatology-page', { 'is-home-page': view === 'home', 'is-detail-page': view === 'detail', 'is-confirm-page': view === 'confirm', 'is-submitting-page': view === 'submitting', 'is-result-page': view === 'success' }]">
-    <PortalNavBar class="dermatology-nav" :class="{ 'is-scrolled': scrollTop > 16 }" :title="pageTitle" :scroll-top="scrollTop" :custom-back="handlePageBack" home-path="/pages/dermatology/index" secondary />
-
-    <view class="dermatology-scroll">
+    <view class="dermatology-scroll" :style="{ marginTop: '0px', minHeight: '100vh' }">
       <view v-if="view === 'home'" class="dermatology-home">
         <view class="hero-card">
           <image class="hero-illustration" :src="heroIllustration" mode="aspectFit" />
@@ -17,12 +15,42 @@
           <view class="consult-copy"><view class="consult-title">在线问诊  辨证施治 <text class="consult-cta">免费咨询</text></view><view class="consult-desc">脱发、痤疮、色斑、敏感肌咨询</view></view>
         </view>
 
-        <view class="area-options yh-inline-segment">
-          <view v-for="area in areas" :key="area" :class="['area-btn', { 'is-active': selectedArea === area }]" hover-class="area-btn--pressed" hover-stay-time="100" @tap.stop="selectArea(area)">{{ area }}院区</view>
-          <view class="yh-portal-title-mark area-smile-indicator" :style="areaSmileStyle"></view>
+        <view :class="['area-options-anchor', { 'is-pinned': isAreaTabPinned }]">
+          <view :class="['area-options', 'yh-inline-segment', 'area-options--source', { 'is-source-hidden': isAreaTabPinned }]">
+            <button
+              v-for="area in areas"
+              :key="area"
+              class="area-btn"
+              type="button"
+              :data-area="area"
+              :class="{ 'is-active': selectedArea === area }"
+              hover-class="area-btn--pressed"
+              :hover-start-time="0"
+              :hover-stay-time="100"
+              @tap="handleAreaTap"
+            >
+              <text class="area-btn__label">{{ area }}院区</text>
+            </button>
+            <view class="yh-portal-title-mark area-smile-indicator" :style="areaSmileStyle"></view>
+          </view>
         </view>
         <view class="content-layout">
-          <view class="category-list"><button v-for="cat in categories" :key="cat.id" type="button" :class="['category-btn', { active: activeCategory === cat.id }]" hover-class="category-btn--pressed" :hover-start-time="0" :hover-stay-time="100" @tap="selectCategory(cat.id)">{{ cat.name }}</button></view>
+          <view :class="['category-list', 'category-list--source', { 'is-source-hidden': isAreaTabPinned }]">
+            <button
+              v-for="cat in categories"
+              :key="cat.id"
+              class="category-btn"
+              type="button"
+              :data-category="cat.id"
+              :class="{ active: activeCategory === cat.id }"
+              hover-class="category-btn--pressed"
+              :hover-start-time="0"
+              :hover-stay-time="100"
+              @tap="handleCategoryTap"
+            >
+              <text class="category-btn__label">{{ cat.name }}</text>
+            </button>
+          </view>
           <view :class="['package-list', { 'is-switching': isSwitching }]">
             <view v-if="servicesLoading" class="services-skeleton" aria-label="正在加载服务">
               <view v-for="item in 3" :key="item" class="services-skeleton__card"><view></view><view></view><view></view></view>
@@ -41,6 +69,56 @@
               <button class="empty-switch-btn" hover-class="empty-switch-btn--pressed" :hover-stay-time="100" @tap="switchEmptyArea">切换至{{ alternateArea }}院区</button>
             </view>
           </view>
+        </view>
+
+        <view
+          :class="['area-options-fixed', { 'is-visible': isAreaTabPinned }]"
+          :style="{ top: `${fixedNavBottomPx}px` }"
+        >
+          <view class="area-options yh-inline-segment area-options--fixed">
+            <button
+              v-for="area in areas"
+              :key="`fixed-${area}`"
+              class="area-btn"
+              type="button"
+              :data-area="area"
+              :class="{ 'is-active': selectedArea === area }"
+              hover-class="area-btn--pressed"
+              :hover-start-time="0"
+              :hover-stay-time="100"
+              @tap="handleAreaTap"
+            >
+              <text class="area-btn__label">{{ area }}院区</text>
+            </button>
+            <view class="yh-portal-title-mark area-smile-indicator" :style="areaSmileStyle"></view>
+          </view>
+        </view>
+
+        <view
+          :class="['category-fixed-shell', { 'is-visible': isAreaTabPinned }]"
+          :style="{ top: `${fixedCategoryTopPx}px`, left: `${fixedCategoryLeftPx}px`, width: '142px', transform: 'none' }"
+        >
+          <scroll-view
+            class="category-list category-list--fixed"
+            scroll-y
+            enhanced
+            :show-scrollbar="false"
+          >
+            <button
+              v-for="cat in categories"
+              :key="`fixed-${cat.id}`"
+              class="category-btn"
+              type="button"
+              :data-category="cat.id"
+              :class="{ active: activeCategory === cat.id }"
+              hover-class="category-btn--pressed"
+              :hover-start-time="0"
+              :hover-stay-time="100"
+              @tap="handleCategoryTap"
+            >
+              <text class="category-btn__label">{{ cat.name }}</text>
+            </button>
+          </scroll-view>
         </view>
       </view>
 
@@ -144,9 +222,8 @@
 </template>
 
 <script setup lang="ts">
-import Taro, { useDidShow, usePageScroll } from '@tarojs/taro'
-import { computed, nextTick, ref } from 'vue'
-import PortalNavBar from '@/components/PortalNavBar/index.vue'
+import Taro, { usePageScroll, useReady } from '@tarojs/taro'
+import { computed, nextTick, ref, watch } from 'vue'
 import PortalEmptyState from '@/components/PortalEmptyState/index.vue'
 import DermatologyAreaTag from '@/components/DermatologyAreaTag/index.vue'
 import PortalUserCard from '@/components/PortalUserCard/index.vue'
@@ -179,6 +256,13 @@ const servicesError = ref('')
 const orderNumber = ref('')
 const scrollTop = ref(0)
 const homeScrollTop = ref(0)
+const isAreaTabPinned = ref(false)
+const areaTabPinThresholdPx = ref(Number.POSITIVE_INFINITY)
+// Native WeChat navigation is outside the page content viewport; fixed tabs
+// must be positioned from the content viewport top instead of the old custom-nav offset.
+const fixedNavBottomPx = ref(0)
+const fixedCategoryTopPx = ref(136)
+const fixedCategoryLeftPx = ref(28)
 const areas = ['鼓楼', '五四北']
 const categories = [{ id: 'all', name: '全部服务' }, { id: 'hair', name: '生发养发' }, { id: 'tcm', name: '中医疗法' }, { id: 'mole', name: '点痣祛疣' }, { id: 'whiten', name: '祛斑美白' }, { id: 'acne', name: '痘印痘坑' }, { id: 'antiaging', name: '光电抗衰' }, { id: 'soothe', name: '舒敏修复' }]
 const packages: PackageItem[] = [
@@ -213,6 +297,22 @@ const pageTitle = computed(() => {
   if (view.value === 'success') return '开单结果'
   return '订单详情'
 })
+
+// 皮肤科的详情、开单、结果为同一个小程序页面内的视图切换，
+// 原生导航栏不会随着 CSS 背景自动更新，需在切换时同步原生颜色。
+const nativeNavBackground = computed(() => {
+  if (view.value === 'home') return '#DAF1CF'
+  if (view.value === 'detail' || view.value === 'confirm') return '#F7FBF5'
+  return '#F7FBF5'
+})
+
+watch([pageTitle, nativeNavBackground], ([title, backgroundColor]) => {
+  Taro.setNavigationBarTitle({ title }).catch(() => {})
+  Taro.setNavigationBarColor({
+    frontColor: '#000000',
+    backgroundColor
+  }).catch(() => {})
+}, { immediate: true })
 const detailCategoryLabel = computed(() => {
   if (currentPackage.value?.cat === 'hair') return '脱发养护'
   return categories.find(category => category.id === currentPackage.value?.cat)?.name || '皮肤养护'
@@ -264,11 +364,62 @@ const treatmentRoomSrc = ref(treatmentRoomImage)
 const handleTreatmentRoomImageError = () => {
   if (treatmentRoomSrc.value !== detailBannerImage) treatmentRoomSrc.value = detailBannerImage
 }
-usePageScroll(({ scrollTop: value }) => { scrollTop.value = value || 0 })
-useDidShow(() => {
-  scrollTop.value = 0
-  isSwitching.value = false
-  nextTick(() => { Taro.pageScrollTo({ scrollTop: 0, duration: 0 }).catch(() => {}) })
+let preservePinnedUntil = 0
+let areaSwitchScrollTimer: ReturnType<typeof setTimeout> | undefined
+const updatePinnedState = (value: number) => {
+  if (view.value !== 'home' || !Number.isFinite(areaTabPinThresholdPx.value)) {
+    isAreaTabPinned.value = false
+    return
+  }
+  if (isAreaTabPinned.value && Date.now() < preservePinnedUntil) return
+  const hysteresisPx = 4
+  if (!isAreaTabPinned.value && value >= areaTabPinThresholdPx.value) {
+    isAreaTabPinned.value = true
+  } else if (isAreaTabPinned.value && value <= areaTabPinThresholdPx.value - hysteresisPx) {
+    isAreaTabPinned.value = false
+  }
+}
+
+const measurePinnedGeometry = () => {
+  if (view.value !== 'home') return
+  const navBottom = fixedNavBottomPx.value
+  const query = Taro.createSelectorQuery()
+  query.select('.area-options--source').boundingClientRect()
+  query.select('.category-list--source').boundingClientRect()
+  query.exec((rects: Array<{ top?: number; left?: number; bottom?: number; height?: number } | null>) => {
+    const areaRect = rects?.[0]
+    if (!areaRect) return
+
+    const areaTop = Number(areaRect.top || 0)
+    const areaHeight = Number(areaRect.height || 48)
+    const categoryTop = Number(rects?.[1]?.top ?? areaTop + areaHeight)
+    const categoryLeft = Number(rects?.[1]?.left ?? fixedCategoryLeftPx.value)
+    fixedNavBottomPx.value = navBottom
+    fixedCategoryTopPx.value = navBottom + Math.max(0, categoryTop - areaTop)
+    fixedCategoryLeftPx.value = categoryLeft
+    areaTabPinThresholdPx.value = scrollTop.value + areaTop - navBottom
+    updatePinnedState(scrollTop.value)
+  })
+}
+
+const handleNavLayout = ({ height }: { height: number }) => {
+  if (!height || height === fixedNavBottomPx.value) return
+  fixedNavBottomPx.value = height
+  nextTick(() => {
+    setTimeout(measurePinnedGeometry, 0)
+  })
+}
+
+useReady(() => {
+  nextTick(() => {
+    setTimeout(measurePinnedGeometry, 60)
+  })
+})
+
+usePageScroll(({ scrollTop: value }) => {
+  const nextScrollTop = value || 0
+  scrollTop.value = nextScrollTop
+  updatePinnedState(nextScrollTop)
 })
 let switchTimer: ReturnType<typeof setTimeout> | undefined
 const playListSwitch = () => {
@@ -276,22 +427,66 @@ const playListSwitch = () => {
   if (switchTimer) clearTimeout(switchTimer)
   switchTimer = setTimeout(() => { isSwitching.value = false }, 310)
 }
+
+const stabilizePinnedAreaSwitch = () => {
+  if (!Number.isFinite(areaTabPinThresholdPx.value)) return
+
+  const targetScrollTop = Math.max(0, Math.ceil(areaTabPinThresholdPx.value + 1))
+  preservePinnedUntil = Date.now() + 500
+  isAreaTabPinned.value = true
+
+  nextTick(() => {
+    if (areaSwitchScrollTimer) clearTimeout(areaSwitchScrollTimer)
+    areaSwitchScrollTimer = setTimeout(() => {
+      Taro.pageScrollTo({ scrollTop: targetScrollTop, duration: 0 })
+        .catch(() => {})
+        .finally(() => {
+          setTimeout(() => {
+            const query = Taro.createSelectorQuery()
+            query.selectViewport().scrollOffset()
+            query.exec((results: Array<{ scrollTop?: number } | null>) => {
+              const actualScrollTop = Number(results?.[0]?.scrollTop ?? targetScrollTop)
+              preservePinnedUntil = 0
+              scrollTop.value = actualScrollTop
+              isAreaTabPinned.value = actualScrollTop >= areaTabPinThresholdPx.value
+            })
+          }, 50)
+        })
+    }, 0)
+  })
+}
+
 const selectCategory = (categoryId: string) => {
   if (activeCategory.value === categoryId) return
+  if (isAreaTabPinned.value) preservePinnedUntil = Date.now() + 600
   activeCategory.value = categoryId
   playListSwitch()
 }
 const selectArea = (area: string) => {
   if (selectedArea.value === area) return
+  const wasPinned = isAreaTabPinned.value
   selectedArea.value = area
   playListSwitch()
+  if (wasPinned) stabilizePinnedAreaSwitch()
+}
+type TabTapEvent = {
+  currentTarget?: {
+    dataset?: Record<string, string>
+  }
+}
+const handleCategoryTap = (event: TabTapEvent) => {
+  const categoryId = event.currentTarget?.dataset?.category
+  if (categoryId) selectCategory(categoryId)
+}
+const handleAreaTap = (event: TabTapEvent) => {
+  const area = event.currentTarget?.dataset?.area
+  if (area) selectArea(area)
 }
 const switchEmptyArea = () => {
   const targetArea = alternateArea.value
   const targetHasServices = alternateAreaHasServices.value
-  selectedArea.value = targetArea
   if (!targetHasServices) activeCategory.value = 'all'
-  playListSwitch()
+  selectArea(targetArea)
 }
 const handlePageBack = () => {
   if (view.value === 'submitting') {

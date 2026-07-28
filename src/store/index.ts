@@ -60,6 +60,10 @@ export const useAppStore = defineStore(
     const showOtherDeptsGlobal = ref(false)
     const showOtherDeptsMap = ref<Record<string, boolean>>({})
     const isSearchingGlobal = ref(false)
+    // Must exist before migrateStoreState() calls saveToStorage().
+    // In preview/production builds the previous declaration order compiled this
+    // ref as undefined during initial hydration, aborting part of app startup.
+    const appointmentsList = ref<any[]>([])
 
     const activePatient = computed(() => {
       const p = patients.value.find(p => p.id === activePatientId.value) || patients.value[0]
@@ -192,8 +196,6 @@ export const useAppStore = defineStore(
     function setAgreement(val: boolean) {
       agreement.value = val
     }
-
-    const appointmentsList = ref<any[]>([])
 
     function initAppointments(defaults: any[]) {
       if (appointmentsList.value.length === 0) {

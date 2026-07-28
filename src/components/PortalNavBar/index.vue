@@ -1,5 +1,5 @@
 <template>
-  <div class="portal-nav-bar" :style="{ height: (navTopPx + navHeightPx) + 'px' }">
+  <div class="portal-nav-bar" :style="{ height: navTotalHeightPx + 'px' }">
     <div
       class="portal-nav-bar__gradient"
       :class="{ 'is-secondary': secondary, 'is-immersive': immersive }"
@@ -7,12 +7,12 @@
     ></div>
     <div class="portal-nav-bar__content" :style="{ top: navTopPx + 'px', height: navHeightPx + 'px' }">
       <div v-if="secondary && !hideLeft" class="portal-nav-bar__left">
-        <button class="portal-nav-bar__circle-btn" type="button" @click="handleBackClick">
+        <div class="portal-nav-bar__circle-btn" role="button" aria-label="返回" @click="handleBackClick">
           <img :src="iconBack" alt="返回">
-        </button>
-        <button class="portal-nav-bar__circle-btn" type="button" @click="handleHomeClick">
+        </div>
+        <div class="portal-nav-bar__circle-btn" role="button" aria-label="返回皮肤科首页" @click="handleHomeClick">
           <img :src="iconHome" alt="首页">
-        </button>
+        </div>
       </div>
       <h1 :class="{ 'is-light': immersive || (!forceDarkText && !secondary && (scrollTop || 0) <= 80) }">{{ title }}</h1>
     </div>
@@ -36,18 +36,34 @@ const props = withDefaults(defineProps<{
   immersive?: boolean
   hideLeft?: boolean
   homePath?: string
+  navBackground?: string
 }>(), {
   scrollTop: 0,
   secondary: false,
   forceDarkText: false,
   immersive: false,
   hideLeft: false,
-  homePath: '/pages/home/index'
+  homePath: '/pages/home/index',
+  navBackground: '#ffffff'
 })
 
+const emit = defineEmits<{
+  layout: [payload: { height: number }]
+}>()
+
 const menuButtonInfo = getSafeMenuButtonBoundingClientRect()
-const navTopPx = menuButtonInfo.top
-const navHeightPx = menuButtonInfo.height
+// The WeChat capsule is only about 32px tall, while the custom circular
+// back/home controls are 70px. On iOS preview, sizing the nav content from
+// the capsule alone lets both controls overflow the nav box. Reserve the
+// actual control height and move the top edge up by half the difference so
+// the visual center stays aligned with the capsule center.
+const navControlHeightPx = 70
+const navHeightPx = Math.max(menuButtonInfo.height, navControlHeightPx)
+const navTopPx = Math.max(
+  0,
+  menuButtonInfo.top - Math.max(0, (navHeightPx - menuButtonInfo.height) / 2)
+)
+const navTotalHeightPx = navTopPx + navHeightPx
 
 const gradientStyle = computed(() => {
   const s = props.scrollTop
@@ -57,13 +73,13 @@ const gradientStyle = computed(() => {
     return `opacity: ${(s - 10) / 80}; background: linear-gradient(180deg, #457130 0%, #345424 100%) !important;`
   }
   if (props.secondary) {
-    if (s <= 10) return 'opacity: 0;'
-    if (s >= 50) return 'opacity: 1;'
-    return `opacity: ${(s - 10) / 40};`
+    if (s <= 10) return `opacity: 0; background: ${props.navBackground};`
+    if (s >= 50) return `opacity: 1; background: ${props.navBackground};`
+    return `opacity: ${(s - 10) / 40}; background: ${props.navBackground};`
   }
-  if (s <= 40) return 'opacity: 0;'
-  if (s >= 140) return 'opacity: 1;'
-  return `opacity: ${(s - 40) / 100};`
+  if (s <= 40) return `opacity: 0; background: ${props.navBackground};`
+  if (s >= 140) return `opacity: 1; background: ${props.navBackground};`
+  return `opacity: ${(s - 40) / 100}; background: ${props.navBackground};`
 })
 
 const triggerClickFeedback = () => {
@@ -144,6 +160,7 @@ const goHome = () => {
 }
 
 onMounted(() => {
+  emit('layout', { height: navTotalHeightPx })
   if (props.immersive) {
     Taro.setNavigationBarColor({
       frontColor: '#ffffff',

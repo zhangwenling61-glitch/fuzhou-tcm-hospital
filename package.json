@@ -11,10 +11,12 @@
 	},
 	"scripts": {
 		"dev:weapp": "pnpm run build:weapp -- --watch",
+		"dev:weapp:clean": "rm -rf dist/weapp && pnpm run dev:weapp",
 		"build-watch:weapp": "taro build --type weapp --watch --env production",
 		"dev:alipay": "pnpm run build:alipay -- --watch",
 		"dev:h5": "pnpm run build:h5 -- --watch",
 		"build:weapp": "taro build --type weapp",
+		"build:weapp:clean": "rm -rf dist/weapp && pnpm run build:weapp",
 		"build:alipay": "taro build --type alipay",
 		"build:h5": "taro build --type h5"
 	},
@@ -44,7 +46,7 @@
 		"pinia": "^3.0.0",
 		"pinia-plugin-persistedstate": "^4.0.0",
 		"vant": "^4.9.0",
-		"vue": "^3.5.0"
+		"vue": "3.4.38"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.8.0",
@@ -60,7 +62,7 @@
 		"@typescript-eslint/eslint-plugin": "^6.2.0",
 		"@typescript-eslint/parser": "^6.2.0",
 		"@vue/babel-plugin-jsx": "^2.0.1",
-		"@vue/compiler-sfc": "^3.5.0",
+		"@vue/compiler-sfc": "3.4.38",
 		"@yh/postcss-px-transform": "^1.0.0",
 		"babel-plugin-import": "^1.13.3",
 		"babel-preset-taro": "4.2.0",
