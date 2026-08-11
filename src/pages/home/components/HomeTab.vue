@@ -1490,7 +1490,7 @@ const variableBannerUrl = 'https://mh3-1329061729.cos.ap-guangzhou.myqcloud.com/
 const variableSpecialtyItems = [
   { name: '皮肤科', desc: '中西医结合祛痘淡斑', icon: 'https://mh3-1329061729.cos.ap-guangzhou.myqcloud.com/%E5%88%87%E5%9B%BE/%E7%A6%8F%E5%B7%9E%E4%B8%AD%E5%8C%BB%E9%99%A2/%E9%A6%96%E9%A1%B5/%E5%8F%98%E9%87%8F%E7%89%88%E6%9C%AC/%E7%9A%AE%E8%82%A4%E7%A7%91.png?v=20260626-2', subtitleColor: '#197dba' },
   { name: '减重科', desc: '中医调理科学减重', icon: 'https://mh3-1329061729.cos.ap-guangzhou.myqcloud.com/%E5%88%87%E5%9B%BE/%E7%A6%8F%E5%B7%9E%E4%B8%AD%E5%8C%BB%E9%99%A2/%E9%A6%96%E9%A1%B5/%E5%8F%98%E9%87%8F%E7%89%88%E6%9C%AC/%E5%87%8F%E9%87%8D%E7%A7%91.png', subtitleColor: '#1a838a' },
-  { name: '中医治未病科', desc: '未病先防体质调理', icon: 'https://mh3-1329061729.cos.ap-guangzhou.myqcloud.com/%E5%88%87%E5%9B%BE/%E7%A6%8F%E5%B7%9E%E4%B8%AD%E5%8C%BB%E9%99%A2/%E9%A6%96%E9%A1%B5/%E5%8F%98%E9%87%8F%E7%89%88%E6%9C%AC/%E4%B8%AD%E5%8C%BB%E7%A7%91.png', subtitleColor: '#e95568' }
+  { name: '中医治未病科', desc: '未病先防体质调理', icon: 'https://mh3-1329061729.cos.ap-guangzhou.myqcloud.com/%E5%88%87%E5%9B%BE/%E7%A6%8F%E5%B7%9E%E4%B8%AD%E5%8C%BB%E9%99%A2/%E9%A6%96%E9%A1%B5/%E5%8F%98%E9%87%8F%E7%89%88%E6%9C%AC/%E4%B8%AD%E5%8C%BB%E7%A7%91.png?v=20260811', subtitleColor: '#e95568' }
 ]
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
