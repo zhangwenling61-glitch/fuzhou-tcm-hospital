@@ -239,7 +239,7 @@ import successIcon from '@/assets/images/成功图标-green.png'
 import { dermatologyOrderRepository } from './orders/order-repository'
 import './index.less'
 
-const heroIllustration = 'https://www.figma.com/api/mcp/asset/04e47934-a5fc-464f-a8d2-0a8616189da6'
+const heroIllustration = 'https://mh3-1329061729.cos.ap-guangzhou.myqcloud.com/%E5%88%87%E5%9B%BE/%E7%A6%8F%E5%B7%9E%E4%B8%AD%E5%8C%BB%E9%99%A2/%E5%9C%A8%E7%BA%BF%E5%95%86%E5%9F%8E/%E4%BB%99%E8%8D%89.png'
 const consultIcon = 'https://www.figma.com/api/mcp/asset/f10228f2-ea72-449d-82e5-cc906af63600'
 
 type PackageItem = { id: string; cat: string; name: string; price: number; area: string[]; note: string; desc: string; duration: string; icon: string; intro: string; steps: string[] }
