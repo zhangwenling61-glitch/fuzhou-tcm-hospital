@@ -1,0 +1,131 @@
+.refund-showcase-page {
+  min-height: 100vh;
+  background: @bg-color-blue-1 !important;
+}
+
+.refund-showcase-content {
+  gap: 24px !important;
+  padding-bottom: calc(64px + env(safe-area-inset-bottom)) !important;
+}
+
+.refund-showcase-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 2px solid @white;
+  border-radius: 24px;
+  background: fade(@white, 72%);
+}
+
+.refund-showcase-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 72px;
+  margin: 0;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 18px;
+  background: transparent;
+  color: @text-color;
+  font-family: @font-regular;
+  font-size: @font-size-body-sm;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+
+  &::after {
+    display: none;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &.is-active {
+    background: @hospital-primary;
+    color: @white;
+    font-family: @font-medium;
+    box-shadow: 0 6px 16px fade(@hospital-primary, 20%);
+  }
+}
+
+.refund-showcase-preview {
+  width: 100%;
+  padding: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 2px solid @white;
+  border-radius: @card-radius;
+  background: #f7fcfa;
+  box-shadow: 0 4px 20px #e4f3ee;
+}
+
+.refund-showcase-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+
+  h1 {
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    color: @text-color-dark;
+    font-family: @font-medium;
+    font-size: @font-size-body-lg;
+    line-height: @line-height-body-lg;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  span {
+    flex: 0 0 auto;
+    color: @text-color-secondary;
+    font-size: @font-size-caption;
+    line-height: @line-height-caption;
+    white-space: nowrap;
+  }
+}
+
+.refund-showcase-media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  background: @white;
+
+  &.is-portrait {
+    aspect-ratio: 1080 / 844;
+  }
+
+  &.is-wide {
+    aspect-ratio: 1080 / 433;
+  }
+}
+
+.refund-showcase-video,
+.refund-showcase-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: @white;
+  object-fit: contain;
+}
+
+@media (max-width: 360px) {
+  .refund-showcase-tab {
+    padding: 0 6px;
+    font-size: @font-size-caption;
+  }
+
+  .refund-showcase-preview {
+    padding: 24px;
+  }
+}

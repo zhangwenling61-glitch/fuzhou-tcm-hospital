@@ -19,6 +19,13 @@ export default defineAppConfig({
         'orders/index',
         'order-detail/index'
       ]
+    },
+    {
+      root: 'pages/common-list',
+      name: 'common-list',
+      pages: [
+        'refund/index'
+      ]
     }
   ],
   window: {
