@@ -9,6 +9,13 @@ export default defineAppConfig({
       pages: [
         'ai-assistant/index'
       ]
+    },
+    {
+      root: 'pages/common-list',
+      name: 'common-list',
+      pages: [
+        'refund/index'
+      ]
     }
   ],
   window: {
