@@ -11,7 +11,7 @@
 
         <view class="consult-card" hover-class="consult-card--pressed" :hover-start-time="0" :hover-stay-time="120" @tap="goConsult">
           <view class="consult-shimmer" aria-hidden="true"></view>
-          <view class="consult-avatar"><image class="consult-icon" :src="consultIcon" mode="aspectFit" /></view>
+          <image class="consult-avatar" :src="consultIcon" mode="aspectFit" />
           <view class="consult-copy"><view class="consult-title">在线问诊  辨证施治 <text class="consult-cta">免费咨询</text></view><view class="consult-desc">脱发、痤疮、色斑、敏感肌咨询</view></view>
         </view>
 
