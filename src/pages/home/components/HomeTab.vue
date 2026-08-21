@@ -626,6 +626,7 @@ import iconManyiduPingjia from '@/assets/images/门户首页/金刚区/双色线
 import iconYonghuHuaxiang from '@/assets/images/门户首页/金刚区/双色线性/用户画像.svg'
 import iconYibaoPingzheng from '@/assets/images/门户首页/金刚区/双色线性/医保电子凭证.svg'
 import iconHuliShangmen from '@/assets/images/门户首页/金刚区/双色线性/护理上门.svg'
+import iconPeizhenFuwu from '@/assets/images/门户首页/金刚区/双色线性/陪诊服务.svg'
 
 // 新增导入的 SVG 图标
 import iconHuizhenQiandao from '@/assets/images/门户首页/金刚区/双色线性/回诊签到.svg'
@@ -967,7 +968,8 @@ const serviceTabs = ref([
       { name: '电子票据', icon: iconDianzifapiao },
       { name: '就医指南', icon: iconJiuyiZhinan },
       { name: '医保电子凭证', icon: iconYibaoPingzheng },
-      { name: '护理上门', icon: iconHuliShangmen }
+      { name: '护理上门', icon: iconHuliShangmen },
+      { name: '陪诊服务', icon: iconPeizhenFuwu }
     ]
   }
 ])
@@ -1040,6 +1042,7 @@ const functionCatalog = [
   { name: '电子票据', desc: '查看电子发票与票据', route: '/pages/common-list/invoice/index', icon: iconDianzifapiao, keywords: ['电子票据', '发票', '票据'] },
   { name: '医保电子凭证', desc: '查看医保电子凭证服务', route: '/pages/common-list/medical-insurance-voucher/index', icon: iconYibaoPingzheng, keywords: ['医保电子凭证', '医保凭证'] },
   { name: '护理上门', desc: '预约护理上门服务', route: '/pages/common-list/home-nursing/index', icon: iconHuliShangmen, keywords: ['护理上门', '护理'] },
+  { name: '陪诊服务', desc: '提供专业陪诊服务', route: '', icon: iconPeizhenFuwu, keywords: ['陪诊服务', '陪诊', '陪同就医'] },
   { name: '智能导诊', desc: '根据症状推荐就诊科室', route: '/pages/appointment/ai-assistant/index', icon: iconZhenhouZice, keywords: ['导诊', '智能导诊', '症状'] },
   { name: '健康档案', desc: '查看个人健康档案资料', route: '/pages/common-list/health-archive/index', icon: iconJiankangTijian, keywords: ['健康档案', '档案'] }
 ]
@@ -1286,6 +1289,14 @@ const handleCardClick = (name: string, categoryTitle?: string) => {
   }
 
   if (name === '信用就医') {
+    Taro.showToast({
+      title: `${name}暂未开放`,
+      icon: 'none'
+    })
+    return
+  }
+
+  if (name === '陪诊服务') {
     Taro.showToast({
       title: `${name}暂未开放`,
       icon: 'none'
