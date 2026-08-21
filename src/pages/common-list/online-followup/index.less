@@ -46,11 +46,25 @@
 .online-consult-card {
   background: @bg-color-blue-2 !important;
 
+  &:focus-within,
+  &.is-focused {
+    border-color: @white !important;
+    box-shadow: 0 4px 20px 0 #E4F3EE !important;
+    transform: none !important;
+  }
+
   &.is-disease,
   &.is-history,
   &.is-proof {
     padding-top: @card-padding-y;
     padding-bottom: @card-padding-y;
+  }
+}
+
+.online-consult-page .yh-secondary-row:focus-within,
+.online-consult-page .yh-secondary-row.is-focused {
+  .yh-secondary-row__focus-line {
+    transform: scaleX(0) !important;
   }
 }
 
