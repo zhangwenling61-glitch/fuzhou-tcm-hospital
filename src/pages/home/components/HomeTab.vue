@@ -568,8 +568,7 @@ import PortalInspectionNoticePopup from '@/components/PortalInspectionNoticePopu
 import { getSafeMenuButtonBoundingClientRect, getRouteUrl, maskName } from '@/utils'
 import { fuzzySearchMatch } from '@/utils/searchMatcher'
 import { doctors as appointmentDoctors, createRandom, dateTabs } from '@/pages/home/mock'
-import { fzHomeAssets } from '@/config/remoteAssets'
-import qrCodeImg from '@/assets/images/portal/card/chs.png'
+import { fzGlobalAssets, fzHomeAssets } from '@/config/remoteAssets'
 import iconSwitchArrow from '@/assets/images/portal/card/Union.png'
 import '@/components/PortalUserCard/index.less'
 
@@ -586,6 +585,7 @@ import deptXinneikeIcon from '@/assets/images/科室/基础/心脏内科.svg'
 import deptXiaohuakeIcon from '@/assets/images/科室/专门/消化科.svg'
 import deptZhenjiukeIcon from '@/assets/images/科室/专门/针灸科.svg'
 const iconSearch = fzHomeAssets.searchIcon
+const qrCodeImg = fzGlobalAssets.insuranceCodeChsGreen
 
 // ---- 金刚区双色线性 SVG 图标静态导入 ----
 import iconYuyueGuahao from '@/assets/images/门户首页/金刚区/双色线性/预约挂号.svg'

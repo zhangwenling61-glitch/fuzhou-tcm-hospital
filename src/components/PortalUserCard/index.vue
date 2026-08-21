@@ -212,12 +212,11 @@ import Taro from '@tarojs/taro'
 import { useAppStore } from '@/store'
 import { AVATAR_MAP } from '@/utils/avatar'
 import { maskName } from '@/utils'
+import { fzGlobalAssets } from '@/config/remoteAssets'
 import iconEyeOpen from '@/assets/images/portal/card/eye-o.png'
 import iconEyeClosed from '@/assets/images/portal/card/closed-eye.png'
 import iconSwitchArrow from '@/assets/images/portal/card/Union.png'
 import './index.less'
-
-import qrCodeImg from '@/assets/images/portal/card/chs.png'
 
 type UserCardKind = 'guest' | 'boundless' | 'clinic' | 'inpatient' | 'todo'
 
@@ -286,7 +285,7 @@ const props = withDefaults(defineProps<{
   eyeIcon: undefined,
   switchArrowIcon: iconSwitchArrow,
   primaryText: '医保码',
-  primaryIcon: qrCodeImg,
+  primaryIcon: fzGlobalAssets.insuranceCodeChsGreen,
   showPrimary: true,
   showTodoBar: true,
   todoText: '当前暂无待办',
