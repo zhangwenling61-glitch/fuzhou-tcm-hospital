@@ -191,9 +191,8 @@
 .consult-choice-line {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  min-height: 48px;
+  gap: 20px;
+  min-height: 84px;
 }
 
 .consult-choice-line__label,
@@ -206,29 +205,38 @@
 }
 
 .consult-radio-row {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 32px;
-  flex-wrap: wrap;
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .consult-radio {
-  width: auto;
-  flex: 0 0 auto;
+  width: 100%;
+  min-width: 0;
+  height: 84px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
   padding: 0;
   margin: 0;
-  border: 0;
-  background: transparent;
-  color: @text-color-dark;
-  font-size: @font-size-body-sm;
-  line-height: @line-height-body-sm;
+  border: 2px solid fade(@hospital-primary, 22%);
+  border-radius: 20px;
+  background: @white;
+  color: @text-color;
+  font-family: @font-regular;
+  font-size: @font-size-body-md;
+  line-height: 1;
+  box-sizing: border-box;
 
   &::after {
     display: none;
+  }
+
+  &--hover {
+    opacity: 0.8;
+    transform: scale(0.97);
   }
 }
 
@@ -240,7 +248,9 @@
 }
 
 .consult-radio.is-checked {
-  color: @hospital-primary;
+  border-color: @hospital-primary;
+  background: @hospital-primary;
+  color: @white;
 }
 
 .consult-history-detail {

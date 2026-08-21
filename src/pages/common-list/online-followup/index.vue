@@ -56,15 +56,10 @@
               :key="'allergy-' + item.value"
               class="consult-radio"
               :class="{ 'is-checked': allergyHistory === item.value }"
+              hover-class="consult-radio--hover"
               type="button"
               @tap="selectHistoryState('allergy', item.value)"
             >
-              <img
-                class="consult-radio__icon"
-                :class="allergyHistory === item.value ? 'is-checked' : 'is-unchecked'"
-                :src="allergyHistory === item.value ? iconCircleDot : iconCircle"
-                alt=""
-              />
               <span>{{ item.label }}</span>
             </button>
           </div>
@@ -110,15 +105,10 @@
               :key="'disease-' + item.value"
               class="consult-radio"
               :class="{ 'is-checked': diseaseHistory === item.value }"
+              hover-class="consult-radio--hover"
               type="button"
               @tap="selectHistoryState('disease', item.value)"
             >
-              <img
-                class="consult-radio__icon"
-                :class="diseaseHistory === item.value ? 'is-checked' : 'is-unchecked'"
-                :src="diseaseHistory === item.value ? iconCircleDot : iconCircle"
-                alt=""
-              />
               <span>{{ item.label }}</span>
             </button>
           </div>
