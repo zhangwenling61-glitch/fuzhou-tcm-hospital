@@ -1,4 +1,5 @@
 export default defineAppConfig({
+  entryPagePath: 'pages/home/index',
   pages: [
     'pages/home/index',
     'pages/winter-summer-treatment/index'

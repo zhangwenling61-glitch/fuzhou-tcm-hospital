@@ -34,8 +34,8 @@
     "miniprogram": {
       "list": [
         {
-          "name": "皮肤科首页",
-          "pathName": "pages/dermatology/index",
+          "name": "首页",
+          "pathName": "pages/home/index",
           "query": "",
           "scene": null
         }
