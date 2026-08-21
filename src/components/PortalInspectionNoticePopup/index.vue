@@ -3,7 +3,7 @@
   <div
     v-if="isNoticeScrollable"
     class="portal-inspection-popup"
-    :class="{ 'is-closing': isClosing }"
+    :class="{ 'is-closing': isClosing, 'is-green': theme === 'green' }"
     @touchmove="handleTouchMove"
   >
     <div
@@ -69,7 +69,7 @@
   <div
     v-else
     class="portal-inspection-popup"
-    :class="{ 'is-closing': isClosing }"
+    :class="{ 'is-closing': isClosing, 'is-green': theme === 'green' }"
     catch-move
     catchtouchmove="handleTouchMove"
     @touchmove.stop.prevent
@@ -145,11 +145,13 @@ import './index.less'
 const props = withDefaults(defineProps<{
   heightMode?: 'max' | 'compact'
   contentMode?: 'short' | 'full'
+  theme?: 'blue' | 'green'
   title?: string
   items?: string[]
 }>(), {
   heightMode: 'max',
   contentMode: 'full',
+  theme: 'blue',
   title: '检查检验开单须知'
 })
 

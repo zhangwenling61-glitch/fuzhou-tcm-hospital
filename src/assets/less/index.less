@@ -30,14 +30,14 @@ button.dermatology-button::after {
 }
 
 button.dermatology-button--primary {
-  background: #18A65E !important;
-  border-color: #18A65E !important;
+  background: @hospital-primary !important;
+  border-color: @hospital-primary !important;
   color: #fff !important;
 }
 
 button.dermatology-button--secondary {
   background: #EDF5EE !important;
-  color: #147B49 !important;
+  color: @hospital-primary !important;
 }
 
 .van-button--hairline::after {
@@ -1022,7 +1022,7 @@ button.btn-primary,
   font-size: @font-size-body-md !important;
   font-weight: bold !important;
   border: 0 !important;
-  box-shadow: 0 8px 7.7px 0 rgba(255, 255, 255, 0.25) inset, 
+  box-shadow: 0 8px 7.7px 0 rgba(255, 255, 255, 0.25) inset,
               0 12px 24px fade(@theme-color, 25%) !important;
   outline: none;
   transition: all 0.15s ease;
@@ -1060,9 +1060,9 @@ button.btn-secondary,
   color: @blue !important;
   font-size: @font-size-body-md !important;
   font-weight: bold !important;
-  box-shadow: 0 8px 30px 0 rgba(69, 113, 48, 0.05), 
-              0 6px 20px 0 rgba(69, 113, 48, 0.08), 
-              0 4px 10px 0 rgba(69, 113, 48, 0.1), 
+  box-shadow: 0 8px 30px 0 rgba(69, 113, 48, 0.05),
+              0 6px 20px 0 rgba(69, 113, 48, 0.08),
+              0 4px 10px 0 rgba(69, 113, 48, 0.1),
               0 0 20px 0 #CBE7BF inset !important;
   outline: none;
   transition: opacity 0.15s ease;

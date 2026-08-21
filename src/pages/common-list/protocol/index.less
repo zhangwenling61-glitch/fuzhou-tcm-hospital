@@ -1,0 +1,57 @@
+.protocol-page {
+  background: @bg-color-blue-1 !important;
+  min-height: 100vh;
+}
+
+.protocol-content {
+  padding-bottom: calc(64px + env(safe-area-inset-bottom)) !important;
+}
+
+.doc-card {
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-title {
+  font-family: @font-medium;
+  font-size: @font-size-title-md;
+  color: @text-color-dark;
+  text-align: center;
+  margin: 0 0 16px 0;
+}
+
+.update-time {
+  font-size: @font-size-caption;
+  color: @text-color-secondary;
+  text-align: center;
+  margin: 0 0 40px 0;
+  border-bottom: 2px solid @border-color-light;
+  padding-bottom: 24px;
+}
+
+.doc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  h3 {
+    font-family: @font-medium;
+    font-size: @font-size-body-lg;
+    color: @text-color-dark;
+    margin: 16px 0 0 0;
+  }
+
+  p {
+    font-size: @font-size-body-sm;
+    color: @text-color;
+    line-height: 48px;
+    margin: 0;
+    text-align: justify;
+
+    strong {
+      color: @text-color-dark;
+      font-weight: 500;
+    }
+  }
+}

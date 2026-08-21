@@ -1,0 +1,224 @@
+@import "../../../assets/less/variables.less";
+@import "../../../assets/less/functions.less";
+
+div[id^='/pages/appointment/detail-status/index'] {
+  background: @bg-color-blue-1 !important;
+  background-color: @bg-color-blue-1 !important;
+  scrollbar-width: none;
+}
+
+div[id^='/pages/appointment/detail-status/index']::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.appointment-detail-status-page {
+  min-height: 100vh;
+  background: @bg-color-blue-1 !important;
+  background-color: @bg-color-blue-1 !important;
+  box-sizing: border-box;
+
+  .detail-status-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 24px calc(180px + env(safe-area-inset-bottom));
+    box-sizing: border-box;
+  }
+
+  // 医生头部卡片
+  .confirm-page__doctor-card {
+    height: 152px;
+    padding: 0 40px;
+    border-radius: 32px;
+    background: @bg-color-blue-2;
+
+    .appointment-doctor {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .confirm-page__doctor-right {
+    flex: 1;
+    min-width: 0;
+    margin-left: 24px;
+    color: @hospital-primary;
+    font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 44px;
+    text-align: right;
+  }
+
+  // 详情列表卡片
+  .confirm-page__form-card {
+    padding: 0 40px;
+    border-radius: 32px;
+    background: @bg-color-blue-2;
+    transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1.25), border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .appointment-row {
+    min-height: 116px;
+    font-size: 32px;
+    line-height: 44px;
+  }
+
+  .appointment-row__label {
+    color: #666666;
+  }
+
+  .status-text--warning {
+    color: #ff8a00 !important;
+  }
+
+  .status-text--success {
+    color: #14bfb9 !important;
+  }
+
+  .status-text--default,
+  .status-text--cancelled,
+  .status-text--stopped {
+    color: #657487 !important;
+  }
+
+  .appointment-row__nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-left: 12px;
+    background: transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+
+    &:active {
+      background: fade(@hospital-primary, 10%);
+    }
+  }
+
+  .appointment-row__nav-icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23457130' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='3 11 22 2 13 21 11 13 3 11'/%3E%3C/svg%3E") no-repeat center / contain;
+  }
+
+  // 注意事项卡片
+  .notes-card {
+    padding: 32px 32px 40px !important;
+    box-sizing: border-box;
+
+    .notes-card__header {
+      margin-bottom: 24px;
+
+      .notes-card__title {
+        font-family: @font-medium;
+        font-size: @font-size-body-lg; // 34px
+        font-weight: @font-weight-bold;
+        color: @text-color-dark;
+        line-height: 48px;
+      }
+    }
+
+    .notes-card__body {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .notes-item {
+      display: flex;
+      align-items: flex-start;
+      line-height: 44px;
+
+      .notes-item__num {
+        flex: 0 0 auto;
+        font-size: @font-size-body-sm; // 28px
+        color: @text-color;
+        line-height: 44px;
+      }
+
+      .notes-item__text {
+        flex: 1;
+        font-size: @font-size-body-sm; // 28px
+        color: @text-color;
+        line-height: 44px;
+        text-align: justify;
+
+        strong {
+          color: @text-color-dark !important;
+          font-family: @font-medium !important;
+          font-weight: @font-weight-bold !important;
+        }
+      }
+    }
+  }
+
+  // 底部按钮
+  .fixed-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+
+    &.is-transparent {
+      // Golden Fixed Bottom Layout with Gradient Mask
+      padding: 32px 40px calc(32px + env(safe-area-inset-bottom)) 40px !important;
+    }
+
+    .fixed-bottom-bar__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 96px;
+      border-radius: 48px;
+      box-sizing: border-box;
+      font-family: @font-medium;
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      flex: 1;
+      transition: transform 0.1s ease-out, -webkit-transform 0.1s ease-out, opacity 0.1s ease-out;
+
+      text {
+        font-size: 32px;
+        font-weight: bold;
+        color: inherit;
+      }
+    }
+
+    .fixed-bottom-bar__btn.is-cancel {
+      flex: 1;
+      border: 2px solid fade(@hospital-primary, 45%) !important;
+      background: @blue-light !important;
+      color: @hospital-primary !important;
+      box-shadow: 0 8px 24px fade(@hospital-primary, 14%) !important;
+    }
+
+    .fixed-bottom-bar__btn.is-confirm {
+      flex: 1.25;
+      background: @hospital-primary !important;
+      color: #ffffff !important;
+      box-shadow: 0 8px 7.7px 0 rgba(255, 255, 255, 0.25) inset,
+                  0 12px 24px fade(@hospital-primary, 25%) !important;
+    }
+
+    .fixed-bottom-bar__btn--cancel-hover {
+      transform: scale(0.95) !important;
+      -webkit-transform: scale(0.95) !important;
+      opacity: 0.85 !important;
+    }
+
+    .fixed-bottom-bar__btn--confirm-hover {
+      transform: scale(0.95) !important;
+      -webkit-transform: scale(0.95) !important;
+      opacity: 0.85 !important;
+    }
+  }
+}

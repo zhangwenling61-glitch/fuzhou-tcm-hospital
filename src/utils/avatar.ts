@@ -1,5 +1,8 @@
 import { fzHomeAssets } from '@/config/remoteAssets'
 
+const globalDoctorAvatarMale = 'https://mh3-1329061729.cos.ap-guangzhou.myqcloud.com/%E5%88%87%E5%9B%BE/%E7%A6%8F%E5%B7%9E%E4%B8%AD%E5%8C%BB%E9%99%A2/%E5%85%A8%E5%B1%80/%E5%8C%BB%E7%94%9F%E5%A4%B4%E5%83%8F/%E7%94%B7%E5%8C%BB%E7%94%9F.png?v=20260821103833'
+const globalDoctorAvatarFemale = 'https://mh3-1329061729.cos.ap-guangzhou.myqcloud.com/%E5%88%87%E5%9B%BE/%E7%A6%8F%E5%B7%9E%E4%B8%AD%E5%8C%BB%E9%99%A2/%E5%85%A8%E5%B1%80/%E5%8C%BB%E7%94%9F%E5%A4%B4%E5%83%8F/%E5%A5%B3%E5%8C%BB%E7%94%9F.png?v=20260821103833'
+
 /**
  * 服务器头像分类映射地址
  */
@@ -22,10 +25,10 @@ export const AVATAR_MAP = {
   elderlyFemale: fzHomeAssets.defaultAvatarFemale,
 
   // 医生
-  doctorMale: 'https://mh3-1329061729.cos.ap-guangzhou.myqcloud.com/%E5%88%87%E5%9B%BE/%E9%97%A8%E6%88%B73.0%E5%88%87%E5%9B%BE%E8%B5%84%E6%BA%90/USER/Property%201%3D%E5%8C%BB%E7%94%9F%E7%94%B7.png',
-  doctorFemale: 'https://mh3-1329061729.cos.ap-guangzhou.myqcloud.com/%E5%88%87%E5%9B%BE/%E9%97%A8%E6%88%B73.0%E5%88%87%E5%9B%BE%E8%B5%84%E6%BA%90/USER/Property%201%3D%E5%8C%BB%E7%94%9F%E5%A5%B3.png',
-  doctorMaleBooking: 'https://foruda.gitee.com/images/1779938882705377803/ef413559_16918445.png',
-  doctorFemaleBooking: 'https://foruda.gitee.com/images/1779968199341740524/d562198e_16918445.png'
+  doctorMale: globalDoctorAvatarMale,
+  doctorFemale: globalDoctorAvatarFemale,
+  doctorMaleBooking: globalDoctorAvatarMale,
+  doctorFemaleBooking: globalDoctorAvatarFemale
 }
 
 /**

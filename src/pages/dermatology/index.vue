@@ -236,11 +236,12 @@ import defaultUserAvatar from '@/assets/images/user/default-user.png'
 import alertCircleIcon from '@/assets/icons/common/circle-alert.svg'
 import emptyAreaIcon from '@/assets/icons/message/hospital-message.svg'
 import successIcon from '@/assets/images/成功图标-green.png'
+import { AVATAR_MAP } from '@/utils/avatar'
 import { dermatologyOrderRepository } from './orders/order-repository'
 import './index.less'
 
 const heroIllustration = 'https://mh3-1329061729.cos.ap-guangzhou.myqcloud.com/%E5%88%87%E5%9B%BE/%E7%A6%8F%E5%B7%9E%E4%B8%AD%E5%8C%BB%E9%99%A2/%E5%9C%A8%E7%BA%BF%E5%95%86%E5%9F%8E/%E4%BB%99%E8%8D%89.png'
-const consultIcon = 'https://mh3-1329061729.cos.ap-guangzhou.myqcloud.com/%E5%88%87%E5%9B%BE/%E7%A6%8F%E5%B7%9E%E4%B8%AD%E5%8C%BB%E9%99%A2/%E5%9C%A8%E7%BA%BF%E5%95%86%E5%9F%8E/%E7%94%B7%E5%8C%BB%E7%94%9F%E5%A4%B4%E5%83%8F.png'
+const consultIcon = AVATAR_MAP.doctorMale
 
 type PackageItem = { id: string; cat: string; name: string; price: number; area: string[]; note: string; desc: string; duration: string; icon: string; intro: string; steps: string[] }
 const view = ref<'home' | 'detail' | 'confirm' | 'submitting' | 'success'>('home')

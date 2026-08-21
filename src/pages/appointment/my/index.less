@@ -1,0 +1,563 @@
+div[id^='/pages/appointment/my/index'] {
+  background: @bg-color-blue-1 !important;
+  background-color: @bg-color-blue-1 !important;
+  scrollbar-width: none;
+}
+
+div[id^='/pages/appointment/my/index']::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.my-appointment-page {
+  min-height: 101vh;
+  overflow-x: hidden;
+  padding-bottom: 0;
+}
+
+.my-appointment-page.yh-scroll-locked {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  height: auto !important;
+  min-height: 101vh !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
+.my-appointment-page__header {
+  padding: 16px 40px 0;
+  box-sizing: border-box;
+  background: @bg-color-blue-1;
+}
+
+.my-appointment-page__content {
+  min-height: auto;
+  margin-top: 16px;
+  padding: 16px 24px calc(50px + env(safe-area-inset-bottom));
+  border-radius: 40px 40px 0 0;
+  background: linear-gradient(180deg, @bg-color-blue-2 0%, @bg-color-blue-2 96px, fade(@bg-color-blue-2, 0%) 100%);
+}
+
+.my-appointment-page__filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  gap: 28px;
+}
+
+.my-appointment-page__filters view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 68px;
+  min-width: 230px;
+  padding: 0 28px;
+  border: 2px solid fade(@hospital-primary, 15%);
+  border-radius: 34px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px fade(@hospital-primary, 12%);
+  color: @hospital-primary !important;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: normal;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+
+  &.filter-btn--hover {
+    background: fade(@bg-color-blue-2, 85%) !important;
+    transform: scale(0.96) !important;
+  }
+}
+
+.my-appointment-page__filters view::after {
+  width: 0;
+  height: 0;
+  margin-left: 12px;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-top: 10px solid @hospital-primary;
+  content: '';
+}
+
+.my-appointment-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.my-appointment-page__card {
+  overflow: visible;
+  padding: 0 !important;
+  border: 2px solid #ffffff !important;
+  border-radius: @card-radius !important;
+  background: @bg-color-blue-2 !important;
+  box-shadow: 0 4px 20px 0 fade(@hospital-primary, 8%) !important;
+  backdrop-filter: blur(20px) !important;
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out, border-color 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+.my-appointment-page__card--hover:not(.is-disabled) {
+  transform: scale(0.992) !important;
+  opacity: 0.96 !important;
+}
+
+.my-appointment-page__card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 116px;
+  padding: 28px 32px 24px;
+  border-radius: @card-radius @card-radius 0 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.my-appointment-page__card-head-left {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.my-appointment-page__card-head-titles {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.my-appointment-page__card-type {
+  color: #111111;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 48px;
+}
+
+.my-appointment-page__card-sub {
+  margin-top: 4px;
+  color: #657487;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+.my-appointment-page__status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 148px;
+  height: 60px;
+  padding: 0 20px;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  box-sizing: border-box;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 44px;
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+
+  &.my-appointment-page__status--hover {
+    opacity: 0.8 !important;
+    transform: scale(0.96) !important;
+  }
+}
+
+.my-appointment-page__status--warning {
+  color: #ff8a00;
+  border-color: #ffe0ad;
+  background: #fffaf0;
+}
+
+.my-appointment-page__status--success {
+  color: #14bfb9;
+  border-color: rgba(20, 191, 185, 0.2);
+  background: rgba(20, 191, 185, 0.08);
+}
+
+.my-appointment-page__status--default,
+.my-appointment-page__status--cancelled,
+.my-appointment-page__status--stopped {
+  color: #657487;
+  background: #eef2f7;
+  border-color: rgba(101, 116, 135, 0.25);
+}
+
+.my-appointment-page__status-arrow {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  margin-left: 4px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ff8a00' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.my-appointment-page__status--success .my-appointment-page__status-arrow {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2314bfb9' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+}
+
+.my-appointment-page__status--default .my-appointment-page__status-arrow,
+.my-appointment-page__status--cancelled .my-appointment-page__status-arrow,
+.my-appointment-page__status--stopped .my-appointment-page__status-arrow {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23657487' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+}
+
+.my-appointment-page__body {
+  padding: 0 32px 32px;
+  box-sizing: border-box;
+}
+
+.my-appointment-page__core {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.my-appointment-page__core-item {
+  min-width: 0;
+  padding: 24px 24px 22px;
+  border: 2px solid fade(@hospital-primary, 12%);
+  border-radius: 24px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, @bg-color-blue-2 0%, @blue-light 100%);
+  transition: transform 0.15s ease-out, border-color 0.15s ease-out;
+
+  &:active {
+    .my-appointment-page__card:not(.is-disabled) & {
+      transform: scale(0.98);
+      border-color: fade(@hospital-primary, 25%);
+    }
+  }
+
+  &.my-appointment-page__core-item--hover {
+    transform: scale(0.98) !important;
+    border-color: fade(@hospital-primary, 25%) !important;
+  }
+}
+
+.my-appointment-page__core-label {
+  color: #657487;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+.my-appointment-page__core-value {
+  margin-top: 8px;
+  overflow: hidden;
+  color: #111111;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 44px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.my-appointment-page__doctor {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin-top: 8px;
+}
+
+.my-appointment-page__doctor-avatar {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+  border-radius: 50%;
+}
+
+.my-appointment-page__doctor-name {
+  flex: 1;
+  min-width: 0;
+  margin-top: 0;
+}
+
+.my-appointment-page__campus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 24px;
+  border: 2px solid fade(@hospital-primary, 12%);
+  border-radius: 24px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, @bg-color-blue-2 0%, @blue-light 100%);
+  transition: transform 0.15s ease-out, border-color 0.15s ease-out;
+
+  &:active {
+    .my-appointment-page__card:not(.is-disabled) & {
+      transform: scale(0.98);
+      border-color: fade(@hospital-primary, 25%);
+    }
+  }
+
+  &.my-appointment-page__campus--hover {
+    transform: scale(0.98) !important;
+    border-color: fade(@hospital-primary, 25%) !important;
+  }
+}
+
+.my-appointment-page__campus-main {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.my-appointment-page__campus-label {
+  flex: 0 0 auto;
+  color: #657487;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+.my-appointment-page__campus-value {
+  min-width: 0;
+  margin-left: 20px;
+  overflow: hidden;
+  color: #111111;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 40px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.my-appointment-page__link {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-left: 20px;
+  color: @hospital-primary;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 26px;
+  line-height: 36px;
+}
+
+.my-appointment-page__link-icon {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23457130' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='3 11 22 2 13 21 11 13 3 11'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.my-appointment-page__rows {
+  margin-top: 18px;
+  padding: 0 4px;
+}
+
+.my-appointment-page__rows .appointment-row {
+  min-height: 72px;
+  padding: 8px 0;
+  box-sizing: border-box;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.my-appointment-page__rows .appointment-row + .appointment-row {
+  border-top: 0;
+}
+
+.my-appointment-page__rows .appointment-row__label {
+  flex: 0 0 128px;
+  color: #666666;
+}
+
+.my-appointment-page__rows .appointment-row__value {
+  justify-content: flex-start;
+  margin-left: 28px;
+  color: #222222;
+  text-align: left;
+}
+
+.my-appointment-page__rows .appointment-row__value--primary {
+  color: @hospital-primary;
+}
+
+.my-appointment-page__rows .appointment-row--link {
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+
+  &:active {
+    .my-appointment-page__card:not(.is-disabled) & {
+      transform: scale(0.985);
+      opacity: 0.75;
+    }
+  }
+
+  &.appointment-row--hover {
+    transform: scale(0.985) !important;
+    opacity: 0.75 !important;
+  }
+}
+
+.my-appointment-page__rows .appointment-row--link .appointment-row__value {
+  max-width: calc(100% - 190px);
+}
+
+.my-appointment-page__rows .appointment-row__arrow {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  margin-left: 8px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23457130' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.my-appointment-page__actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1PX solid fade(@hospital-primary, 10%);
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.my-appointment-page__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  height: 88px;
+  padding: 0 32px;
+  border-radius: 1000px;
+  box-sizing: border-box;
+  color: @hospital-primary;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: normal;
+  .fn_gradient_border_button(1px);
+  backdrop-filter: none !important;
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, box-shadow 0.15s ease-out;
+
+  &:active {
+    transform: scale(0.95) !important;
+    opacity: 0.88 !important;
+  }
+
+  &.my-appointment-page__action--hover {
+    transform: scale(0.95) !important;
+    opacity: 0.88 !important;
+  }
+}
+
+.my-appointment-page__action--tip {
+  position: relative;
+  min-width: auto;
+  height: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: @hospital-primary;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-right: auto;
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+
+  text {
+    font-size: 24px !important;
+    font-weight: bold !important;
+    line-height: normal !important;
+  }
+
+  &:active {
+    transform: scale(0.96) !important;
+    opacity: 0.82 !important;
+  }
+
+  &.my-appointment-page__action--tip-hover {
+    transform: scale(0.96) !important;
+    opacity: 0.82 !important;
+  }
+}
+
+.my-appointment-page__action-tip-icon {
+  width: 42px;
+  height: 44px;
+  margin-right: 0 !important;
+  margin-bottom: 6px !important;
+  flex: 0 0 auto;
+  transform-origin: top center;
+  animation: bell-ring 2s ease-in-out infinite;
+}
+
+.my-appointment-page__action--primary {
+  color: #ffffff !important;
+  background: var(--euxui-brand-primary, @hospital-primary) !important;
+  border: none !important;
+  box-shadow: 0 8px 7.7px 0 rgba(255, 255, 255, 0.25) inset,
+              0 12px 24px fade(@hospital-primary, 25%) !important;
+}
+
+.my-appointment-page .my-appointment-page__action--primary {
+  background: var(--euxui-brand-primary, @hospital-primary) !important;
+  border: none !important;
+}
+
+
+.my-appointment-page__card.is-disabled {
+  .my-appointment-page__core-item {
+    background: #f4f6fa !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  .my-appointment-page__campus {
+    background: #f4f6fa !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  .my-appointment-page__link {
+    color: #8896a8 !important;
+  }
+
+  .my-appointment-page__link-icon {
+    filter: grayscale(1) opacity(0.5) !important;
+  }
+
+  .appointment-row__arrow {
+    filter: grayscale(1) opacity(0.5) !important;
+  }
+}
+
+
+
+@keyframes bell-ring {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  5%, 15%, 25% {
+    transform: rotate(-12deg);
+  }
+  10%, 20%, 30% {
+    transform: rotate(12deg);
+  }
+  35% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(8deg);
+  }
+  45% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+  55% {
+    transform: rotate(0);
+  }
+}

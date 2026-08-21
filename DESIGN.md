@@ -1,6 +1,6 @@
 # DESIGN.md — MH3.0 门户设计规范
 
-> 所有尺寸按 **750px @2x** 写入代码：Figma 1x 标注 ×2。颜色不换算。  
+> 所有尺寸按 **750px @2x** 写入代码：Figma 1x 标注 ×2。颜色不换算。
 > Less token 来源：`src/assets/less/variables.less`。页面不得硬编码色值、字号、行高、字重、标准圆角、卡片阴影。
 
 ## 一、文档职责
@@ -39,7 +39,7 @@
 
 | 用途 | Less 变量 | 色值 |
 |------|-----------|------|
-| 品牌主蓝 | `@blue` / `@theme-color` | `#3186FF` |
+| 福州中医院品牌主绿 | `@hospital-primary`（`@blue` / `@green` / `@theme-color` 仅为历史兼容别名） | `#457130` |
 | 品牌辅助青 | `@cyan` | `#36CFC9` |
 | 一级文字 | `@text-color-dark` | `#222222` |
 | 二级文字 | `@text-color` | `#666666` |
@@ -51,10 +51,10 @@
 | 浅分割/点击态 | `@border-color` | `#F2F3F5` |
 | 页面浅灰底 | `@bg-color-light` | `#F7F8FA` |
 | 白底 | `@bg-color` / `@white` | `#FFFFFF` |
-| 门户主蓝背景 | `@bg-color-blue-1` | `#D6E8FE` |
-| 门户内容浅蓝 | `@bg-color-blue-2` | `#F0F6FF` |
-| 二级页背景 | `@bg-color-blue-1` | `#D6E8FE` |
-| 二级页旧渐变底 | `@bg-color-secondary-end` | `#EEF5FC` |
+| 门户主绿浅背景 | `@bg-color-blue-1` | `#ECF6E7` |
+| 门户内容浅绿 | `@bg-color-blue-2` | `#F7FAF6` |
+| 二级页背景 | `@bg-color-blue-1` | `#ECF6E7` |
+| 二级页渐变底 | `@bg-color-secondary-end` | `#F4FAF2` |
 | 箭头色 | `@arrow-color` | `#DCDEE0` |
 
 ### 3.2 字号 / 行高 / 字重

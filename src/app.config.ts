@@ -8,6 +8,13 @@ export default defineAppConfig({
       root: 'pages/appointment',
       name: 'appointment',
       pages: [
+        'department/index',
+        'doctor/index',
+        'detail/index',
+        'confirm/index',
+        'result/index',
+        'my/index',
+        'detail-status/index',
         'ai-assistant/index'
       ]
     },
@@ -24,7 +31,12 @@ export default defineAppConfig({
       root: 'pages/common-list',
       name: 'common-list',
       pages: [
-        'refund/index'
+        'protocol/index',
+        'refund/index',
+        'online-followup/index',
+        'online-followup/date-select',
+        'online-followup/history',
+        'online-followup/success'
       ]
     }
   ],

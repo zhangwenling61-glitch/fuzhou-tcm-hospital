@@ -58,7 +58,13 @@
           </div>
         </div>
       </div>
-      <button v-if="showPrimary" class="portal-user-card__primary" type="button" hover-class="is-active" @click="onPrimaryClick">
+      <button
+        v-if="showPrimary"
+        class="portal-user-card__primary"
+        type="button"
+        hover-class="is-active"
+        @click="onPrimaryClick"
+      >
         <image v-if="displayPrimaryIcon" class="portal-user-card__qr" :src="displayPrimaryIcon" mode="aspectFit" />
         <span>{{ primaryText }}</span>
       </button>
@@ -485,7 +491,8 @@ const isMasked = computed({
 
 // Removed circular watcher on props.eyeIcon to prevent reactivity stalls and circular dependencies.
 
-const displayPrimaryIcon = computed(() => props.primaryIcon || qrCodeImg)
+// An explicitly empty icon hides the CHS mark for text-only primary actions.
+const displayPrimaryIcon = computed(() => props.primaryIcon === '' ? '' : props.primaryIcon)
 
 const isAnonymous = computed(() => props.kind === 'guest' || props.kind === 'boundless')
 

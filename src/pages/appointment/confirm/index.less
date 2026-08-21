@@ -1,0 +1,197 @@
+div[id^='/pages/appointment/confirm/index'] {
+  background: @bg-color-blue-1 !important;
+  background-color: @bg-color-blue-1 !important;
+  scrollbar-width: none;
+}
+
+div[id^='/pages/appointment/confirm/index']::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.confirm-page__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: auto;
+  padding: 20px 24px calc(148px + env(safe-area-inset-bottom));
+  border-radius: 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.confirm-page__tip {
+  position: relative;
+  min-height: 196px;
+  padding: 24px 40px;
+  overflow: visible;
+  border-radius: 40px;
+  background: linear-gradient(180deg, fade(@blue-light, 95%) 0%, fade(@bg-color-blue-2, 95%) 55%);
+  box-shadow: 0 4px 16px fade(@hospital-primary, 22%);
+}
+
+.confirm-page__tip .appointment-tip-card__title {
+  font-size: 36px;
+  line-height: 48px;
+}
+
+.confirm-page__tip .appointment-tip-card__item {
+  margin-top: 8px;
+  color: #666666;
+  font-size: 28px;
+  line-height: 40px;
+}
+
+.confirm-page__doctor-card {
+  min-height: 152px;
+  height: auto;
+  padding: 20px 40px;
+  border-radius: 32px;
+  background: @bg-color-blue-2;
+  display: flex;
+  align-items: center;
+
+  .appointment-doctor {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.confirm-page__doctor-right {
+  flex: 1;
+  min-width: 0;
+  margin-left: 24px;
+  color: @hospital-primary;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 44px;
+  text-align: right;
+  white-space: normal;
+  word-break: break-all;
+}
+
+.confirm-page__form-card {
+  padding: 0 40px;
+  border-radius: 32px;
+  background: @bg-color-blue-2;
+  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1.25), border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &:focus-within,
+  &.is-focused {
+    border-color: @hospital-primary !important;
+    box-shadow: 0 0 32px fade(@hospital-primary, 45%), 0 0 8px fade(@hospital-primary, 20%) !important;
+    transform: scale(1.012) translateY(-2px) !important;
+  }
+}
+
+.confirm-page__form-card .portal-row-arrow {
+  margin-left: 12px;
+}
+
+.confirm-page__phone-value {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.confirm-page__phone-input {
+  flex: 1;
+  min-width: 0;
+  height: 92px;
+  color: @text-color-dark;
+  font-family: PingFangSC-Regular, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 32px;
+  text-align: right;
+  border: none;
+  background: transparent;
+  outline: none;
+  transition: color 0.15s ease;
+
+  &--error {
+    color: @red !important;
+  }
+}
+
+.confirm-page__row-hover {
+  opacity: 0.7 !important;
+  transition: opacity 0.08s ease !important;
+}
+
+.confirm-page__agree {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  color: #666666;
+  font-size: 26px;
+  line-height: 38px;
+}
+
+.confirm-page__agree text:last-child {
+  color: @hospital-primary;
+}
+
+.confirm-page__agree-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  margin: 0;
+  margin-right: 16px;
+  background: transparent;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    display: none;
+  }
+}
+
+.confirm-page__agree-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.confirm-page__fixed .appointment-primary-btn {
+  width: 100%;
+}
+
+.confirm-page .appointment-row {
+  min-height: 116px;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.confirm-page .appointment-row__label {
+  color: #666666;
+}
+
+.appointment-row__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-left: 12px;
+  background: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  &:active {
+    background: fade(@hospital-primary, 10%);
+  }
+}
+
+.appointment-row__nav-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23457130' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='3 11 22 2 13 21 11 13 3 11'/%3E%3C/svg%3E") no-repeat center / contain;
+}

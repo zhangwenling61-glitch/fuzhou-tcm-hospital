@@ -1,0 +1,128 @@
+.online-consult-history-page {
+  background: @bg-color-blue-1 !important;
+  min-height: 100vh;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+.online-consult-history-content {
+  gap: 0 !important;
+}
+
+.history-disease-card {
+  padding-top: @card-padding-y;
+  padding-bottom: @card-padding-y;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+
+  &:active {
+    opacity: 0.82;
+    transform: scale(0.992);
+  }
+}
+
+.history-disease-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.history-disease-card__patient {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1 1 auto;
+}
+
+.history-disease-card__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: @blue-light;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.history-disease-card__patient-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 auto;
+}
+
+.history-disease-card__name-row {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.history-disease-card__name {
+  min-width: 0;
+  overflow: hidden;
+  color: @text-color-dark;
+  font-family: @font-medium;
+  font-size: @font-size-body-lg;
+  line-height: @line-height-body-lg;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-disease-card__card-no {
+  color: @text-color-secondary;
+  font-size: @font-size-caption;
+  line-height: @line-height-caption;
+}
+
+.history-disease-card__tag {
+  flex: 0 0 auto;
+  padding: 4px 14px;
+  border-radius: 8px;
+  background: fade(@hospital-primary, 8%);
+  color: @hospital-primary;
+  font-size: @font-size-caption;
+  line-height: @line-height-caption;
+}
+
+.history-disease-card__import {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: @hospital-primary;
+  font-size: @font-size-body-sm;
+  line-height: @line-height-body-sm;
+
+  &::after {
+    display: none;
+  }
+}
+
+.history-disease-card__divider {
+  height: 1px;
+  margin: 20px 0 16px;
+  background: fade(@text-color, 12%);
+}
+
+.history-disease-card__desc {
+  margin: 0;
+  color: @text-color-dark;
+  font-size: @font-size-body-md;
+  line-height: @line-height-body-md;
+}
+
+.history-disease-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: @text-color-secondary;
+  font-size: @font-size-body-sm;
+  line-height: @line-height-body-sm;
+}

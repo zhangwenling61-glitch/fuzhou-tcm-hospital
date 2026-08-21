@@ -30,7 +30,8 @@
 
 // 主题色
 // 变量名保持兼容历史蓝色命名，福州中医院版本统一映射为绿色主色。
-@blue: #457130; // 默认/主题色
+@hospital-primary: #457130; // 福州中医院唯一品牌主色（门诊服务标题绿）
+@blue: @hospital-primary; // 历史兼容别名，禁止新增页面直接使用
 @blue-light: #ECF6E7; // 浅色背景
 @blue-dark: #2a451d; // 深色/标题色
 
@@ -48,7 +49,7 @@
 @yellow-dark: #9e7430; // 深色
 
 // 绿色
-@green: #457130; // 默认
+@green: @hospital-primary; // 历史兼容别名
 @green-dark: #2a451d; // 深色
 
 // 背景色
@@ -144,6 +145,6 @@
 @nav-bottom-gap: 8; // 导航栏底部到首个内容元素的固定间距（真实像素，非 rpx）
 
 // 主题相关
-@theme-color: @blue; // 主题色
+@theme-color: @hospital-primary; // 全局主题色兼容别名
 @theme-selected-color: #ECF6E7;
 @theme-success: @success-color;

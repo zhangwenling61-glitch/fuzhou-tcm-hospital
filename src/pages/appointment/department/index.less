@@ -1,0 +1,1205 @@
+@import "../../common-list/search-result/index.less";
+
+div[id^='/pages/appointment/department/index'] {
+  background: @bg-color-blue-1 !important;
+  background-color: @bg-color-blue-1 !important;
+  scrollbar-width: none;
+}
+
+page {
+  background: @bg-color-blue-1;
+  background-color: @bg-color-blue-1;
+}
+
+.online-consult-home {
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  background: @bg-color-blue-1;
+  color: @text-color-dark;
+  font-family: @font-regular;
+}
+
+.online-consult-home button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  line-height: normal;
+  text-align: left;
+  box-sizing: border-box;
+
+  &::after {
+    display: none;
+  }
+}
+
+.online-consult-home image,
+.online-consult-home text {
+  display: block;
+}
+
+.online-consult-home__scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+.online-consult-home__hero {
+  position: relative;
+  width: 750px;
+  height: 546px;
+  overflow: hidden;
+}
+
+.online-consult-home__banner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 750px;
+  height: auto;
+}
+
+.online-consult-home__hero-copy {
+  position: absolute;
+  left: 44px;
+  top: 194px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.online-consult-home__hero-title {
+  color: @hospital-primary;
+  font-family: @font-medium;
+  font-size: 48px;
+  font-weight: @font-weight-semibold;
+  line-height: 64px;
+  white-space: nowrap;
+}
+
+.online-consult-home__hero-subtitle {
+  margin-top: 4px;
+  color: @text-color;
+  font-family: @font-regular;
+  font-size: 28px;
+  font-weight: @font-weight-regular;
+  line-height: 40px;
+  white-space: nowrap;
+}
+
+.online-consult-home__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: calc(100vh - 456px);
+  flex-direction: column;
+  margin-top: -90px;
+  padding: 0 31px calc(64px + env(safe-area-inset-bottom));
+  background: transparent;
+  box-sizing: border-box;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 90px;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: @bg-color-blue-1;
+    pointer-events: none;
+  }
+}
+
+.online-consult-home__featured-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.online-consult-home__featured-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 0;
+  height: 145px;
+  padding: 0 !important;
+  border: 2px solid rgba(255, 255, 255, 0.72) !important;
+  border-radius: 28px !important;
+  background: rgba(255, 255, 255, 0.86) !important;
+  box-shadow: 0 10px 28px rgba(42, 69, 29, 0.07) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform-origin: center;
+  transition: transform 0.16s ease-out, opacity 0.16s ease-out, box-shadow 0.16s ease-out;
+
+  &:active,
+  &.online-consult-home__card--pressed {
+    transform: translateY(2px) scale(0.97);
+    opacity: 0.92;
+    box-shadow: 0 4px 12px rgba(42, 69, 29, 0.05) !important;
+  }
+}
+
+.online-consult-home__featured-icon-wrap {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  transition: transform 0.16s ease-out;
+}
+
+.online-consult-home__featured-card:active .online-consult-home__featured-icon-wrap,
+.online-consult-home__featured-card.online-consult-home__card--pressed .online-consult-home__featured-icon-wrap {
+  transform: scale(0.94);
+}
+
+.online-consult-home__featured-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.online-consult-home__featured-name {
+  min-width: 0;
+  margin-left: 19px;
+  color: @blue-dark;
+  font-family: @font-medium;
+  font-size: 36px;
+  font-weight: @font-weight-semibold;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.online-consult-home__dept-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 16px;
+  row-gap: 18px;
+  width: 100%;
+  margin-top: 18px;
+}
+
+.online-consult-home__dept-card {
+  display: flex !important;
+  align-items: center !important;
+  width: 100%;
+  height: 134px;
+  min-width: 0;
+  padding: 0 18px !important;
+  border-radius: 32px !important;
+  background: rgba(255, 255, 255, 0.86) !important;
+  box-shadow: 0 8px 24px rgba(42, 69, 29, 0.05) !important;
+  transform-origin: center;
+  transition: transform 0.16s ease-out, opacity 0.16s ease-out, box-shadow 0.16s ease-out;
+
+  &:active,
+  &.online-consult-home__card--pressed {
+    transform: translateY(2px) scale(0.97);
+    opacity: 0.92;
+    box-shadow: 0 3px 10px rgba(42, 69, 29, 0.04) !important;
+  }
+}
+
+.online-consult-home__dept-icon-wrap {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  transition: transform 0.16s ease-out;
+}
+
+.online-consult-home__dept-card:active .online-consult-home__dept-icon-wrap,
+.online-consult-home__dept-card.online-consult-home__card--pressed .online-consult-home__dept-icon-wrap {
+  transform: scale(0.94);
+}
+
+.online-consult-home__dept-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.online-consult-home__dept-name {
+  min-width: 0;
+  margin-left: 14px;
+  color: #24384A;
+  font-family: @font-medium;
+  font-size: 26px;
+  font-weight: @font-weight-medium;
+  line-height: 37px;
+  white-space: nowrap;
+}
+
+.online-consult-home__notice {
+  display: flex;
+  align-items: stretch;
+  min-height: 136px;
+  flex-direction: column;
+  margin-top: auto;
+  padding: 24px 26px;
+  border-radius: 32px;
+  background: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.online-consult-home__notice-header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.online-consult-home__notice-icon {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  margin-top: 2px;
+}
+
+.online-consult-home__notice-title {
+  min-width: 0;
+  margin-left: 16px;
+  color: #9B5C12;
+  font-family: @font-medium;
+  font-size: 28px;
+  font-weight: @font-weight-semibold;
+  line-height: 40px;
+}
+
+.online-consult-home__notice-text {
+  margin-top: 10px;
+  color: #6A400A;
+  font-family: @font-medium;
+  font-size: 26px;
+  font-weight: @font-weight-medium;
+  line-height: 40px;
+}
+
+div[id^='/pages/appointment/department/index']::-webkit-scrollbar,
+.department-page::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.department-page {
+  height: 100vh; /* Lock page to exactly full screen viewport height */
+  min-height: 100vh !important; /* Override global .yh-secondary-page's min-height: 101vh to prevent page-level scroll */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Disable page scroll */
+  box-sizing: border-box;
+  background: @bg-color-blue-1;
+  color: @text-color-dark;
+  font-family: @font-regular;
+}
+
+.department-page button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  line-height: normal;
+  text-align: left;
+  box-sizing: border-box;
+
+  &::after {
+    display: none;
+  }
+}
+
+.department-page image,
+.department-page text {
+  display: block;
+}
+
+.department-page__top-row {
+  position: relative;
+  z-index: 100; /* Sit clearly above the full-screen search mask overlay (z-index: 98) */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Compact gap to fit glassmorphic capsule cards */
+  width: 100%;
+  padding: 0 24px; /* Aligned left and right padding to 24px (12px in 1x) */
+  box-sizing: border-box;
+}
+
+.department-page__ai-triage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  margin: 16px 24px 0 24px;
+  padding: 0 24px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6) !important;
+  border: 1px solid fade(@hospital-primary, 12%) !important;
+  box-sizing: border-box;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+
+  &:active {
+    transform: scale(0.99);
+    opacity: 0.9;
+  }
+
+  .ai-triage__icon {
+    width: 44px;
+    height: 48px;
+    flex-shrink: 0;
+    margin-right: 12px;
+  }
+
+  .ai-triage__carousel {
+    height: 44px;
+    flex: 1;
+    pointer-events: none;
+    margin-right: 16px;
+  }
+
+  .ai-triage__carousel-item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #333333;
+    font-size: 26px;
+    font-weight: 500;
+    font-family: @font-regular;
+    line-height: 44px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    span {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .ai-triage__right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .ai-triage__link {
+      font-size: 26px;
+      font-weight: bold;
+      color: @hospital-primary;
+      font-family: @font-medium;
+    }
+
+    .ai-triage__arrow {
+      flex: 0 0 auto;
+      width: 10px;
+      height: 18px;
+      background: url("data:image/svg+xml,%3Csvg width='5' height='9' viewBox='0 0 5 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L4 4.5L1 8' stroke='%23457130' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
+      margin-left: 8px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.department-page__search-wrap {
+  position: relative;
+  z-index: 100; /* Ensure search pill and cancel button sit above mask overlay */
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  transition: all 0.25s ease;
+
+  &.is-searching {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+.department-page__search-pill {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 280px; /* Longer search box */
+  height: 76px;
+  padding: 0 32px !important;
+  border: 2px solid @white !important;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72) !important;
+  color: @hospital-primary;
+  font-family: @font-medium;
+  font-size: 28px;
+  font-weight: @font-weight-medium;
+  line-height: 40px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.25s ease;
+
+  &.is-active {
+    width: 100% !important;
+    justify-content: flex-start; /* Align contents to left when typing */
+    background: #ffffff !important;
+    border-color: @hospital-primary !important;
+    box-shadow: 0 0 16px fade(@hospital-primary, 16%);
+  }
+}
+
+.department-page__search-icon {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+}
+
+.department-page__search-input {
+  flex: 1 1 auto;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: @text-color-dark;
+  font-family: @font-regular;
+  font-size: 28px;
+  outline: none;
+  text-align: left;
+}
+
+.department-page__search-cancel {
+  font-size: 28px;
+  color: @text-color;
+  font-family: @font-medium;
+  max-width: 0;
+  opacity: 0;
+  margin-left: 0;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  pointer-events: none;
+
+  &.is-visible {
+    max-width: 120px;
+    margin-left: 20px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Full screen glassmorphic search overlay mask */
+.department-page__search-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: fade(@bg-color-blue-1, 60%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  z-index: 98; /* Underneath navbar but above content */
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  animation: search-fade-in 0.25s ease;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: opacity;
+
+  .search-result-page__scroll {
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 36px);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 36px);
+  }
+}
+
+.department-page__search-suggests {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0;
+  padding: 0 32px;
+  box-sizing: border-box;
+
+  .search-result-page__section {
+    margin-top: 0 !important;
+  }
+  .search-result-page__section + .search-result-page__section {
+    margin-top: 28px !important;
+  }
+}
+
+.search-suggests__section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-suggests__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.search-suggests__title {
+  font-size: 28px;
+  color: @blue-dark;
+  font-family: @font-medium;
+  margin-bottom: 20px;
+}
+
+.search-suggests__title-row .search-suggests__title {
+  margin-bottom: 0;
+}
+
+.search-suggests__clear-btn {
+  font-size: 24px;
+  color: @text-color-secondary;
+  font-family: @font-regular;
+  padding: 10px 0;
+}
+
+.search-suggests__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.search-suggests__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  padding: 0 28px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 100px;
+  font-size: 24px;
+  color: @text-color;
+  font-family: @font-regular;
+  line-height: 1 !important; /* Force baseline reset for perfect vertical centering inside flex */
+  transition: all 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+
+  &:active {
+    background: fade(@hospital-primary, 10%);
+    color: @hospital-primary;
+  }
+}
+
+.search-suggests__history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search-suggests__history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  transition: all 0.2s ease;
+
+  &:active {
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.history-item__text {
+  font-size: 26px;
+  color: #333333;
+  font-family: @font-regular;
+}
+
+.history-item__del {
+  font-size: 32px;
+  color: @text-color-secondary;
+  padding: 0 10px;
+}
+
+.search-suggests__no-history {
+  font-size: 26px;
+  color: @text-color-secondary;
+  font-family: @font-regular;
+  text-align: center;
+  padding: 24px 0;
+}
+
+@keyframes search-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.department-page__recent-capsule {
+  display: flex;
+  flex: 1 1 0%;
+  align-items: center;
+  height: 76px;
+  border: 2px solid @white !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.recent-capsule__left-btn {
+  display: flex;
+  flex: 1 1 0%;
+  align-items: center;
+  height: 100%;
+  padding: 0 0 0 16px !important;
+  min-width: 0;
+}
+
+.recent-capsule__avatar {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid @white;
+  background: @blue-light;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.recent-capsule__avatar image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.recent-capsule__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 12px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.recent-capsule__name {
+  color: @text-color-dark;
+  font-family: @font-medium;
+  font-size: 24px;
+  font-weight: @font-weight-medium;
+  line-height: 34px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recent-capsule__dept {
+  color: @text-color;
+  font-family: @font-regular;
+  font-size: 20px;
+  font-weight: @font-weight-regular;
+  line-height: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recent-capsule__right-btn {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  padding: 0 16px 0 8px !important;
+}
+
+.recent-capsule__more-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: @hospital-primary;
+  font-family: @font-medium;
+  font-size: 20px;
+  font-weight: @font-weight-medium;
+  line-height: 28px;
+}
+
+.recent-capsule__more-arrow {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 18px;
+  background: url("data:image/svg+xml,%3Csvg width='5' height='9' viewBox='0 0 5 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L4 4.5L1 8' stroke='%23457130' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.department-campus-segment {
+  width: 100% !important;
+  height: 84px;
+  margin: 0 0 20px !important;
+  padding: 8px !important;
+  border-radius: 32px !important;
+  background: @bg-color-blue-2 !important;
+}
+
+.department-campus-segment .yh-secondary-tab-active-bg {
+  height: 68px !important;
+  top: 8px !important;
+  border-radius: 24px !important;
+  background: @bg-color-blue-1 !important;
+  box-shadow: none !important;
+}
+
+.department-campus-segment .yh-secondary-tab-item {
+  height: 68px !important;
+  color: @text-color;
+  font-family: @font-medium;
+  font-size: 28px !important;
+  font-weight: @font-weight-medium;
+  line-height: 40px !important;
+
+  &.is-active {
+    color: @hospital-primary !important;
+    font-weight: @font-weight-medium !important;
+  }
+}
+
+.department-page__main {
+  flex: 1 1 0%;
+  min-height: 0; /* Core trick to allow inner flex content and scroll-views to scroll */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+  border-radius: 40px 40px 0 0;
+  background: linear-gradient(180deg, fade(@hospital-primary, 12%) 0%, fade(@bg-color-blue-2, 0%) 100%);
+  overflow: hidden; /* Prevent outer container scroll */
+}
+
+.department-page__location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 36px;
+  margin-bottom: 16px;
+  color: @hospital-primary;
+  font-family: @font-regular;
+  font-size: 28px;
+  font-weight: @font-weight-regular;
+  line-height: 36px;
+}
+
+.department-page__location-icon {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23457130' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.department-page__location text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.department-page__dept-panel {
+  flex: 1 1 0%;
+  min-height: 0; /* Core trick to enable scroll-views height inheritance */
+  display: flex;
+  width: calc(100% + 48px);
+  overflow: hidden;
+  border-radius: 40px 40px 0 0;
+  background: @bg-color-blue-2;
+  box-sizing: border-box;
+}
+
+.department-page__dept-sidebar {
+  flex: 0 0 252px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; /* Stretch to fill panel height vertically */
+  padding: 24px 20px 48px 24px; /* Reverted bottom padding to 48px */
+  box-sizing: border-box;
+  background: transparent;
+  overflow-y: scroll; /* Enable scrolling */
+}
+
+.department-page__dept-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 208px;
+  min-height: 96px;
+  padding: 0 24px;
+  border-radius: 32px;
+  color: @text-color-dark;
+  font-family: @font-medium;
+  font-size: 32px;
+  font-weight: @font-weight-medium;
+  line-height: 44px;
+  text-align: center;
+
+  text {
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+  }
+
+  &.is-active {
+    border: 2px solid @white !important;
+    background: @bg-color-blue-2 !important;
+    color: @hospital-primary;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+.department-page__dept-list {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+  margin: 24px 22px 48px 0;
+  padding: 0;
+  height: calc(100% - 72px); /* Fill remaining height exactly matching panel minus outer margins */
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.department-page__dept-panel-new {
+  flex: 1 1 0%;
+  min-height: 0;
+  width: calc(100% + 48px);
+  margin: 0 -24px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 40px 40px 0 0;
+  background: @bg-color-blue-2;
+}
+
+.department-page__scroll-view {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
+
+.department-page__category-grid-container {
+  padding: 32px 32px 16px 32px;
+  box-sizing: border-box;
+}
+
+.department-page__dept-grid-container {
+  padding: 32px 32px 80px 32px;
+  box-sizing: border-box;
+
+  .department-page__dept-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .yh-secondary-section-title {
+      padding-left: 0 !important;
+      margin-top: 0 !important;
+      margin-bottom: 8px !important;
+      text-align: left;
+    }
+  }
+}
+
+.department-page__category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 20px; /* Vertical and horizontal gaps */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Category button matching Figure 2 style: white background, blue text when active, long/wide keys */
+.department-page__category-card-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  min-height: 112px !important;
+  padding: 16px 24px !important;
+  background: @bg-color-blue-2 !important;
+  border-radius: 32px !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 4px 20px 0 fade(@hospital-primary, 8%) !important;
+  box-sizing: border-box !important;
+  transition: all 0.15s ease;
+
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+}
+
+.department-page__category-card-btn.is-active .department-page__category-card-text {
+  color: @hospital-primary !important; /* Blue text for active state */
+  font-weight: bold !important;
+}
+
+.department-page__category-card-text {
+  font-size: 32px !important;
+  color: @text-color-dark !important; /* Black/dark text when inactive */
+  font-family: @font-medium !important;
+  font-weight: 500 !important;
+  line-height: 44px !important;
+  text-align: center !important;
+  white-space: normal !important;
+  word-break: break-all !important;
+}
+
+.department-page__dept-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.department-page__dept-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  min-height: 112px !important;
+  padding: 16px 20px !important;
+  background: @bg-color-blue-2 !important;
+  border-radius: 32px !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 4px 20px 0 fade(@hospital-primary, 8%) !important;
+  box-sizing: border-box !important;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+}
+
+.department-page__dept-btn-text {
+  font-size: 28px !important;
+  color: @text-color-dark !important;
+  font-family: @font-medium !important;
+  font-weight: 500 !important;
+  line-height: 38px !important;
+  text-align: center !important;
+  white-space: normal !important;
+  word-break: break-all !important;
+}
+
+
+
+/* Hide scroll-view scrollbars for premium native feel */
+.department-page__dept-sidebar::-webkit-scrollbar,
+.department-page__dept-list::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.department-page__dept-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 96px;
+  padding: 0 36px;
+  color: @text-color-dark;
+  font-family: @font-regular;
+  font-size: 32px;
+  font-weight: @font-weight-regular;
+  line-height: 44px;
+  position: relative;
+
+  &::after {
+    display: none !important;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 36px;
+    right: 36px;
+    height: 2px;
+    background-color: fade(@hospital-primary, 16%);
+  }
+
+  &:last-child::before {
+    display: none !important;
+  }
+
+  text {
+    flex: 1 1 auto;
+    margin-left: 24px; /* Move ONLY this text column right by 12px (24px in 2x) */
+    min-width: 0;
+    overflow: hidden;
+    padding-right: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &:active {
+    opacity: 0.72;
+  }
+}
+
+.department-page__dept-item .portal-row-arrow {
+  width: 36px;
+  height: 36px;
+  margin-right: 32px; /* Move ONLY this arrow column left by 16px (32px in 2x) */
+}
+
+.department-campus-segment *,
+.department-page__dept-category *,
+.department-page__dept-item * {
+  pointer-events: none !important;
+}
+
+/* 一级科室的样式（孟超真实科室列表平铺，使用标准二级页面列表和卡片） */
+.department-page__tiled-scroll {
+  flex: 1 1 0%;
+  min-height: 0;
+  width: calc(100% + 48px);
+  margin: 16px -24px 0 -24px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
+
+.department-page__tiled-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: calc(50px + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+.department-page__category-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 32px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .yh-secondary-section-title {
+    margin-bottom: 8px !important;
+  }
+}
+
+/* 覆盖平铺布局的卡片网格与按钮样式，确保双列布局、无图标、文字居中、圆角卡片视觉效果一致 */
+.department-page__tiled-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 8px 0 8px;
+}
+
+.department-page__tiled-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  min-height: 112px !important;
+  padding: 16px 24px !important;
+  background: #ffffff !important;
+  border-radius: 24px !important;
+  border: none !important;
+  box-shadow: 0 4px 16px 0 rgba(233, 240, 252, 0.6) !important;
+  box-sizing: border-box !important;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+}
+
+.department-page__tiled-btn-text {
+  font-size: 28px !important;
+  color: @text-color-dark !important;
+  font-family: @font-medium !important;
+  font-weight: 500 !important;
+  line-height: 38px !important;
+  text-align: center !important;
+  white-space: normal !important;
+  word-break: break-all !important;
+}
+
+.department-page .doctor-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  border: 2px solid #ffffff;
+  border-radius: 32px;
+  background: @bg-color-blue-2;
+  box-shadow: 0 4px 20px 0 fade(@hospital-primary, 8%);
+  backdrop-filter: blur(20px);
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+
+  .doctor-card__follow-btn {
+    display: none !important;
+  }
+}

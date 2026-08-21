@@ -1,0 +1,615 @@
+.doctor-list-page, div[id^='/pages/appointment/doctor/index'] {
+  background: @bg-color-blue-1 !important;
+  background-color: @bg-color-blue-1 !important;
+  scrollbar-width: none;
+
+  /* Extend parent height to ensure WKWebView backdrop-filter is not clipped, and force full width to eliminate right-edge gaps */
+  .portal-nav-bar {
+    height: 320px !important;
+    max-width: 100% !important;
+  }
+
+  /* Scoped nav-bar gradient height extension for smooth frosted glass masking on the doctor list page only */
+  .portal-nav-bar__gradient.is-secondary {
+    height: 320px;
+    background: fade(@bg-color-blue-1, 92%) !important;
+    -webkit-mask-image: linear-gradient(180deg, #000000 88%, transparent 100%);
+    mask-origin: border-box;
+    mask-image: linear-gradient(180deg, #000000 88%, transparent 100%);
+  }
+}
+
+.doctor-list-page::-webkit-scrollbar, div[id^='/pages/appointment/doctor/index']::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.doctor-list-page__header {
+  padding: 16px 24px 12px;
+}
+
+.doctor-list-page__date-tabs-placeholder {
+  width: 100%;
+  height: 140px;
+}
+
+.doctor-list-page__date-tabs-wrap {
+  position: relative;
+  width: auto;
+  margin-left: -24px;
+  margin-right: -24px;
+  overflow: hidden;
+  transition: all 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &.is-sticky {
+    margin-left: 0;
+    margin-right: 0;
+
+    .doctor-list-page__date-tab {
+      height: 80px;
+      flex: 0 0 140px;
+      border-radius: 18px;
+    }
+  }
+}
+
+.doctor-list-page__date-tabs-wrap::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 24px;
+  pointer-events: none;
+  background: linear-gradient(270deg, fade(@bg-color-blue-1, 0%) 0%, @bg-color-blue-1 100%);
+  content: '';
+}
+
+.doctor-list-page__date-tabs-wrap::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 76px;
+  pointer-events: none;
+  background: linear-gradient(90deg, fade(@bg-color-blue-1, 0%) 0%, fade(@bg-color-blue-1, 18%) 32%, fade(@bg-color-blue-1, 72%) 74%, @bg-color-blue-1 100%);
+  content: '';
+}
+
+.doctor-list-page__date-tabs {
+  display: flex;
+  gap: 16px;
+  width: auto;
+  padding-left: 24px;
+  padding-right: 76px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Enable smooth native momentum inertia scrolling */
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+.doctor-list-page__date-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.doctor-list-page__date-tab {
+  position: relative;
+  display: flex;
+  flex: 0 0 140px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  border: 4px solid rgba(255, 255, 255, 0);
+  border-radius: 24px;
+  box-sizing: border-box;
+  color: @text-color;
+  background: fade(@hospital-primary, 22%);
+  overflow: visible;
+  transition: all 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.doctor-list-page__date-tab--active {
+  color: @hospital-primary !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  animation: none !important;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border: 4px solid @hospital-primary;
+    border-radius: 24px;
+    background: #ffffff;
+    box-sizing: border-box;
+    animation: activeCardScaleBreath 2.4s infinite ease-in-out;
+    transform-origin: center;
+  }
+}
+
+.doctor-list-page .doctor-list-page__date-tab--active {
+  background: transparent !important;
+  border-color: transparent !important;
+  animation: none !important;
+
+  .doctor-list-page__date-week,
+  .doctor-list-page__date-value {
+    position: relative;
+    z-index: 1;
+    color: @hospital-primary !important;
+  }
+}
+
+.doctor-list-page__date-week {
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+.doctor-list-page__date-value {
+  margin-top: 4px;
+  font-size: 28px;
+  line-height: 40px;
+}
+
+.doctor-list-page__filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  margin-top: 24px;
+  padding: 0 36px;
+  border: 2px solid #ffffff;
+  border-radius: 48px;
+  box-sizing: border-box;
+  color: @text-color-dark;
+  font-size: 24px;
+  line-height: 36px;
+  background: @bg-color-blue-2;
+}
+
+.doctor-list-page__content {
+  min-height: auto;
+  padding: 12px 24px calc(50px + env(safe-area-inset-bottom));
+  border-radius: 0;
+  background: @bg-color-blue-1;
+}
+
+.doctor-list-page__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.doctor-list-page__card {
+  position: relative;
+  overflow: hidden;
+  min-height: auto;
+  padding: 24px 24px 32px;
+  border-radius: 32px;
+  background: @bg-color-blue-2;
+  transform-origin: center;
+  transition: transform 100ms ease-out, filter 100ms ease-out;
+
+  &.doctor-list-page__card--pressed {
+    filter: brightness(0.97);
+    transform: scale(0.985);
+  }
+
+  .doctor-card__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .doctor-card__avatar {
+    display: block;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .doctor-card__info {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .doctor-card__name-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .doctor-card__divider {
+      color: rgba(34, 34, 34, 0.25) !important;
+      font-size: 24px !important;
+      margin: 0 4px !important;
+      user-select: none !important;
+    }
+
+    .doctor-card__dept {
+      color: @text-color !important;
+      font-size: 26px !important;
+      font-family: @font-regular !important;
+      white-space: nowrap !important;
+    }
+  }
+
+  .doctor-card__tags-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+
+
+  .doctor-card__stats-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid @border-color-light;
+  }
+
+  .doctor-card__stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .doctor-card__stat-icon-img {
+    width: 32px !important;
+    height: 32px !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .doctor-card__stat-label {
+    color: #222222;
+    font-size: 24px;
+    font-family: @font-regular;
+    line-height: 1;
+  }
+
+  .doctor-card__stat-val {
+    color: @hospital-primary;
+    font-size: 24px;
+    font-family: @font-medium;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .doctor-card__message {
+    position: relative;
+    display: block;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid @border-color-light;
+    max-height: 72px;
+    overflow: hidden;
+    font-size: 24px;
+    line-height: 36px;
+    color: #666666;
+    text-align: justify;
+    word-break: break-all;
+
+    .doctor-card__desc-content {
+      display: block;
+    }
+
+    .portal-home__expert-desc-label {
+      margin-right: 8px;
+      color: @hospital-primary;
+      font-family: @font-medium;
+      font-weight: @font-weight-medium;
+      display: inline;
+    }
+
+    .doctor-card__desc-text {
+      display: inline;
+    }
+
+    .doctor-card__desc-float-spacer {
+      float: right;
+      width: 0;
+      height: 36px;
+    }
+
+    .doctor-card__desc-detail-btn {
+      float: right;
+      clear: right;
+      margin-left: 4px;
+      color: @hospital-primary;
+      font-family: @font-medium;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px;
+      cursor: pointer;
+
+      &::before {
+        content: '...';
+        margin-right: 8px;
+        color: #666666;
+        font-family: @font-regular;
+        font-weight: 400;
+      }
+
+      &:active {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.doctor-list-page .doctor-list-page__card {
+  background: @bg-color-blue-2;
+}
+
+
+
+
+.doctor-list-page__schedule-card {
+  margin-top: 24px;
+  padding: 24px 24px 30px;
+  border: 2px solid #ffffff;
+  border-radius: 32px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, @blue-light 100%) !important;
+}
+
+.doctor-campus-tabs {
+  margin: 24px 0 0 0 !important;
+  width: 100% !important;
+  background: #ffffff !important;
+  overflow: visible !important;
+
+  .yh-secondary-tab-active-bg {
+    overflow: visible !important;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -32px; /* Hangs down to the top of the schedule card */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-bottom: 14px solid #ffffff; /* Points upwards from the card to the active tab */
+      z-index: 10;
+    }
+  }
+}
+
+.doctor-list-page__dept {
+  margin-top: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+
+  & > .doctor-list-page__department:first-child {
+    .doctor-list-page__slot-row:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.doctor-list-page__switch-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 96px;
+  margin: 2px 6px 4px;
+  padding: 0 28px;
+  border-radius: 38px;
+  box-sizing: border-box;
+  color: @text-color-dark;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+  background: transparent !important;
+  position: relative;
+  margin-bottom: 24px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: fade(@hospital-primary, 8%);
+  }
+
+  .appointment-mini-switch {
+    width: 72px;
+    height: 48px;
+    border-radius: 30px;
+    background: linear-gradient(180deg, lighten(@hospital-primary, 18%) 0%, @hospital-primary 100%);
+    transition: transform 120ms ease, background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+
+    &:active {
+      transform: scale(0.9);
+      opacity: 0.9;
+    }
+  }
+
+  .appointment-mini-switch::after {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    content: '';
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translate3d(24px, 0, 0);
+  }
+
+  .appointment-mini-switch--off {
+    background: linear-gradient(180deg, lighten(@hospital-primary, 34%) 0%, lighten(@hospital-primary, 26%) 100%) !important;
+  }
+
+  .appointment-mini-switch--off::after {
+    transform: translate3d(0, 0, 0) !important;
+  }
+}
+
+.doctor-list-page__department + .doctor-list-page__department {
+  margin-top: 28px;
+}
+
+.doctor-list-page__dept-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 8px 0;
+  color: @text-color-dark;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.doctor-list-page__dept-title text:first-child {
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-weight: 600;
+  color: @hospital-primary;
+}
+
+.doctor-list-page__dept-action {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  color: @hospital-primary;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.doctor-list-page__dept-action-arrow {
+  width: 14px;
+  height: 14px;
+  margin-left: 8px;
+  border-right: 4px solid @hospital-primary;
+  border-bottom: 4px solid @hospital-primary;
+  box-sizing: border-box;
+  transform: translateY(-6px) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.doctor-list-page__dept-action--expanded .doctor-list-page__dept-action-arrow {
+  margin-top: 0;
+  transform: translateY(0) rotate(225deg);
+}
+
+.doctor-list-page__slot-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding: 0 8px;
+  margin-top: 32px;
+}
+
+.doctor-list-page__slot-row--two-cols {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.doctor-list-page__slot-row + .doctor-list-page__slot-row {
+  margin-top: 24px;
+}
+
+.doctor-list-page__slot-row .appointment-chip {
+  width: 100%;
+  min-width: 0;
+  height: 92px;
+  border: 2px solid fade(@hospital-primary, 32%) !important;
+  border-radius: 24px;
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.doctor-list-page__slot-row .appointment-chip .appointment-chip-label {
+  color: #222222 !important;
+  font-size: 26px !important;
+  line-height: 36px !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  transition: color 0.15s ease !important;
+}
+
+.doctor-list-page__slot-row .appointment-chip--active {
+  border: 2px solid fade(@hospital-primary, 32%) !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+.doctor-list-page__slot-row .appointment-chip--active .appointment-chip-label {
+  color: #222222 !important;
+}
+
+.doctor-list-page__slot-row .appointment-chip--disabled {
+  color: #b2b8c2 !important;
+  border: none !important;
+  background: #f5f6fa !important;
+  box-shadow: none !important;
+}
+
+.doctor-list-page__slot-row .appointment-chip--disabled .appointment-chip-label {
+  color: #b2b8c2 !important;
+  opacity: 1 !important;
+}
+
+.doctor-list-page__collapsed-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 20px 16px 0;
+  color: @text-color-dark;
+  font-size: 32px;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  line-height: 44px;
+}
+
+.doctor-list-page__collapsed-row text:last-child {
+  color: @hospital-primary;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.doctor-list-page.is-consult {
+  .doctor-list-page__card {
+    min-height: auto !important;
+  }
+}
+
+@keyframes activeCardScaleBreath {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.055);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

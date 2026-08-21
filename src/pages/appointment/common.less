@@ -1,0 +1,492 @@
+page {
+  background: @bg-color-blue-1;
+  background-color: @bg-color-blue-1;
+}
+
+.appointment-flow-page {
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: visible;
+  color: @text-color-dark;
+  font-family: PingFangSC-Regular, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  background: @bg-color-blue-1;
+  background-color: @bg-color-blue-1;
+  scrollbar-width: none;
+}
+
+.appointment-flow-page::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.appointment-flow-page image,
+.appointment-flow-page text {
+  display: block;
+}
+
+.appointment-page-header {
+  padding: 16px 24px 24px;
+  box-sizing: border-box;
+  background: @bg-color-blue-1;
+}
+
+.appointment-content {
+  padding-top: 28px;
+  padding-bottom: calc(132px + env(safe-area-inset-bottom));
+}
+
+.appointment-card {
+  border: 2px solid #ffffff;
+  border-radius: 32px;
+  box-sizing: border-box;
+  background: @bg-color-blue-2;
+  box-shadow: 0 8px 40px fade(@hospital-primary, 32%);
+}
+
+.appointment-doctor {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.appointment-doctor__avatar {
+  flex: 0 0 auto;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: @blue-light;
+}
+
+.appointment-doctor__avatar image {
+  width: 72px;
+  height: 80px;
+}
+
+.appointment-doctor__info {
+  flex: 1;
+  min-width: 0;
+  margin-left: 16px;
+}
+
+.appointment-doctor__name-line {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.appointment-doctor__name {
+  flex: 0 0 auto;
+  color: #111111;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+.appointment-doctor__tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 30px;
+  margin-left: 10px;
+  padding: 0 8px;
+  border: 1PX solid #edbf77;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #b26800;
+  font-size: 20px;
+  line-height: 28px;
+  background: linear-gradient(180deg, #fff9ea 0%, #f7d298 100%);
+}
+
+.appointment-doctor__dept {
+  margin-top: 4px;
+  overflow: hidden;
+  color: @text-color;
+  font-size: 26px;
+  line-height: 36px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.appointment-row {
+  display: flex;
+  align-items: center;
+  min-height: 88px;
+  color: @text-color-dark;
+  font-size: 26px;
+  line-height: 36px;
+}
+
+.appointment-row + .appointment-row {
+  border-top: 1PX solid fade(@hospital-primary, 8%);
+}
+
+.appointment-row__label {
+  flex: 0 0 auto;
+  color: #657487;
+}
+
+.appointment-row__value {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: 0;
+  margin-left: 24px;
+  color: @text-color-dark;
+  text-align: right;
+}
+
+.appointment-row__value--primary {
+  color: @hospital-primary;
+}
+
+.appointment-tip-card {
+  padding: 24px;
+}
+
+.appointment-tip-card__title {
+  display: flex;
+  align-items: center;
+  color: @hospital-primary;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+.appointment-tip-card__item {
+  margin-top: 8px;
+  color: #657487;
+  font-size: 22px;
+  line-height: 34px;
+}
+
+.appointment-fixed-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 40px calc(46px + env(safe-area-inset-bottom));
+  padding-bottom: calc(46px + constant(safe-area-inset-bottom));
+  padding-bottom: calc(46px + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+  background: linear-gradient(0deg, @bg-color-blue-1 80%, fade(@bg-color-blue-1, 0%) 100%);
+}
+
+.appointment-primary-btn,
+.appointment-ghost-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 104px;
+  border-radius: 999px;
+  box-sizing: border-box;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+.appointment-primary-btn {
+  flex: 1;
+  color: #ffffff;
+  background: var(--euxui-brand-primary, @hospital-primary) !important;
+  box-shadow: 0 8px 7.7px 0 rgba(255, 255, 255, 0.25) inset,
+              0 12px 24px fade(@hospital-primary, 25%) !important;
+}
+
+.appointment-ghost-btn {
+  flex: 1;
+  color: @hospital-primary;
+  background: linear-gradient(0deg, lighten(@hospital-primary, 42%) 0%, lighten(@hospital-primary, 47%) 63%, lighten(@hospital-primary, 49%) 100%);
+  box-shadow: inset 0 0 40px lighten(@hospital-primary, 25%), 0 12px 24px fade(@hospital-primary, 12%);
+}
+
+.appointment-flow-page .appointment-primary-btn {
+  background: var(--euxui-brand-primary, @hospital-primary) !important;
+  box-shadow: 0 8px 7.7px 0 rgba(255, 255, 255, 0.25) inset,
+              0 12px 24px fade(@hospital-primary, 25%) !important;
+}
+
+.appointment-flow-page .appointment-ghost-btn {
+  background: linear-gradient(0deg, lighten(@hospital-primary, 42%) 0%, lighten(@hospital-primary, 47%) 63%, lighten(@hospital-primary, 49%) 100%);
+}
+
+.appointment-mini-switch {
+  position: relative;
+  width: 76px;
+  height: 40px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, lighten(@hospital-primary, 18%) 0%, @hospital-primary 100%);
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.appointment-mini-switch::after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  content: '';
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translate3d(36px, 0, 0);
+  will-change: transform;
+}
+
+.appointment-mini-switch--off {
+  background: fade(@hospital-primary, 24%) !important;
+}
+
+.appointment-mini-switch--off::after {
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.appointment-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 98px;
+  height: 66px;
+  border: 1PX solid fade(@hospital-primary, 16%);
+  border-radius: 16px;
+  color: @hospital-primary;
+  font-size: 22px;
+  line-height: 28px;
+  background: @blue-light;
+  transition: transform 0.10s ease, border-color 0.15s ease, background 0.15s ease;
+
+  &:active:not(.appointment-chip--disabled) {
+    transform: scale(0.95);
+  }
+}
+
+.appointment-chip--hover:not(.appointment-chip--disabled) {
+  transform: scale(0.95) !important;
+  opacity: 0.85 !important;
+  transition: transform 0.08s ease !important;
+}
+
+.appointment-chip--active {
+  color: #ffffff !important;
+  border-color: transparent !important;
+  background: linear-gradient(180deg, lighten(@hospital-primary, 14%) 0%, @hospital-primary 100%) !important;
+  box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.3), 0 8px 20px fade(@hospital-primary, 22%) !important;
+  animation: slotBounce 0.3s cubic-bezier(0.25, 1.25, 0.5, 1.25) both;
+}
+
+@keyframes slotBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.appointment-flow-page .appointment-chip--active {
+  border-color: transparent !important;
+  background: linear-gradient(180deg, lighten(@hospital-primary, 14%) 0%, @hospital-primary 100%) !important;
+  box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.3), 0 8px 20px fade(@hospital-primary, 22%) !important;
+}
+
+/* Big Doctor Profile Card (Shared by Doctor List and Doctor Detail Pages) */
+.appointment-doctor--big {
+  align-items: flex-start;
+  z-index: 3;
+}
+
+.appointment-doctor--big .appointment-doctor__avatar {
+  width: 138px;
+  height: 152px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, @hospital-primary 0%, @bg-color-blue-1 100%);
+}
+
+.appointment-doctor--big .appointment-doctor__avatar image {
+  width: 138px;
+  height: 152px;
+}
+
+.appointment-doctor--big .appointment-doctor__info {
+  margin-left: 16px;
+}
+
+.appointment-doctor--big .appointment-doctor__name-line {
+  padding-right: 0;
+}
+
+.appointment-doctor--big .appointment-doctor__name {
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.appointment-doctor--big .appointment-doctor__tag {
+  height: 28px;
+  margin-left: 8px;
+  padding: 0 8px;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.appointment-doctor-card__desc-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 4px;
+  margin-right: -8px; /* Offset card padding to position "详细" exactly 16px from card right boundary (shifted 4px further left) */
+  color: @text-color-dark;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.appointment-doctor-card__desc-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.appointment-doctor-card__tags {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.appointment-doctor-card__tag {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  height: 32px;
+  padding: 0 10px;
+  border: 2px solid #ffffff;
+  border-radius: 24px;
+  box-sizing: border-box;
+  color: @hospital-primary;
+  font-size: 20px;
+  line-height: 28px;
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.appointment-doctor-card__stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 10px;
+  color: #000000;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.appointment-doctor-card__stats view {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.appointment-doctor-card__stat-icon {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+}
+
+.appointment-doctor-card__stats text:last-child {
+  color: @hospital-primary;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+}
+
+.appointment-doctor-card__plain-arrow {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  margin-left: 8px;
+  border-top: 4px solid @hospital-primary;
+  border-right: 4px solid @hospital-primary;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+}
+
+/* Follow Button (Shared by Doctor List and Doctor Detail Pages) */
+.appointment-follow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 100px;
+  height: 40px;
+  margin-left: 8px; /* Left gap distance from Chief Physician tag is exactly 8px */
+  padding: 0 12px;
+  border-radius: 24px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  background: @hospital-primary;
+
+  text {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+}
+
+.appointment-follow-btn--active {
+  background: fade(@hospital-primary, 8%) !important;
+  color: @hospital-primary !important;
+  border: 2px solid fade(@hospital-primary, 20%) !important;
+}
+
+.appointment-follow-plus {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+
+.appointment-follow-plus::before,
+.appointment-follow-plus::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background: #ffffff;
+  content: '';
+  transform: translate(-50%, -50%);
+}
+
+.appointment-follow-plus::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.appointment-doctor-card__desc-detail-btn {
+  flex: 0 0 auto;
+  margin-left: 8px;
+  color: @hospital-primary;
+  font-family: PingFangSC-Medium, PingFang SC, Helvetica Neue, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  cursor: pointer;
+
+  &:active {
+    opacity: 0.8;
+  }
+}

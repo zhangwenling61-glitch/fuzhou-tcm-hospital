@@ -25,11 +25,11 @@ page {
   backdrop-filter: blur(0px) !important;
   -webkit-backdrop-filter: blur(0px) !important;
   color: @text-color-dark;
-  
+
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
-  
+
   transition: opacity 0.22s cubic-bezier(0.25, 1, 0.5, 1),
               visibility 0.22s cubic-bezier(0.25, 1, 0.5, 1),
               background 0.22s cubic-bezier(0.25, 1, 0.5, 1),
@@ -79,7 +79,7 @@ page {
   margin-top: 32px;
   margin-bottom: 40px;
   width: 100%;
-  
+
   // Initial state before mounting animation (spring pop out)
   opacity: 0;
   transform: scale(0.1) translateY(120px) rotate(-15deg);
@@ -135,12 +135,12 @@ page {
   position: relative;
   height: 80px !important;
   line-height: 36px !important;
-  background: rgba(249, 252, 255, 0.80) !important;
+  background: fade(@bg-color-blue-2, 80%) !important;
   border: 2px solid #ffffff !important;
   border-radius: 200px !important;
   padding: 20px 48px !important;
   box-shadow: 0 4px 20px 0 rgba(69, 113, 48, 0.15) !important;
-  color: #457130 !important;
+  color: @hospital-primary !important;
   font-size: 28px !important;
   font-family: @font-regular !important;
   font-weight: @font-weight-regular !important;
@@ -151,7 +151,7 @@ page {
   box-sizing: border-box !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
-  
+
   // Initial state before mounting animation (floating up from bottom with scale)
   opacity: 0 !important;
   transform: translateY(120px) scale(0.7) !important;
@@ -229,13 +229,13 @@ page {
   right: auto !important;
   width: calc(100% - 96px) !important;
   height: 104px;
-  background: rgba(249, 252, 255, 0.80) !important;
+  background: fade(@bg-color-blue-2, 80%) !important;
   border-radius: 200px !important;
   box-shadow: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #457130 !important;
+  color: @hospital-primary !important;
   font-size: 32px;
   font-family: @font-medium;
   font-weight: bold;
@@ -250,9 +250,9 @@ page {
   }
 
   &.is-recording {
-    background: #438823 !important;
+    background: @hospital-primary !important;
     color: #ffffff !important;
-    border-color: #438823 !important;
+    border-color: @hospital-primary !important;
     box-shadow: 0 8px 32px rgba(67, 136, 35, 0.35) !important;
     animation: none !important;
   }

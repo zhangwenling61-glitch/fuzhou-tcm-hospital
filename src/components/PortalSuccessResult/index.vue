@@ -1,5 +1,5 @@
 <template>
-  <div class="portal-success-result">
+  <div class="portal-success-result" :class="{ 'is-green': theme === 'green' }">
     <div class="portal-success-result__status-card">
       <div class="portal-success-result__status-header">
         <div class="portal-success-result__icon">
@@ -20,7 +20,7 @@
         <span class="portal-success-result__row-key">{{ row.label }}</span>
         <span
           class="portal-success-result__row-val"
-          :class="{ 'is-highlight': row.highlight }"
+          :class="{ 'is-highlight': row.highlight, 'is-status': row.status }"
         >
           {{ row.value }}
         </span>
@@ -29,6 +29,7 @@
 
     <PortalDoubleButton
       class="portal-success-result__actions"
+      :class="{ 'is-inline': inlineActions }"
       :left-text="leftText"
       :right-text="rightText"
       @cancel="$emit('cancel')"
@@ -55,6 +56,7 @@ interface PortalSuccessResultRow {
   label: string
   value: string | number
   highlight?: boolean
+  status?: boolean
 }
 
 withDefaults(defineProps<{
@@ -64,12 +66,16 @@ withDefaults(defineProps<{
   icon?: string
   leftText?: string
   rightText?: string
+  theme?: 'default' | 'green'
+  inlineActions?: boolean
 }>(), {
   title: '操作成功',
   desc: '操作已完成',
   icon: '',
   leftText: '返回首页',
-  rightText: '查看详情'
+  rightText: '查看详情',
+  theme: 'default',
+  inlineActions: false
 })
 
 defineEmits(['cancel', 'confirm'])

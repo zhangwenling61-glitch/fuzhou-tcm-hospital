@@ -185,3 +185,117 @@
     line-height: 48px;
   }
 }
+
+.portal-success-result.is-green {
+  padding-top: 56px;
+
+  .portal-success-result__status-card {
+    height: 332px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .portal-success-result__status-header {
+    padding-top: 192px;
+  }
+
+  .portal-success-result__icon {
+    top: 8px;
+    width: 168px;
+    height: 168px;
+  }
+
+  .portal-success-result__icon-img {
+    width: 168px;
+    height: 168px;
+    filter: drop-shadow(0 0 12px fade(@hospital-primary, 28%));
+    animation-name: portal-success-icon-breath-green;
+  }
+
+  .portal-success-result__title {
+    color: @hospital-primary;
+    font-size: @font-size-title-md;
+    line-height: @line-height-title-md;
+  }
+
+  .portal-success-result__desc {
+    color: darken(@hospital-primary, 4%);
+    font-size: @font-size-body-sm;
+    line-height: @line-height-body-sm;
+  }
+
+  .portal-success-result__details-card {
+    margin-top: 16px;
+    padding: 16px 32px;
+    background: fade(@white, 94%);
+    box-shadow: 0 4px 20px fade(@hospital-primary, 10%);
+  }
+
+  .portal-success-result__row {
+    height: 96px;
+    border-bottom: 2px dashed fade(@hospital-primary, 22%);
+  }
+
+  .portal-success-result__row-key,
+  .portal-success-result__row-val {
+    font-size: @font-size-body-sm;
+    line-height: @line-height-body-sm;
+  }
+
+  .portal-success-result__row-key {
+    width: 180px;
+    color: darken(@hospital-primary, 2%);
+  }
+
+  .portal-success-result__row-val {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &.is-highlight,
+    &.is-status {
+      color: @hospital-primary;
+    }
+
+    &.is-status::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 12px;
+      border-radius: 50%;
+      background: @hospital-primary;
+      vertical-align: -1px;
+    }
+  }
+
+  .portal-success-result__actions.fixed-bottom-bar.is-inline {
+    position: static !important;
+    width: 702px;
+    margin: 32px auto 0;
+    padding: 0 !important;
+    background: transparent !important;
+
+    .btn-secondary {
+      border: 2px solid @hospital-primary !important;
+      background: @white !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+@keyframes portal-success-icon-breath-green {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 12px fade(@hospital-primary, 28%));
+  }
+
+  50% {
+    transform: scale(1.045);
+    filter: drop-shadow(0 0 20px fade(@hospital-primary, 38%));
+  }
+}

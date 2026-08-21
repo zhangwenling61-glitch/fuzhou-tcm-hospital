@@ -1,0 +1,29 @@
+@import '../../appointment/common.less';
+@import '../../appointment/detail/index.less';
+
+div[id^='/pages/common-list/online-followup/date-select'] {
+  background: @bg-color-blue-1 !important;
+  background-color: @bg-color-blue-1 !important;
+}
+
+.followup-date-page {
+  min-height: 100vh;
+  padding-bottom: calc(210px + env(safe-area-inset-bottom));
+  background: @bg-color-blue-1;
+  color: @text-color-dark;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.followup-date-page button::after {
+  display: none;
+}
+
+.followup-date-header {
+  padding-top: 16px;
+}
+
+.followup-date-main {
+  min-height: auto;
+  padding-bottom: calc(210px + env(safe-area-inset-bottom));
+}

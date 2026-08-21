@@ -230,6 +230,24 @@
   }
 }
 
+.portal-inspection-popup.is-green {
+  .portal-inspection-popup__bg {
+    filter: hue-rotate(265deg) saturate(0.72) brightness(1.02);
+  }
+
+  .portal-inspection-popup__corner {
+    filter: hue-rotate(265deg) saturate(0.78) brightness(0.96);
+  }
+
+  .portal-inspection-popup__clipboard {
+    filter: hue-rotate(265deg) saturate(0.82) brightness(0.98);
+  }
+
+  .portal-inspection-popup__list strong {
+    color: @hospital-primary;
+  }
+}
+
 @keyframes portalInspectionButtonBreathe {
   0% { transform: scale(1); }
   50% { transform: scale(1.03); }
