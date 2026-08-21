@@ -10,12 +10,6 @@ export const routeMap = {
   home: '/pages/home/index'
 }
 
-const avatarMap = {
-  doctorMan: AVATAR_MAP.doctorMale,
-  doctorWoman: AVATAR_MAP.doctorFemale,
-  user: 'https://foruda.gitee.com/images/1779939037698922393/695edf87_16918445.png'
-}
-
 export const dateTabs = [
   { id: 'all', week: '全部', date: '' },
   { id: '05-26', week: '周二', date: '05-26' },
@@ -53,32 +47,6 @@ export function createRandom(seedStr: string) {
       return copy
     }
   }
-}
-
-const FAMILY_NAMES = ['张', '王', '李', '刘', '赵', '陈', '杨', '黄', '吴', '周', '徐', '孙', '马', '朱', '胡', '郭', '何', '高', '林', '郑', '梁', '谢', '宋', '唐', '许', '韩', '邓', '曹', '彭', '曾']
-const MALE_GIVENS = ['志强', '建国', '国庆', '伟德', '启铭', '学城', '峥茗', '毅达', '明杰', '智轩', '建明', '元林', '子豪', '宇轩', '博涛', '泽洋', '天宇', '皓轩', '致远', '俊杰', '雨泽', '烨磊', '晟睿', '文博', '明阳', '鸿涛']
-const FEMALE_GIVENS = ['丽华', '明娜', '小青', '妮可', '晓雯', '淑文', '美玲', '雅琴', '雪梅', '雨婷', '梦琪', '欣怡', '佳莹', '思涵', '梓萱', '诗涵', '海燕', '丽娟', '晓婷', '雅雯', '梦瑶', '雪怡', '欣蕾', '钰晴', '佩仪']
-
-const INTRO_TEMPLATES = [
-  '从事{dept}临床工作{years}年，在{tag1}、{tag2}及{tag3}的诊治与系统调理方面积累了极其丰富的临床经验。',
-  '现任{dept}核心专家。主张以患者为中心，深研学术理论，推崇个体化精准医疗方案，在{tag1}和{tag2}的临床实践中取得了突出成果。',
-  '主要从事{dept}慢病健康管理与临床工作。倡导“治未病”理念与心身共治的综合干预模式，对{tag1}、{tag2}有深入独到的见解。',
-  '具有二十余年丰富的{dept}诊疗实践。医术精湛、工作热忱，对{tag1}、{tag2}及{tag3}的规范化诊疗具有深厚的学术造诣，深受患者信赖。'
-]
-
-const TAGS_POOL: Record<string, string[]> = {
-  '非病毒性肝病科': ['脂肪肝慢病', '酒精性肝病', '药物性肝损伤', '肝脏健康评估'],
-  '重症肝病科': ['重症肝炎', '人工肝支持', '肝硬化腹水', '肝衰竭抢救'],
-  '慢性肝病科': ['慢性乙肝诊疗', '丙肝规范化治疗', '自身免疫性肝病', '肝硬化管理'],
-  '代谢性肝病科': ['糖尿病合并肝病', '高脂血症脂肪肝', '肥胖相关肝损伤', '代谢调理'],
-  '心血管内科': ['高血压规范治疗', '冠心病介入', '心律失常调理', '心衰健康管理'],
-  '妊娠及中毒性肝病科': ['妊娠期肝脏损伤', '中毒性肝损害', '妊娠期急性脂肪肝', '药物及毒物性肝病'],
-  '肿瘤科': ['实体肿瘤化疗', '靶向免疫治疗', '肿瘤安宁疗护', '规范化多学科'],
-  '放疗科': ['精确放射治疗', '三维适形放疗', '调强放疗', '肿瘤合并放疗'],
-  '介入科': ['血管微创介入', '肝癌栓塞治疗', '下肢静脉介入', '微创栓塞止血'],
-  '感染一科': ['不明原因发热', '重症感染救治', '耐药菌感染', '呼吸道传染'],
-  '感染二科': ['真菌严重感染', '肠道感染防治', '公共卫生防御', '系统感染规范'],
-  '口腔科': ['数字化种植牙', '牙齿美学正畸', '牙体牙髓治疗', '牙周病规范化']
 }
 
 const ALL_DEPARTMENTS = [
@@ -597,53 +565,6 @@ const xihongRehabSchedule = [
   }
 ]
 
-const timeSlots = [
-  { id: 'time-1', no: '7号', time: '08:30' },
-  { id: 'time-2', no: '8号', time: '08:36' },
-  { id: 'time-3', no: '9号', time: '08:42' },
-  { id: 'time-4', no: '10号', time: '08:48' },
-  { id: 'time-5', no: '11号', time: '08:54' },
-  { id: 'time-6', no: '12号', time: '09:00' },
-  { id: 'time-7', no: '13号', time: '09:06' },
-  { id: 'time-8', no: '14号', time: '09:12' },
-  { id: 'time-9', no: '15号', time: '09:18' },
-  { id: 'time-10', no: '16号', time: '09:24' }
-]
-
-const xihongTimeSlots = [
-  { id: 'xihong-time-1', no: '1号', time: '09:00' },
-  { id: 'xihong-time-2', no: '2号', time: '09:06' },
-  { id: 'xihong-time-3', no: '3号', time: '09:12' },
-  { id: 'xihong-time-4', no: '4号', time: '09:18' },
-  { id: 'xihong-time-5', no: '5号', time: '09:24' },
-  { id: 'xihong-time-6', no: '6号', time: '09:30' },
-  { id: 'xihong-time-7', no: '7号', time: '09:36' },
-  { id: 'xihong-time-8', no: '8号', time: '09:42' },
-  { id: 'xihong-time-9', no: '9号', time: '09:48' },
-  { id: 'xihong-time-10', no: '10号', time: '09:54' }
-]
-
-const appointmentRows = [
-  { label: '就诊院区', value: '福州市第一总医院-金山院区' },
-  { label: '就诊时间', value: '2026/05/27 08:30' },
-  { label: '诊查费', value: '50.00元', primary: true }
-]
-
-const patientRows = [
-  { label: '就诊人', value: '孔晓雯', arrow: true },
-  { label: '手机号', value: '13556667892', arrow: true }
-]
-
-const resultRows = [
-  { label: '院区地址', value: '地址导航', primary: true },
-  { label: '预约科室', value: '非病毒性肝病科' },
-  { label: '预约时间', value: '2026/05/27 08:30', primary: true },
-  { label: '预约序号', value: '7号' },
-  { label: '诊查费', value: '50.00元' },
-  { label: '诊室位置', value: '门诊楼三楼', primary: true },
-  { label: '就诊人', value: '孔*雯' }
-]
-
 export const noticeItems = [
   '请在就诊时间前5分钟提前到院取号。',
   '如需取消预约，请在就诊前通过我的预约办理。',
@@ -761,22 +682,6 @@ export const myAppointments = [
     patient: '陈*玲 (D54***93)',
     actions: ['再次预约']
   }
-]
-
-// ── Unified mapping list to synchronize list/famous doctors with booking flow ──
-const FAMOUS_DEPT_MAPPING = [
-  { dept: '呼吸内科门诊', isMale: true, avatar: AVATAR_MAP.doctorMale },
-  { dept: '耳鼻喉科门诊', isMale: false, avatar: AVATAR_MAP.doctorFemale },
-  { dept: '消化内科门诊', isMale: true, avatar: AVATAR_MAP.doctorMale },
-  { dept: '呼吸内科门诊', isMale: false, avatar: AVATAR_MAP.doctorFemale, skipCount: 1 },
-  { dept: '心血管内科门诊', isMale: true, avatar: AVATAR_MAP.doctorMale },
-  { dept: '普通儿科门诊', isMale: false, avatar: AVATAR_MAP.doctorFemale },
-  { dept: '骨科门诊', isMale: true, avatar: AVATAR_MAP.doctorMale },
-  { dept: '妇科常规门诊', isMale: false, avatar: AVATAR_MAP.doctorFemale },
-  { dept: '神经内科门诊', isMale: true, avatar: AVATAR_MAP.doctorMale },
-  { dept: '内分泌科门诊', isMale: true, avatar: AVATAR_MAP.doctorMale },
-  { dept: '皮肤病普通门诊', isMale: false, avatar: AVATAR_MAP.doctorFemale },
-  { dept: '肾脏内科门诊', isMale: true, avatar: AVATAR_MAP.doctorMale }
 ]
 
 export const famousDoctorsList = doctors.map((doc) => {
