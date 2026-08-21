@@ -32,7 +32,6 @@ interface ConsultResultRow {
   label: string
   value: string
   highlight?: boolean
-  status?: boolean
 }
 
 interface ConsultSuccessData {
@@ -64,7 +63,7 @@ const resultRows = computed<ConsultResultRow[]>(() => [
   { label: '问诊科室', value: successData.departmentName || '—' },
   { label: '主要症状', value: symptomSummary.value },
   { label: '预计费用', value: successData.expectedFee || '¥20.00', highlight: true },
-  { label: '状态', value: successData.status || '待医生接诊', status: true }
+  { label: '状态', value: successData.status || '待医生接诊', highlight: true }
 ])
 
 function goDepartment() {
